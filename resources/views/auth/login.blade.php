@@ -1,6 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('title', 'Login')
+
+@section('styles')
+    <style>
+        body {
+            background-image: url(img/background/tools-bg.jpeg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+@endsection
 
 @section('content')
 
