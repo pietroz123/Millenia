@@ -28,3 +28,20 @@ body {
 .navbar-brand-logo {
     width: 30px;
 }
+
+
+// =======================================================
+// LOGIN PAGE
+// =======================================================
+
+.login-card {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    max-width: 460px;
+    margin: 0 auto;
+    p {
+        margin: 0;
+        text-align: center;
+    }
+}
