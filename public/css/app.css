@@ -1,4 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Lato:400,400i&display=swap);@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Rajdhani:500,600);@import url(https://fonts.googleapis.com/css?family=Bitter&display=swap);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Lora&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Asap:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Exo:400,500,600&display=swap);.btn {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Asap:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Exo:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap);body {
+  font-family: "Oswald", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
+  font-family: "Asap", sans-serif !important;
+  font-family: "Exo", sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-family: "Nunito Sans", sans-serif !important;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.btn {
   font-size: 1rem;
   text-transform: none;
   box-shadow: none !important;

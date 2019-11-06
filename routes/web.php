@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * AUTHENTICATION ROUTES
+ */
+Auth::routes();
+
+/**
+ * PAGES ROUTES
+ */
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
