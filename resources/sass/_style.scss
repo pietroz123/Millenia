@@ -25,6 +25,12 @@ body {
 // NAVBAR
 // =======================================================
 
+.navbar-brand {
+    display: flex;
+    .brand {
+        margin-left: 8px;
+    }
+}
 .navbar-brand-logo {
     width: 30px;
 }
