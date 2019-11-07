@@ -14,7 +14,7 @@
 Route::get('/', function () {
     if (auth()->check())
         return redirect()->route('dashboard');
-        
+
     return view('welcome');
 });
 
@@ -26,4 +26,4 @@ Auth::routes();
 /**
  * PAGES ROUTES
  */
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
