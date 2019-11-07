@@ -1,25 +1,105 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('title', 'Dashboard')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+@section('dashboard-sidebar')
+    
+    <div class="dashboard-logo">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ asset('img/icons/logo.svg') }}" class="navbar-brand-logo" alt="Ícone Millenia">
+            <span class="brand">Millenia</span>
+        </a>
     </div>
-</div>
+
+    <hr>
+    
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <img src="https://image.flaticon.com/icons/svg/145/145867.svg" class="rounded-circle user-image mb-2" alt="">
+        <p>{{ Auth::user()->name }}</p>
+    </div>
+
+    <hr>
+
+    <div>
+
+        <span class="dashboard-sidebar-divider">Navegação</span>
+        <ul class="dashboard-sidebar-items">
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="far fa-calendar-alt"></i>
+                    Agenda
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-address-card"></i>
+                    Cadastros
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-user"></i>
+                    Clientes
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-users"></i>
+                    Profissionais
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-box-open"></i>
+                    Produtos
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-cut"></i>
+                    Serviços
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-chart-pie"></i>
+                    Relatórios
+                </a>
+            </li>
+        </ul>
+
+        <span class="dashboard-sidebar-divider">Dados Gerais</span>
+        <ul class="dashboard-sidebar-items">
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="far fa-address-card"></i>
+                    Dados Cadastrais
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="#!">
+                    <i class="fas fa-cog"></i>
+                    Configurações
+                </a>
+            </li>
+            <li class="dashboard-sidebar-item">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sair
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
+        </ul>
+
+
+    </div>
+
+@endsection
+
+@section('dashboard-content')
+    
+    <h3>Dashboard de {{ Auth::user()->name }}</h3>
+
 @endsection
