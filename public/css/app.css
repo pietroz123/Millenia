@@ -86,15 +86,14 @@ input:-webkit-autofill {
   min-height: 100vh;
   background: linear-gradient(170.81deg, #C4C4C4 0%, rgba(196, 196, 196, 0) 97.51%);
   box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.4);
+  font-weight: 600;
 }
 .dashboard-sidebar hr {
   margin: 0;
 }
 .dashboard-sidebar .user-info {
   padding: 1rem;
-}
-.dashboard-sidebar .user-name {
-  margin-left: 10px;
+  display: flex;
 }
 .dashboard-sidebar .user-image {
   width: 50px;
@@ -140,6 +139,7 @@ input:-webkit-autofill {
   text-align: center;
   margin-right: 14px;
   min-width: 20px;
+  color: #27353e;
 }
 .dashboard-sidebar-item a::after {
   width: 0%;

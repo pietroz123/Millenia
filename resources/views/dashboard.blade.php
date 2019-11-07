@@ -15,7 +15,10 @@
     
     <div class="user-info">
         <img src="https://image.flaticon.com/icons/svg/145/145867.svg" class="rounded-circle user-image" alt="">
-        <span class="user-name">{{ Auth::user()->name }}</span>
+        <div class="d-flex flex-column justify-content-center ml-3">
+            <span class="user-name">{{ Auth::user()->name }}</span>
+            <span class="user-job">Cabeleireiro</span>
+        </div>
     </div>
 
     <hr>

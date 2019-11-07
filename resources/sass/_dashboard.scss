@@ -19,6 +19,7 @@
     -webkit-box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
     -moz-box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
     box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
+    font-weight: 600;
 
     hr {
         margin: 0;
@@ -26,9 +27,7 @@
 
     .user-info {
         padding: 1rem;
-    }
-    .user-name {
-        margin-left: 10px;
+        display: flex;
     }
     .user-image {
         width: 50px;
@@ -68,6 +67,7 @@
             text-align: center;
             margin-right: 14px;
             min-width: 20px;
+            color: #27353e;
         }
         color: black;
         padding: 10px 20px;
