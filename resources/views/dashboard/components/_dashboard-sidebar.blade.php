@@ -1,5 +1,5 @@
 <div class="dashboard-logo">
-    <a class="navbar-brand" href="{{ url('/') }}">
+    <a class="navbar-brand" href="{{ route('dashboard.index') }}">
         <img src="{{ asset('img/icons/logo.svg') }}" class="navbar-brand-logo" alt="Ícone Millenia">
         <span class="brand">Millenia</span>
     </a>
@@ -34,7 +34,7 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="{{ route('clientes.index') }}">
                 <i class="fas fa-user"></i>
                 Clientes
             </a>

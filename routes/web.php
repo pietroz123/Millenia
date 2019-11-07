@@ -27,3 +27,10 @@ Auth::routes();
  * PAGES ROUTES
  */
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+
+/**
+ * ROTAS DE CADASTRO
+ */
+
+// Clientes
+Route::resource('clientes', 'ClienteController');
