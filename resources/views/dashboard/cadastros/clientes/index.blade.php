@@ -8,6 +8,63 @@
 
 @section('dashboard-content')
     
-    <h3>Clientes</h3>
+    <div class="d-flex justify-content-between w-100">
+        <div>
+            <h3>Clientes</h3>
+            <p>Número de Clientes: 10</p>
+        </div>
+        <div>
+            <button class="btn btn-light">Adicionar um cliente</button>
+        </div>
+    </div>
+
+    <table class="table table-cadastro">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Celular</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pietro Zuntini Bonfim</td>
+                <td>(15) 99999-9999</td>
+                <td>(15) 9999-9999</td>
+                <td>o o</td>
+            </tr>
+            <tr>
+                <td>Pietro Zuntini Bonfim</td>
+                <td>(15) 99999-9999</td>
+                <td>(15) 9999-9999</td>
+                <td>o o</td>
+            </tr>
+            <tr>
+                <td>Pietro Zuntini Bonfim</td>
+                <td>(15) 99999-9999</td>
+                <td>(15) 9999-9999</td>
+                <td>o o</td>
+            </tr>
+            <tr>
+                <td>Pietro Zuntini Bonfim</td>
+                <td>(15) 99999-9999</td>
+                <td>(15) 9999-9999</td>
+                <td>o o</td>
+            </tr>
+            <tr>
+                <td>Pietro Zuntini Bonfim</td>
+                <td>(15) 99999-9999</td>
+                <td>(15) 9999-9999</td>
+                <td>o o</td>
+            </tr>
+            <tr>
+                <td>Pietro Zuntini Bonfim</td>
+                <td>(15) 99999-9999</td>
+                <td>(15) 9999-9999</td>
+                <td>o o</td>
+            </tr>
+        </tbody>
+    </table>
 
 @endsection
