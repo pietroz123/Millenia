@@ -32,37 +32,55 @@
                 <td>Pietro Zuntini Bonfim</td>
                 <td>(15) 99999-9999</td>
                 <td>(15) 9999-9999</td>
-                <td>o o</td>
+                <td class="td-actions">
+                    <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Pietro Zuntini Bonfim</td>
                 <td>(15) 99999-9999</td>
                 <td>(15) 9999-9999</td>
-                <td>o o</td>
+                <td class="td-actions">
+                    <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Pietro Zuntini Bonfim</td>
                 <td>(15) 99999-9999</td>
                 <td>(15) 9999-9999</td>
-                <td>o o</td>
+                <td class="td-actions">
+                    <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Pietro Zuntini Bonfim</td>
                 <td>(15) 99999-9999</td>
                 <td>(15) 9999-9999</td>
-                <td>o o</td>
+                <td class="td-actions">
+                    <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Pietro Zuntini Bonfim</td>
                 <td>(15) 99999-9999</td>
                 <td>(15) 9999-9999</td>
-                <td>o o</td>
+                <td class="td-actions">
+                    <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Pietro Zuntini Bonfim</td>
                 <td>(15) 99999-9999</td>
                 <td>(15) 9999-9999</td>
-                <td>o o</td>
+                <td class="td-actions">
+                    <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>
