@@ -22,7 +22,7 @@
     <span class="dashboard-sidebar-divider">Navegação</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="{{ route('dashboard.agenda.index') }}">
                 <i class="far fa-calendar-alt"></i>
                 Agenda
             </a>

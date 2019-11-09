@@ -28,3 +28,10 @@ mix.scripts([
     'resources/lib/mdbootstrap/js/mdb.js',
     'resources/lib/mdbootstrap/js/datatables.js',
 ], 'public/js/mdbootstrap.js');
+
+/**
+ * Dashboard
+ */
+
+// Agenda
+mix.scripts('resources/js/dashboard/agenda/index.js', 'public/js/dashboard/agenda/index.js');

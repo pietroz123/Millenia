@@ -34,3 +34,10 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 
 // Clientes
 Route::resource('clientes', 'ClienteController');
+
+/**
+ * ROTAS DA AGENDA
+ */
+Route::get('/agenda', function() {
+    return view('dashboard.agenda.index');
+})->name('dashboard.agenda.index');
