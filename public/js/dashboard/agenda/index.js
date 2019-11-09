@@ -1,12 +1,16 @@
+
+var calendarEl;
+var calendar;
+
 $(document).ready(function() {
 
     /**
      * Inicializa o Full Calendar
      */
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    calendarEl = document.getElementById('calendar');
+    calendar = new FullCalendar.Calendar(calendarEl, {
         plugins: [ 'dayGrid' ],
-        height: 'parent',
+        height: 800,
     });
     calendar.render();
 

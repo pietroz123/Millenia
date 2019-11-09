@@ -1669,6 +1669,7 @@ input:-webkit-autofill {
 }
 
 .dashboard-sidebar {
+  position: fixed;
   width: 300px;
   min-height: 100vh;
   background: linear-gradient(170.81deg, #C4C4C4 0%, rgba(196, 196, 196, 0) 97.51%);
@@ -1689,6 +1690,7 @@ input:-webkit-autofill {
 }
 
 .dashboard-content {
+  margin-left: 300px;
   width: calc(100% - 300px);
   padding: 60px 75px;
 }

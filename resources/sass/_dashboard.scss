@@ -13,6 +13,7 @@
     font-size: 15px;
 }
 .dashboard-sidebar {
+    position: fixed;
     width: 300px;
     min-height: 100vh;
     @include sidebar-background();
@@ -36,6 +37,7 @@
     }
 }
 .dashboard-content {
+    margin-left: 300px;
     width: calc(100% - 300px);
     padding: 60px 75px;
 }
