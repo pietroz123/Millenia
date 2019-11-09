@@ -14,7 +14,7 @@
             <p>Número de Clientes: 10</p>
         </div>
         <div>
-            <a href="{{ route('clientes.create') }}" class="btn btn-light">Adicionar um cliente</a>
+            <a href="{{ route('clientes.create') }}" class="btn btn-light btn-tool add">Adicionar um cliente</a>
         </div>
     </div>
 

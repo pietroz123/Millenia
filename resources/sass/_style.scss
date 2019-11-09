@@ -20,6 +20,21 @@ body {
 // MISC
 // =======================================================
 
+.btn-tool {
+    font-family: $font-oswald;
+    text-transform: uppercase !important;
+    &.add {
+        &::after {
+            float: right;
+            font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f234";
+        }
+    }
+    &::after {
+        margin-left: 10px;
+        font-size: 15px;
+        padding-top: 1px;
+    }
+}
 
 // =======================================================
 // NAVBAR
