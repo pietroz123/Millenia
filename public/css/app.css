@@ -2141,6 +2141,28 @@ input:-webkit-autofill {
   animation-fill-mode: both;
 }
 
+.select2-selection {
+  height: 40px !important;
+  border: 1px solid #ced4da !important;
+}
+
+.select2-selection__placeholder {
+  font-size: 16px;
+  color: #6c757d !important;
+}
+
+.select2-selection__rendered {
+  padding-top: 6px;
+  color: #6c757d !important;
+}
+
+.select2-search__field {
+  border-radius: 0.25rem;
+}
+.select2-container--default .select2-selection--multiple {
+  height: 100% !important;
+}
+
 .dashboard-wrapper {
   display: flex;
   font-family: "Nunito Sans", sans-serif !important;
