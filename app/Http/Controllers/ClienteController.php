@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Profissao;
 
 class ClienteController extends Controller
 {
@@ -23,7 +24,9 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cadastros.clientes.create');        
+        return view('dashboard.cadastros.clientes.create', [
+            'profissoes' => Profissao::all(),
+        ]);        
     }
 
     /**

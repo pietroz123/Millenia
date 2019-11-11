@@ -4,11 +4,12 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
+// Libraries
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
 @import '~@fullcalendar/timegrid/main.css';
 @import '~@fullcalendar/list/main.css';
+@import '~select2/dist/css/select2.css';
 
 // Custom
 @import 'fonts';

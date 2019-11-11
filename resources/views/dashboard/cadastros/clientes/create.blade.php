@@ -51,8 +51,10 @@
 
             <label for="profession">Profissão</label>
             <select class="browser-default custom-select" id="profession">
-                <option selected>Selecione uma profissão</option>
-                <option value="1">Cabeleireiro</option>
+                <option></option>
+                @foreach ($profissoes as $profissao)
+                    <option value="{{ $profissao->id }}">{{ $profissao->nome }}</option>
+                @endforeach
             </select>
            
             <label class="mt-3" for="recommendation">Indicação (Opcional)</label>
@@ -121,4 +123,8 @@
 
     <button type="button" class="btn btn-light float-right mt-4">Cadastrar</button>
 
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/dashboard/cadastros/cliente/create.js') }}"></script>
 @endsection
