@@ -26,8 +26,8 @@ class ProfissionalController extends Controller
     public function create()
     {
         return view('dashboard.cadastros.profissionais.create', [
-            'cidades' => Cidade::all(),
-            'estados' => Estado::all(),
+            'cidades' => Cidade::all()->sortBy('nome'),
+            'estados' => Estado::all()->sortBy('nome'),
         ]);
     }
 
