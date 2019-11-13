@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cidade;
+use App\Estado;
 
 class ProfissionalController extends Controller
 {
@@ -23,7 +25,10 @@ class ProfissionalController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cadastros.profissionais.create');
+        return view('dashboard.cadastros.profissionais.create', [
+            'cidades' => Cidade::all(),
+            'estados' => Estado::all(),
+        ]);
     }
 
     /**

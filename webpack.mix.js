@@ -33,9 +33,13 @@ mix.scripts([
  * Dashboard
  */
 
+// =======================================================
 // Cadastros
+// =======================================================
+ 
 // Clientes
 mix.scripts('resources/js/dashboard/cadastros/cliente/create.js', 'public/js/dashboard/cadastros/cliente/create.js');
+mix.scripts('resources/js/dashboard/cadastros/profissional/create.js', 'public/js/dashboard/cadastros/profissional/create.js');
 
 // Agenda
 mix.scripts('resources/js/dashboard/agenda/index.js', 'public/js/dashboard/agenda/index.js');

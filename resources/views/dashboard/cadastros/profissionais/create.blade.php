@@ -68,7 +68,6 @@
 
             <label class="mt-3" for="services">Serviços</label>
             <select class="browser-default custom-select" id="services" name="services[]" multiple="multiple">
-                <option selected>Seleciona os serviços</option>
                 <option value="1">Um</option>
                 <option value="2">Dois</option>
                 <option value="3">Três</option>
@@ -87,9 +86,9 @@
                         <label for="city">Cidade</label>
                         <select class="browser-default custom-select" id="city">
                             <option></option>
-                            {{-- @foreach ($cidades as $cidade)
+                            @foreach ($cidades as $cidade)
                                 <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
-                            @endforeach --}}
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -98,9 +97,9 @@
                         <label for="state">Estado</label>
                         <select class="browser-default custom-select" id="state">
                             <option></option>
-                            {{-- @foreach ($estados as $estado)
+                            @foreach ($estados as $estado)
                                 <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
-                            @endforeach --}}
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -166,4 +165,8 @@
     <a href="#!" class="btn btn-light btn-tool float-right mt-4">Cadastrar</a>
 
 
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/dashboard/cadastros/profissional/create.js') }}"></script>
 @endsection

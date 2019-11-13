@@ -4,5 +4,6 @@
     "/css/mdbootstrap.css": "/css/mdbootstrap.css",
     "/js/mdbootstrap.js": "/js/mdbootstrap.js",
     "/js/dashboard/cadastros/cliente/create.js": "/js/dashboard/cadastros/cliente/create.js",
+    "/js/dashboard/cadastros/profissional/create.js": "/js/dashboard/cadastros/profissional/create.js",
     "/js/dashboard/agenda/index.js": "/js/dashboard/agenda/index.js"
 }
