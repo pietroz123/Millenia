@@ -40,7 +40,7 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="{{ route('profissionais.index') }}">
                 <i class="fas fa-users"></i>
                 Profissionais
             </a>

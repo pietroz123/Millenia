@@ -35,6 +35,9 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 // Clientes
 Route::resource('clientes', 'ClienteController');
 
+// Profissionais
+Route::resource('profissionais', 'ProfissionalController');
+
 /**
  * ROTAS DA AGENDA
  */
