@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profissao;
+use App\Cidade;
+use App\Estado;
 
 class ClienteController extends Controller
 {
@@ -26,6 +28,8 @@ class ClienteController extends Controller
     {
         return view('dashboard.cadastros.clientes.create', [
             'profissoes' => Profissao::all(),
+            'cidades' => Cidade::all()->sortBy('nome'),
+            'estados' => Estado::all()->sortBy('nome'),
         ]);        
     }
 

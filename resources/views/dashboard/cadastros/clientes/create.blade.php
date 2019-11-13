@@ -71,13 +71,23 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="city">Cidade</label>
-                        <input type="text" class="form-control" id="city" placeholder="Cidade">
+                        <select class="browser-default custom-select" id="city">
+                            <option></option>
+                            @foreach ($cidades as $cidade)
+                                <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="state">Estado</label>
-                        <input type="text" class="form-control" id="state" placeholder="Estado">
+                        <select class="browser-default custom-select" id="state">
+                            <option></option>
+                            @foreach ($estados as $estado)
+                                <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
             </div>
