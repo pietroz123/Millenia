@@ -24,7 +24,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="999.999.999-99">
+                        <input type="text" class="form-control" id="cpf" name="cpf">
                     </div>
                 </div>
 

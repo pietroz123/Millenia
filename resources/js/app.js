@@ -7,3 +7,4 @@
 require('./bootstrap');
 
 window.select2 = require('select2');
+window.jquerymask = require('jquery-mask-plugin');
