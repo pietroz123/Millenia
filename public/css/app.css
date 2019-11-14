@@ -2577,6 +2577,13 @@ body {
 /**
  * Clientes
  */
+#modal-cliente .header {
+  margin-bottom: 15px;
+}
+#modal-cliente .info {
+  margin-bottom: 5px;
+}
+
 /**
 * Profissionais
 */
