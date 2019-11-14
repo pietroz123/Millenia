@@ -57,6 +57,12 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cep" placeholder="99999-999" name="cep" autocomplete="new" required value="{{ $cliente->cep }}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
                     <label for="cidade">Cidade</label>
                     <select class="browser-default custom-select" id="cidade" name="cidade">
                         <option></option>
@@ -66,26 +72,9 @@
                     </select>
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <select class="browser-default custom-select" id="estado" name="estado">
-                        <option></option>
-                        @foreach ($estados as $estado)
-                            <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label for="cep">CEP</label>
-                    <input type="text" class="form-control" id="cep" placeholder="99999-999" name="cep" autocomplete="new" required value="{{ $cliente->cep }}">
-                </div>
-            </div>
             <div class="col">
                 <div class="form-group">
                     <label for="bairro">Bairro</label>

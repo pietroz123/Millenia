@@ -52,7 +52,7 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="{{ route('servicos.index') }}">
                 <i class="fas fa-cut"></i>
                 Serviços
             </a>

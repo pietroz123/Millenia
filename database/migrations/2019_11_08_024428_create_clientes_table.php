@@ -16,9 +16,8 @@ class CreateClientesTable extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->bigInteger('id_cidade')->unsigned();
-            $table->bigInteger('id_estado')->unsigned();
             $table->string('cep');
             $table->string('bairro');
             $table->string('rua');
@@ -34,7 +33,6 @@ class CreateClientesTable extends Migration
         Schema::table('clientes', function (Blueprint $table) {
             $table->foreign('id_profissao')->references('id')->on('profissoes')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_cidade')->references('id')->on('cidades')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_estado')->references('id')->on('estados')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

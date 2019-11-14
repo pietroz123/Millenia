@@ -87,8 +87,10 @@ $(document).ready(function() {
                 if (!("erro" in dados)) {
                     //Atualiza os campos com os valores da consulta.
                     $("#rua").val(dados.logradouro);
-                    $("#cidade").val(dados.localidade);
-                    $("#estado").val(dados.uf);
+
+                    const valCidade = $('#cidade').find("option:contains('"+dados.localidade+"')").val();
+                    $('#cidade').val(valCidade).trigger('change.select2');
+                    
                     $("#bairro").val(dados.bairro);
                     $("#complemento").val(dados.complemento);
                 }

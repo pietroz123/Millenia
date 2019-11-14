@@ -38,6 +38,10 @@ Route::resource('clientes', 'ClienteController');
 // Profissionais
 Route::resource('profissionais', 'ProfissionalController');
 
+// Serviços
+Route::resource('servicos', 'ServicoController');
+
+
 /**
  * ROTAS DA AGENDA
  */
