@@ -87,10 +87,10 @@
             <div class="col">
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
-                    <select class="browser-default custom-select" id="cidade" name="cidade" value="{{ $profissional->id_cidade }}">
+                    <select class="browser-default custom-select" id="cidade" name="cidade">
                         <option></option>
                         @foreach ($cidades as $cidade)
-                            <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
+                            <option value="{{ $cidade->id }}" {{ $profissional->cidade ? ($profissional->cidade->nome == $cidade->nome ? 'selected' : '') : '' }}>{{ $cidade->nome }}</option>
                         @endforeach
                     </select>
                 </div>

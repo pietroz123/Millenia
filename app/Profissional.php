@@ -12,4 +12,11 @@ class Profissional extends Model
      * @var string
      */
     protected $table = 'profissionais';
+
+    /**
+     * Relacionamentos
+     */
+    public function cidade() {
+        return $this->belongsTo('App\Cidade', 'id_cidade', 'id');
+    }
 }

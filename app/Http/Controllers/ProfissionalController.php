@@ -88,7 +88,11 @@ class ProfissionalController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.cadastros.profissionais.edit', [
+            'profissional' => Profissional::find($id),
+            'cidades' => Cidade::all()->sortBy('nome'),
+            'estados' => Estado::all()->sortBy('nome'),
+        ]);
     }
 
     /**
@@ -100,7 +104,30 @@ class ProfissionalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /**
+         * Atualiza o profissional
+         */
+        $profissional = Profissional::find($id);
+        $profissional->nome = request('nome');
+        $profissional->cpf = request('cpf');
+        $profissional->rg = request('rg');
+        $profissional->telefone_celular = request('tel-celular');
+        $profissional->telefone_residencial = request('tel-residencial');
+        $profissional->email = request('email');
+        // $profissional-> = request('area-atuacao');
+        // $profissional-> = request('servicos');
+        $profissional->cor_agenda = request('cor-agenda');
+        $profissional->cep = request('cep');
+        $profissional->id_cidade = request('cidade');
+        $profissional->bairro = request('bairro');
+        $profissional->rua = request('rua');
+        $profissional->numero_rua = request('numero-rua');
+        $profissional->complemento_rua = request('complemento');
+        $profissional->horario_entrada = request('horario-entrada');
+        $profissional->horario_saida = request('horario-saida');
+        $profissional->save();
+
+        return redirect()->route('profissionais.index')->with('success', 'Profissional atualizado com sucesso');
     }
 
     /**
