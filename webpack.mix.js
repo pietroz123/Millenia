@@ -38,7 +38,10 @@ mix.scripts([
 // =======================================================
  
 // Clientes
+mix.scripts('resources/js/dashboard/cadastros/cliente/index.js', 'public/js/dashboard/cadastros/cliente/index.js');
 mix.scripts('resources/js/dashboard/cadastros/cliente/create.js', 'public/js/dashboard/cadastros/cliente/create.js');
+
+// Profissionais
 mix.scripts('resources/js/dashboard/cadastros/profissional/create.js', 'public/js/dashboard/cadastros/profissional/create.js');
 
 // Agenda

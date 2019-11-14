@@ -44,3 +44,13 @@ Route::resource('profissionais', 'ProfissionalController');
 Route::get('/agenda', function() {
     return view('dashboard.agenda.index');
 })->name('dashboard.agenda.index');
+
+/**
+ * ROTAS DE AJAX
+ */
+Route::namespace('Ajax')->prefix('ajax')->group(function() {
+
+    // Clientes
+    Route::post('/modalInformacoesCliente', 'AjaxController@modalInformacoesCliente');
+
+});
