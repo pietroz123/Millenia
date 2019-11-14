@@ -2655,6 +2655,10 @@ input:-webkit-autofill {
   width: 50px;
 }
 
+.sp-palette {
+  max-width: 400px;
+}
+
 .dashboard-wrapper {
   display: flex;
   font-family: "Nunito Sans", sans-serif !important;
