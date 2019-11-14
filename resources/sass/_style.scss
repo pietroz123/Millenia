@@ -126,18 +126,3 @@ body {
 /**
  * Serviços
  */
-input[name=ativo] {
-    display: none;
-    & + label {
-        cursor: pointer;
-        background: #e0e0e0;
-        padding: 5px 10px;
-        border-radius: 4px;
-    }
-    &:checked {
-        & + label {
-            background: #4285F4;
-            color: white;
-        }
-    }
-}

@@ -43,6 +43,20 @@ a:hover {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both; }
 
+.custom-switch .custom-control-label::before {
+    width: 38px !important;
+    height: 20px !important;
+    border-radius: 0.75rem !important;
+}
+.custom-switch .custom-control-label::after {
+    width: calc(1rem - 0px) !important;
+    height: calc(1rem - 0px) !important;
+}
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+    -webkit-transform: translateX(18px) !important;
+    transform: translateX(18px) !important;
+}
+
 // =======================================================
 // SELECT2
 // =======================================================

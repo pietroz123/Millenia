@@ -49,12 +49,10 @@
             <label class="custom-control-label" for="enviar-notificacao">Enviar notificações ao cliente após esse período</label>
         </div>
     
-        <label class="mt-3">O serviço está ativo?</label>
-        <div class="form-group d-block">
-            <input type="radio" id="ativo-sim" name="ativo" checked>
-            <label for="ativo-sim">Sim</label>
-            <input type="radio" id="ativo-nao" name="ativo">
-            <label for="ativo-nao">Não</label>
+        <label class="d-block mt-3">O serviço está ativo?</label>
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="ativo">
+            <label class="custom-control-label" for="ativo"></label>
         </div>
         
     </div>
