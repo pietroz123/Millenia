@@ -2562,6 +2562,10 @@ body {
   font-size: 14px;
   padding-bottom: 11px !important;
 }
+.table-cadastro td {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.6rem !important;
+}
 .table-cadastro .td-actions {
   padding-top: 0.8rem;
   padding-bottom: 0.6rem;
@@ -2591,6 +2595,13 @@ body {
 /**
 * Profissionais
 */
+.cor-agenda-profissional {
+  display: block;
+  width: 50%;
+  height: 28px;
+  border-radius: 2px;
+}
+
 .btn {
   font-size: 1rem;
   text-transform: none;

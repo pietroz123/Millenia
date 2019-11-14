@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientesTable extends Migration
+class CreateProfissionaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('profissionais', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('email')->unique();
+            $table->string('cpf', 14)->unique();
+            $table->string('rg', 12)->unique();
             $table->string('telefone_celular', 15);
             $table->string('telefone_residencial', 14)->nullable();
             $table->bigInteger('id_cidade')->unsigned();
@@ -25,13 +27,12 @@ class CreateClientesTable extends Migration
             $table->string('rua');
             $table->integer('numero_rua');
             $table->string('complemento_rua')->nullable();
-            $table->integer('pontuacao')->default(0);
-            $table->bigInteger('id_profissao')->unsigned()->nullable();
-            $table->boolean('deseja_notificacao');
+            $table->time('horario_entrada');
+            $table->time('horario_saida');
+            $table->string('cor_agenda', 7);
             $table->timestamps();
         });
-        Schema::table('clientes', function (Blueprint $table) {
-            $table->foreign('id_profissao')->references('id')->on('profissoes')->onDelete('cascade')->onUpdate('cascade');
+        Schema::table('profissionais', function (Blueprint $table) {
             $table->foreign('id_cidade')->references('id')->on('cidades')->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -43,6 +44,6 @@ class CreateClientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('profissionais');
     }
 }
