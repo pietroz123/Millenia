@@ -2639,8 +2639,8 @@ input:-webkit-autofill {
 
 .select2-selection__rendered {
   font-size: 16px;
-  padding-top: 6px;
-  color: #6c757d !important;
+  padding: 0.375rem 0.75rem !important;
+  color: #495057 !important;
 }
 
 .select2-search__field {

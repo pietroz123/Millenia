@@ -106,7 +106,29 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /**
+         * Atualiza o cliente
+         */
+        $cliente = Cliente::find($id);
+        $cliente->nome = request('nome');
+        $cliente->telefone_celular = request('tel-celular');
+        $cliente->telefone_residencial = request('tel-residencial');
+        $cliente->deseja_notificacao = request('deseja-notificacao') == "on" ? true : false;
+        $cliente->email = request('email');
+        $cliente->id_profissao = request('profissao');
+        // $cliente->indicacao = request('indicacao');
+        $cliente->id_cidade = request('cidade');
+        $cliente->id_estado = request('estado');
+        $cliente->cep = request('cep');
+        $cliente->bairro = request('bairro');
+        $cliente->rua = request('rua');
+        $cliente->numero_rua = request('numero-rua');
+        $cliente->complemento_rua = request('complemento');
+
+        // Salva
+        $cliente->save();
+
+        return redirect()->route('clientes.index')->with('success', 'Cliente atualizado com sucesso');
     }
 
     /**
