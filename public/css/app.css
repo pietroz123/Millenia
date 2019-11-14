@@ -2602,6 +2602,23 @@ body {
   border-radius: 2px;
 }
 
+/**
+ * Serviços
+ */
+input[name=ativo] {
+  display: none;
+}
+input[name=ativo] + label {
+  cursor: pointer;
+  background: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+input[name=ativo]:checked + label {
+  background: #4285F4;
+  color: white;
+}
+
 .btn {
   font-size: 1rem;
   text-transform: none;
