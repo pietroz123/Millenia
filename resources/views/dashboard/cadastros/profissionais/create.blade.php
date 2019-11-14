@@ -60,19 +60,28 @@
 
             <h5 class="mt-4">Informações Adicionais</h5>
 
-            <label class="mt-3" for="recommendation">Área de Atuação</label>
-            <select class="browser-default custom-select" id="recommendation" name="recommendation">
-                <option selected>Seleciona a área</option>
-                <option value="1">Cabeleireiro</option>
-            </select>
+            <div class="form-group">
+                <label class="mt-3" for="recommendation">Área de Atuação</label>
+                <select class="browser-default custom-select" id="recommendation" name="recommendation">
+                    <option selected>Seleciona a área</option>
+                    <option value="1">Cabeleireiro</option>
+                </select>
+            </div>
 
-            <label class="mt-3" for="services">Serviços</label>
-            <select class="browser-default custom-select" id="services" name="services[]" multiple="multiple">
-                <option value="1">Um</option>
-                <option value="2">Dois</option>
-                <option value="3">Três</option>
-                <option value="4">Quatro</option>
-            </select>
+            <div class="form-group">
+                <label for="services">Serviços</label>
+                <select class="browser-default custom-select" id="services" name="services[]" multiple="multiple">
+                    <option value="1">Um</option>
+                    <option value="2">Dois</option>
+                    <option value="3">Três</option>
+                    <option value="4">Quatro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="color-picker">Cor para a agenda</label>
+                <input type='text' id="color-picker">
+            </div>
 
         </div>
 
@@ -145,7 +154,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="start-time">Entrada</label>
+                        <label class="mt-2" for="start-time">Entrada</label>
                         <input type="time" class="form-control" id="start-time" placeholder="Horário de entrada">
                     </div>
                 </div>
