@@ -4,14 +4,14 @@ $(document).ready(function() {
     // SELECTs
     // =======================================================
 
-    $('select#services').select2({
+    $('select#servicos').select2({
         placeholder: 'Selecione os serviços do profissional',
         tags: true, 
     });
-    $('#city').select2({
+    $('#cidade').select2({
         placeholder: "Selecione a cidade",
     });
-    $('#state').select2({
+    $('#estado').select2({
         placeholder: "Selecione o estado",
     });
 
@@ -27,10 +27,10 @@ $(document).ready(function() {
         reverse: true,
         placeholder: "__.___.___-_",
     });
-    $('#smartphone').mask('(00) 00000-0000', {
+    $('#tel-celular').mask('(00) 00000-0000', {
         placeholder: "(__) _____-____"
     });
-    $('#phone').mask('(00) 0000-0000', {
+    $('#tel-residencial').mask('(00) 0000-0000', {
         placeholder: "(__) ____-____"
     });
     $('#cep').mask('00000-000', {
@@ -87,11 +87,11 @@ $(document).ready(function() {
 
     function limpa_formulario_cep() {
         // Limpa valores do formulário de cep.
-        $('#city').val('');
-        $('#state').val('');
-        $('#street').val('');
-        $('#neighborhood').val('');
-        $('#complement').val('');
+        $('#cidade').val('');
+        $('#estado').val('');
+        $('#rua').val('');
+        $('#bairro').val('');
+        $('#complemento').val('');
     }
 
     $(document).on('keyup', '#cep', delay(function() {
@@ -103,22 +103,22 @@ $(document).ready(function() {
         if (cep != "") {
 
             // Loading enquanto procura o CEP
-            $('#city').val('...');
-            $('#state').val('...');
-            $('#street').val('...');
-            $('#neighborhood').val('...');
-            $('#complement').val('...');
+            $('#cidade').val('...');
+            $('#estado').val('...');
+            $('#rua').val('...');
+            $('#bairro').val('...');
+            $('#complemento').val('...');
 
             //Consulta o webservice viacep.com.br/
             $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
                 if (!("erro" in dados)) {
                     //Atualiza os campos com os valores da consulta.
-                    $("#street").val(dados.logradouro);
-                    $("#city").val(dados.localidade);
-                    $("#state").val(dados.uf);
-                    $("#neighborhood").val(dados.bairro);
-                    $("#complement").val(dados.complemento);
+                    $("#rua").val(dados.logradouro);
+                    $("#cidade").val(dados.localidade);
+                    $("#estado").val(dados.uf);
+                    $("#bairro").val(dados.bairro);
+                    $("#complemento").val(dados.complemento);
                 }
                 else {
                     //CEP pesquisado não foi encontrado.
