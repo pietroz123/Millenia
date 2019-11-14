@@ -13,7 +13,7 @@
     <div class="row mt-5">
 
         <div class="col">
-            <h5>Contato</h5>
+            <h5 class="mb-3">Contato</h5>
 
             <div class="form-group">
                 <label for="name">Nome</label>
@@ -87,7 +87,7 @@
 
         <div class="col">
 
-            <h5>Endereço</h5>
+            <h5 class="mb-3">Endereço</h5>
             
             <div class="row">
                 <div class="col">
@@ -154,13 +154,13 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <label class="mt-2" for="start-time">Entrada</label>
+                        <label class="mt-3" for="start-time">Entrada</label>
                         <input type="time" class="form-control" id="start-time" placeholder="Horário de entrada">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="start-time">Saída</label>
+                        <label class="mt-3" for="start-time">Saída</label>
                         <input type="time" class="form-control" id="start-time" placeholder="Horário de saída">
                     </div>
                 </div>
