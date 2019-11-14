@@ -40,7 +40,7 @@
         <select class="browser-default custom-select" id="profissao" name="profissao">
             <option></option>
             @foreach ($profissoes as $profissao)
-                <option value="{{ $profissao->id }}" {{ $cliente->profissao->nome == $profissao->nome ? 'selected' : '' }}>{{ $profissao->nome }}</option>
+                <option value="{{ $profissao->id }}" {{ $cliente->profissao ? ($cliente->profissao->nome == $profissao->nome ? 'selected' : '') : '' }}>{{ $profissao->nome }}</option>
             @endforeach
         </select>
         
@@ -61,7 +61,7 @@
                     <select class="browser-default custom-select" id="cidade" name="cidade">
                         <option></option>
                         @foreach ($cidades as $cidade)
-                            <option value="{{ $cidade->id }}" {{ $cliente->cidade->nome == $cidade->nome ? 'selected' : '' }}>{{ $cidade->nome }}</option>
+                            <option value="{{ $cidade->id }}" {{ $cliente->profissao ? ($cliente->cidade->nome == $cidade->nome ? 'selected' : '') : '' }}>{{ $cidade->nome }}</option>
                         @endforeach
                     </select>
                 </div>
