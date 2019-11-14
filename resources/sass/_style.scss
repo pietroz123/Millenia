@@ -96,7 +96,6 @@ body {
  * Clientes
  */
 
-// Index
 #modal-cliente {
     .header {
         margin-bottom: 15px;
@@ -105,9 +104,9 @@ body {
         margin-bottom: 5px;
     }
 }
-
-// Create
-
+.remove-form {
+    display: contents;
+}
 
 /**
 * Profissionais

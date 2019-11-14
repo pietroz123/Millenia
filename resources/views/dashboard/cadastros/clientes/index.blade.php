@@ -37,7 +37,11 @@
                         <td class="td-actions">
                             <button class="btn-action view" data-id-cliente="{{ $cliente->id }}"><i class="fas fa-eye"></i></button>
                             <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
-                            <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                            <form method="POST" action="{{ route('clientes.destroy', $cliente->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este cliente?');">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
