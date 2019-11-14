@@ -16,13 +16,15 @@ class CreateServicosTable extends Migration
         Schema::create('servicos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->boolean('ativo');
-            $table->integer('pontos');
-            $table->boolean('pode_entrar_em_pacote');
             $table->double('preco');
+            $table->double('comissao');
             $table->integer('tempo_execucao_em_minutos');
+            $table->integer('pontos');
             $table->integer('duracao_em_dias');
-            $table->boolean('enviar_notificacao');
+            $table->boolean('enviar_notificacao_cliente');
+            $table->boolean('ativo');
+            $table->text('observacoes')->nullable();
+            // $table->boolean('pode_entrar_em_pacote');
             $table->timestamps();
         });
     }

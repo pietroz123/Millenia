@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Servico;
 
 class ServicoController extends Controller
 {
@@ -13,7 +14,9 @@ class ServicoController extends Controller
      */
     public function index()
     {
-        return view('dashboard.cadastros.servicos.index');
+        return view('dashboard.cadastros.servicos.index', [
+            'servicos' => Servico::all(),
+        ]);
     }
 
     /**
@@ -23,7 +26,9 @@ class ServicoController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cadastros.servicos.create');
+        return view('dashboard.cadastros.servicos.create', [
+            'servico' => new Servico,
+        ]);
     }
 
     /**
@@ -34,7 +39,22 @@ class ServicoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /**
+         * Criar novo servico
+         */
+        $servico = new Servico;
+        $servico->nome = request('nome');
+        $servico->preco = request('preco');
+        $servico->comissao = request('comissao');
+        $servico->tempo_execucao_em_minutos = request('tempo-execucao');
+        $servico->pontos = request('pontos');
+        $servico->duracao_em_dias = request('duracao');
+        $servico->enviar_notificacao_cliente = request('enviar-notificacao') ? true : false;
+        $servico->ativo = request('ativo') ? true : false;
+        $servico->observacoes = request('observacoes');
+        $servico->save();
+
+        return redirect()->route('servicos.index')->with('success', 'Serviço cadastrado com sucesso');
     }
 
     /**
@@ -56,7 +76,9 @@ class ServicoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.cadastros.servicos.edit', [
+            'servico' => Servico::find($id),
+        ]);
     }
 
     /**
@@ -68,7 +90,22 @@ class ServicoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /**
+         * Atualizar servico
+         */
+        $servico = Servico::find($id);
+        $servico->nome = request('nome');
+        $servico->preco = request('preco');
+        $servico->comissao = request('comissao');
+        $servico->tempo_execucao_em_minutos = request('tempo-execucao');
+        $servico->pontos = request('pontos');
+        $servico->duracao_em_dias = request('duracao');
+        $servico->enviar_notificacao_cliente = request('enviar-notificacao') ? true : false;
+        $servico->ativo = request('ativo') ? true : false;
+        $servico->observacoes = request('observacoes');
+        $servico->save();
+
+        return redirect()->route('servicos.index')->with('success', 'Serviço atualizado com sucesso');
     }
 
     /**
@@ -79,6 +116,12 @@ class ServicoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        /**
+         * Remove o servico
+         */
+        $servico = Servico::find($id);
+        $servico->delete();
+
+        return redirect()->route('servicos.index')->with('success', 'Serviço removido com sucesso');
     }
 }

@@ -8,14 +8,15 @@
 
 @section('dashboard-content')
     
-    <form method="POST" action="{{ route('servicos.store') }}">
+    <form method="POST" action="{{ route('servicos.update', $servico->id) }}">
+        @method('PUT')
         @csrf
 
-        <h3>Cadastro de Serviços</h3>
+        <h3>Editar serviço ({{ $servico->nome }})</h3>
         
         @include('dashboard.cadastros.servicos._form')
         
-        <button type="submit" class="btn btn-light btn-tool float-right mt-4">Cadastrar</button>
+        <button type="submit" class="btn btn-light btn-tool float-right mt-4">Editar</button>
     </form>
 
 @endsection
