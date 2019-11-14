@@ -30,10 +30,11 @@ class ClienteController extends Controller
     public function create()
     {
         return view('dashboard.cadastros.clientes.create', [
+            'cliente' => new Cliente,
             'profissoes' => Profissao::all(),
             'cidades' => Cidade::all()->sortBy('nome'),
             'estados' => Estado::all()->sortBy('nome'),
-        ]);        
+        ]);
     }
 
     /**
@@ -88,7 +89,12 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.cadastros.clientes.edit', [
+            'cliente' => Cliente::find($id),
+            'profissoes' => Profissao::all(),
+            'cidades' => Cidade::all()->sortBy('nome'),
+            'estados' => Estado::all()->sortBy('nome'),
+        ]);
     }
 
     /**

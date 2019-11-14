@@ -36,7 +36,7 @@
                         <td>{{ $cliente->telefone_residencial }}</td>
                         <td class="td-actions">
                             <button class="btn-action view" data-id-cliente="{{ $cliente->id }}"><i class="fas fa-eye"></i></button>
-                            <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
+                            <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
                             <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
                         </td>
                     </tr>
