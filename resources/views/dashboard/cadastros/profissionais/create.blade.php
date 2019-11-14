@@ -17,21 +17,21 @@
 
             <div class="form-group">
                 <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nome do cliente">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nome do cliente" autocomplete="new">
             </div>
 
             <div class="row">
                 <div class="col">
                     <div class="form-group">
                         <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf">
+                        <input type="text" class="form-control" id="cpf" name="cpf" autocomplete="new">
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-group">
                         <label for="rg">RG</label>
-                        <input type="text" class="form-control" id="rg" name="rg" placeholder="99.999.999-9">
+                        <input type="text" class="form-control" id="rg" name="rg" placeholder="99.999.999-9" autocomplete="new">
                     </div>
                 </div>
             </div>
@@ -41,21 +41,21 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="smartphone">Celular</label>
-                        <input type="tel" class="form-control" id="smartphone" name="smartphone" placeholder="(15) 99999-9999">
+                        <input type="tel" class="form-control" id="smartphone" name="smartphone" placeholder="(15) 99999-9999" autocomplete="new">
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="form-group">
                         <label for="phone">Residencial</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(15) 33333-3333">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(15) 33333-3333" autocomplete="new">
                     </div>
                 </div>
             </div>
             
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente" autocomplete="new">
             </div>
 
             <h5 class="mt-4">Informações Adicionais</h5>
@@ -118,13 +118,13 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="cep">CEP</label>
-                        <input type="text" class="form-control" id="cep" placeholder="99999-999">
+                        <input type="text" class="form-control" id="cep" placeholder="99999-999" autocomplete="new">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="neighborhood">Bairro</label>
-                        <input type="text" class="form-control" id="neighborhood" placeholder="Bairro">
+                        <input type="text" class="form-control" id="neighborhood" placeholder="Bairro" autocomplete="new">
                     </div>
                 </div>
             </div>
@@ -133,20 +133,20 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="street">Rua</label>
-                        <input type="text" class="form-control" id="street" placeholder="Rua">
+                        <input type="text" class="form-control" id="street" placeholder="Rua" autocomplete="new">
                     </div>
                 </div>
                 <div class="col-5">
                     <div class="form-group">
                         <label for="house-number">Número</label>
-                        <input type="text" class="form-control" id="house-number" placeholder="Nº">
+                        <input type="text" class="form-control" id="house-number" placeholder="Nº" autocomplete="new">
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="complement">Complemento</label>
-                <input type="text" class="form-control" id="complement" placeholder="Complemento">
+                <input type="text" class="form-control" id="complement" placeholder="Complemento" autocomplete="new">
             </div>
 
             <h5 class="mt-4">Horário</h5>
@@ -155,13 +155,13 @@
                 <div class="col">
                     <div class="form-group">
                         <label class="mt-3" for="start-time">Entrada</label>
-                        <input type="time" class="form-control" id="start-time" placeholder="Horário de entrada">
+                        <input type="time" class="form-control" id="start-time" placeholder="Horário de entrada" autocomplete="new">
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-group">
                         <label class="mt-3" for="start-time">Saída</label>
-                        <input type="time" class="form-control" id="start-time" placeholder="Horário de saída">
+                        <input type="time" class="form-control" id="start-time" placeholder="Horário de saída" autocomplete="new">
                     </div>
                 </div>
             </div>
