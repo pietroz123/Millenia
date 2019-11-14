@@ -20,48 +20,48 @@
                 <h5>Contato</h5>
         
                 <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" class="form-control" id="name" placeholder="Nome do cliente" autocomplete="new">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do cliente" autocomplete="new" required>
                 </div>
         
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="smartphone">Celular</label>
-                            <input type="tel" class="form-control" id="smartphone" placeholder="(15) 99999-9999" autocomplete="new">
+                            <label for="tel-celular">Celular</label>
+                            <input type="tel" class="form-control" id="tel-celular" name="tel-celular" placeholder="(15) 99999-9999" autocomplete="new">
                         </div>
                     </div>
         
                     <div class="col">
                         <div class="form-group">
-                            <label for="phone">Residencial</label>
-                            <input type="tel" class="form-control" id="phone" placeholder="(15) 33333-3333" autocomplete="new">
+                            <label for="tel-residencial">Residencial</label>
+                            <input type="tel" class="form-control" id="tel-residencial" name="tel-residencial" placeholder="(15) 33333-3333" autocomplete="new">
                         </div>
                     </div>
                 </div>
                 
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="receive-notifications">
-                    <label class="custom-control-label" for="receive-notifications">Receber notificações</label>
+                    <input type="checkbox" class="custom-control-input" id="deseja-notificacoes" name="deseja-notificacoes">
+                    <label class="custom-control-label" for="deseja-notificacoes">Receber notificações</label>
                 </div>
         
                 <div class="form-group mt-3">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email do cliente" autocomplete="new">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente" autocomplete="new">
                 </div>
         
                 <h5 class="mt-4">Informações Adicionais</h5>
         
-                <label for="profession">Profissão</label>
-                <select class="browser-default custom-select" id="profession">
+                <label for="profissao">Profissão</label>
+                <select class="browser-default custom-select" id="profissao" name="profissao">
                     <option></option>
                     @foreach ($profissoes as $profissao)
                         <option value="{{ $profissao->id }}">{{ $profissao->nome }}</option>
                     @endforeach
                 </select>
                
-                <label class="mt-3" for="recommendation">Indicação (Opcional)</label>
-                <select class="browser-default custom-select" id="recommendation">
+                <label class="mt-3" for="indicacao">Indicação (Opcional)</label>
+                <select class="browser-default custom-select" id="indicacao" name="indicacao">
                     <option selected>Indicação</option>
                     <option value="1">Amigo</option>
                 </select>
@@ -73,8 +73,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="city">Cidade</label>
-                            <select class="browser-default custom-select" id="city">
+                            <label for="cidade">Cidade</label>
+                            <select class="browser-default custom-select" id="cidade" name="cidade">
                                 <option></option>
                                 @foreach ($cidades as $cidade)
                                     <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>
@@ -84,8 +84,8 @@
                     </div>
                     <div class="col">
                         <div class="form-group">
-                            <label for="state">Estado</label>
-                            <select class="browser-default custom-select" id="state">
+                            <label for="estado">Estado</label>
+                            <select class="browser-default custom-select" id="estado" name="estado">
                                 <option></option>
                                 @foreach ($estados as $estado)
                                     <option value="{{ $estado->id }}">{{ $estado->nome }}</option>
@@ -99,13 +99,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="cep">CEP</label>
-                            <input type="text" class="form-control" id="cep" placeholder="99999-999" autocomplete="new">
+                            <input type="text" class="form-control" id="cep" placeholder="99999-999" name="cep" autocomplete="new">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
-                            <label for="neighborhood">Bairro</label>
-                            <input type="text" class="form-control" id="neighborhood" placeholder="Bairro" autocomplete="new">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" class="form-control" id="bairro" placeholder="Bairro" name="bairro" autocomplete="new">
                         </div>
                     </div>
                 </div>
@@ -113,21 +113,21 @@
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="street">Rua</label>
-                            <input type="text" class="form-control" id="street" placeholder="Rua" autocomplete="new">
+                            <label for="rua">Rua</label>
+                            <input type="text" class="form-control" id="rua" placeholder="Rua" name="rua" autocomplete="new">
                         </div>
                     </div>
                     <div class="col-5">
                         <div class="form-group">
-                            <label for="house-number">Número</label>
-                            <input type="text" class="form-control" id="house-number" placeholder="Nº" autocomplete="new">
+                            <label for="numero-rua">Número</label>
+                            <input type="text" class="form-control" id="numero-rua" placeholder="Nº" name="numero-rua" autocomplete="new">
                         </div>
                     </div>
                 </div>
         
                 <div class="form-group">
-                    <label for="complement">Complemento</label>
-                    <input type="text" class="form-control" id="complement" placeholder="Complemento" autocomplete="new">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Complemento" name="complemento" autocomplete="new">
                 </div>
         
             </div>
