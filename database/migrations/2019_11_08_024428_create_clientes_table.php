@@ -22,11 +22,12 @@ class CreateClientesTable extends Migration
             $table->string('cep');
             $table->string('bairro');
             $table->string('rua');
+            $table->integer('numero_rua');
             $table->string('complemento_rua')->nullable();
             $table->string('telefone_celular');
             $table->string('telefone_residencial')->nullable();
             $table->integer('pontuacao')->default(0);
-            $table->bigInteger('id_profissao')->unsigned();
+            $table->bigInteger('id_profissao')->unsigned()->nullable();
             $table->boolean('deseja_notificacao');
             $table->timestamps();
         });

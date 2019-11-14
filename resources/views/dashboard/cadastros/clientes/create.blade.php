@@ -28,7 +28,7 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="tel-celular">Celular</label>
-                            <input type="tel" class="form-control" id="tel-celular" name="tel-celular" placeholder="(15) 99999-9999" autocomplete="new">
+                            <input type="tel" class="form-control" id="tel-celular" name="tel-celular" placeholder="(15) 99999-9999" autocomplete="new" required>
                         </div>
                     </div>
         
@@ -41,16 +41,16 @@
                 </div>
                 
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="deseja-notificacoes" name="deseja-notificacoes">
-                    <label class="custom-control-label" for="deseja-notificacoes">Receber notificações</label>
+                    <input type="checkbox" class="custom-control-input" id="deseja-notificacao" name="deseja-notificacao" required>
+                    <label class="custom-control-label" for="deseja-notificacao">Receber notificações</label>
                 </div>
         
                 <div class="form-group mt-3">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente" autocomplete="new">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente" autocomplete="new" required>
                 </div>
         
-                <h5 class="mt-4">Informações Adicionais</h5>
+                <h5 class="mt-4">Informações Adicionais (Opcional)</h5>
         
                 <label for="profissao">Profissão</label>
                 <select class="browser-default custom-select" id="profissao" name="profissao">
@@ -60,7 +60,7 @@
                     @endforeach
                 </select>
                
-                <label class="mt-3" for="indicacao">Indicação (Opcional)</label>
+                <label class="mt-3" for="indicacao">Indicação</label>
                 <select class="browser-default custom-select" id="indicacao" name="indicacao">
                     <option selected>Indicação</option>
                     <option value="1">Amigo</option>
@@ -99,13 +99,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="cep">CEP</label>
-                            <input type="text" class="form-control" id="cep" placeholder="99999-999" name="cep" autocomplete="new">
+                            <input type="text" class="form-control" id="cep" placeholder="99999-999" name="cep" autocomplete="new" required>
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
                             <label for="bairro">Bairro</label>
-                            <input type="text" class="form-control" id="bairro" placeholder="Bairro" name="bairro" autocomplete="new">
+                            <input type="text" class="form-control" id="bairro" placeholder="Bairro" name="bairro" autocomplete="new" required>
                         </div>
                     </div>
                 </div>
@@ -114,13 +114,13 @@
                     <div class="col">
                         <div class="form-group">
                             <label for="rua">Rua</label>
-                            <input type="text" class="form-control" id="rua" placeholder="Rua" name="rua" autocomplete="new">
+                            <input type="text" class="form-control" id="rua" placeholder="Rua" name="rua" autocomplete="new" required>
                         </div>
                     </div>
                     <div class="col-5">
                         <div class="form-group">
                             <label for="numero-rua">Número</label>
-                            <input type="text" class="form-control" id="numero-rua" placeholder="Nº" name="numero-rua" autocomplete="new">
+                            <input type="text" class="form-control" id="numero-rua" placeholder="Nº" name="numero-rua" autocomplete="new" required>
                         </div>
                     </div>
                 </div>

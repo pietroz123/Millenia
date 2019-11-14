@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cliente;
 use App\Profissao;
 use App\Cidade;
 use App\Estado;
@@ -16,7 +17,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        return view('dashboard.cadastros.clientes.index');
+        return view('dashboard.cadastros.clientes.index', [
+            'clientes' => Cliente::all(),
+        ]);
     }
 
     /**
@@ -41,7 +44,29 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /**
+         * Cria um novo cliente
+         */
+        $cliente = new Cliente;
+        $cliente->nome = request('nome');
+        $cliente->telefone_celular = request('tel-celular');
+        $cliente->telefone_residencial = request('tel-residencial');
+        $cliente->deseja_notificacao = request('deseja-notificacao') == "on" ? true : false;
+        $cliente->email = request('email');
+        $cliente->id_profissao = request('profissao');
+        // $cliente->indicacao = request('indicacao');
+        $cliente->id_cidade = request('cidade');
+        $cliente->id_estado = request('estado');
+        $cliente->cep = request('cep');
+        $cliente->bairro = request('bairro');
+        $cliente->rua = request('rua');
+        $cliente->numero_rua = request('numero-rua');
+        $cliente->complemento_rua = request('complemento');
+
+        // Salva
+        $cliente->save();
+
+        return redirect()->route('clientes.index')->with('success', 'Cliente inserido com sucesso');
     }
 
     /**
