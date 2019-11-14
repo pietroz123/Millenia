@@ -35,6 +35,7 @@
                         <td>{{ $cliente->telefone_celular }}</td>
                         <td>{{ $cliente->telefone_residencial }}</td>
                         <td class="td-actions">
+                            <button class="btn-action" data-toggle="modal" data-target="#modal-cliente"><i class="fas fa-eye"></i></button>
                             <button class="btn-action"><i class="fas fa-pencil-alt"></i></button>
                             <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
                         </td>
@@ -47,5 +48,27 @@
             Nenhum cliente foi cadastrado ainda. Você pode cadastrar um clicando no botão acima.
         </div>
     @endif
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-cliente" tabindex="-1" role="dialog" aria-labelledby="modal-cliente-label"
+    aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-cliente-label">Dados do <span class="font-weight-bold">Pietro</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
