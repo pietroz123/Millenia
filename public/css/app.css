@@ -2606,6 +2606,36 @@ body {
 /**
  * Serviços
  */
+.opcoes-agenda {
+  display: flex;
+}
+.opcoes-agenda .opcao-agenda {
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 1rem;
+  background: lightgrey;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 250ms ease-in;
+}
+.opcoes-agenda .opcao-agenda i {
+  font-size: 30px;
+}
+.opcoes-agenda .opcao-agenda span {
+  padding-top: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+.opcoes-agenda .opcao-agenda:not(:first-of-type) {
+  margin-left: 15px;
+}
+.opcoes-agenda .opcao-agenda:hover {
+  transform: scale(1.1);
+}
+
 .btn {
   font-size: 1rem;
   text-transform: none;

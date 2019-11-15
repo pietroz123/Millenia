@@ -45,9 +45,12 @@ Route::resource('servicos', 'ServicoController');
 /**
  * ROTAS DA AGENDA
  */
-Route::get('/agenda', function() {
-    return view('dashboard.agenda.index');
-})->name('dashboard.agenda.index');
+Route::prefix('agenda')->group(function() {
+
+    Route::get('/agenda', 'AgendaController@index')->name('agenda.index');
+    Route::get('/agenda/calendario', 'AgendaController@calendario')->name('agenda.calendario');
+
+});
 
 /**
  * ROTAS DE AJAX

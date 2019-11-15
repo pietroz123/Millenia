@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-@section('title', 'Dashboard')
+@section('title', 'Agenda Home')
 
 @section('dashboard-sidebar')
     @include('dashboard.components._dashboard-sidebar')
@@ -8,14 +8,17 @@
 
 @section('dashboard-content')
     
-    <div id='calendar'></div>
+    <h3 class="mb-5">Opções da Agenda</h3>
 
-@endsection
+    <div class="opcoes-agenda">
+        <a href="#!" class="opcao-agenda">
+            <i class="far fa-calendar-plus"></i>
+            <span>Adicionar um agendamento</span>
+        </a>
+        <a href="{{ route('agenda.calendario') }}" class="opcao-agenda">
+            <i class="far fa-calendar-alt"></i>
+            <span>Visualizar agenda</span>
+        </a>
+    </div>
 
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.js"></script>
-    <script src="{{ asset('js/dashboard/agenda/index.js') }}"></script>
 @endsection

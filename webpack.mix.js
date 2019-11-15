@@ -48,5 +48,10 @@ mix.scripts('resources/js/dashboard/cadastros/profissional/index.js', 'public/js
 // Serviços
 mix.scripts('resources/js/dashboard/cadastros/servico/index.js', 'public/js/dashboard/cadastros/servico/index.js');
 
+
+// =======================================================
+// AGENDA
+// =======================================================
+
 // Agenda
-mix.scripts('resources/js/dashboard/agenda/index.js', 'public/js/dashboard/agenda/index.js');
+mix.scripts('resources/js/dashboard/agenda/calendario.js', 'public/js/dashboard/agenda/calendario.js');
