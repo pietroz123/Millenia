@@ -58,6 +58,12 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
+        <a href="{{ route('pacotes.index') }}" class="{{ setActive('pacotes.index') }}">
+                <i class="fas fa-tag"></i>
+                Pacotes
+            </a>
+        </li>
+        <li class="dashboard-sidebar-item">
             <a href="#!" class="{{ setActive('') }}">
                 <i class="fas fa-chart-pie"></i>
                 Relatórios

@@ -52,6 +52,9 @@ mix.scripts('resources/js/dashboard/cadastros/servico/index.js', 'public/js/dash
 mix.scripts('resources/js/dashboard/cadastros/produto/index.js', 'public/js/dashboard/cadastros/produto/index.js');
 mix.scripts('resources/js/dashboard/cadastros/produto/create.js', 'public/js/dashboard/cadastros/produto/create.js');
 
+// Pacotes
+mix.scripts('resources/js/dashboard/cadastros/pacote/create.js', 'public/js/dashboard/cadastros/pacote/create.js');
+
 
 // =======================================================
 // AGENDA

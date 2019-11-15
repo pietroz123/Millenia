@@ -44,6 +44,8 @@ Route::resource('servicos', 'ServicoController');
 // Produtos
 Route::resource('produtos', 'ProdutoController');
 
+// Pacotes
+Route::resource('pacotes', 'PacoteController');
 
 /**
  * ROTAS DA AGENDA

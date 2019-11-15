@@ -98,6 +98,9 @@ $(document).ready(function() {
                     console.log('Success');
                     console.log(retorno);
                     $('.modal-agendamento').html(retorno);
+                    $('select#servico').select2({
+                        placeholder: 'Selecione o serviço',
+                    });
                 },
                 error: function(retorno) {
                     console.log('Error');

@@ -96,6 +96,9 @@ a:hover {
         // outline: 0;
     }
 }
+.select2-container--default {
+    z-index: 10000;
+}
 .select2-container--default .select2-selection--multiple {
     height: 100% !important;
 }
