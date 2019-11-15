@@ -31,7 +31,6 @@ class AgendaController extends Controller
     {
         return view('dashboard.agenda.novo-agendamento', [
             'servicos' => Servico::all(),
-            'profissionais' => Profissional::all(),
         ]);
     }
 }

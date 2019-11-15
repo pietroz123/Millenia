@@ -11,12 +11,18 @@ $(document).ready(function() {
         placeholder: 'Selecione o profissional',
     });
 
+    $(document).on('click', '.btn-opcao', function() {
+        $(this).parent().children('.btn-opcao').removeClass('selecionado');
+        $(this).addClass('selecionado');
+    });
+
     /**
      * Recuperar profissionais de um serviço
      */
-    $('#servico').change(function() {
-        const id = $(this).val();
-        console.log('id: ', id);
+    $('.js-btn-servico').click(function() {
+
+        const id = $(this).attr('data-id-servico');
+        
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -27,8 +33,32 @@ $(document).ready(function() {
                 id: id
             },
             success: function(retorno) {
-                console.log('Success');
-                console.log(retorno);
+
+                const profissionais = retorno;
+
+                var buttons = [];
+                for (let i = 0; i < profissionais.length; i++) {
+                    const profissional = profissionais[i];
+                    const id = profissional.id;
+                    const nome = profissional.nome;
+                    buttons.push(
+                        '<button type="button" class="btn btn-light btn-opcao" data-id-profissional="'+ id +'">' +
+                            '<span>'+ nome +'</span>' +
+                        '</button>'
+                    );
+                }
+
+                $('#selecionar-profissional').show();
+                if (buttons.length > 0) {
+                    $('#selecionar-profissional .opcoes-agendamento').html(buttons);
+                }
+                else {
+                    $('#selecionar-profissional .opcoes-agendamento').html(
+                        '<div class="alert alert-info" role="alert">' +
+                            'Não encontramos nenhum profissional com esse serviço.' +
+                        '</div>'
+                    );
+                }
             },
             error: function(retorno) {
                 console.log('Error');

@@ -58,7 +58,7 @@ class AjaxController extends Controller
     {
         $idServico = request('id');
         $profissionais = Servico::find($idServico)->profissionais;
-        return $profissionais;
+        return response()->json($profissionais);
     }
 
     public function servicosDeUmProfissional()

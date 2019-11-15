@@ -2636,6 +2636,25 @@ body {
   transform: scale(1.1);
 }
 
+.opcoes-agendamento button:not(:first-of-type) {
+  margin-left: 5px;
+}
+.opcoes-agendamento .btn-opcao.selecionado {
+  background-color: #4285F4 !important;
+  color: white;
+}
+
+.header-novo-agendamento {
+  margin: 1rem 0;
+  padding: 8px 35px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+}
+.header-novo-agendamento:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
 .btn {
   font-size: 1rem;
   text-transform: none;

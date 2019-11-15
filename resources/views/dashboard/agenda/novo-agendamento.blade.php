@@ -10,43 +10,20 @@
     
     <h3>Novo Agendamento</h3>
 
-    <div class="row mt-4">
-        <div class="col">
-            <div class="form-group">
-                <label for="servico">Selecione o serviço</label>
-                <select class="browser-default custom-select" id="servico" name="servico">
-                    <option></option>
-                    @foreach ($servicos as $servico)
-                        <option value="{{ $servico->id }}">{{ $servico->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <div class="form-group">
-                <label for="profissional">Selecione o profissional</label>
-                <select class="browser-default custom-select" id="profissional" name="profissional">
-                    <option></option>
-                    @foreach ($profissionais as $profissional)
-                        <option value="{{ $profissional->id }}">{{ $profissional->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
+    <div id="selecionar-servico">
+        <label class="header-novo-agendamento">Selecione o serviço</label>
+        <div class="opcoes-agendamento d-flex">
+            @foreach ($servicos as $servico)
+                <button type="button" class="btn btn-light btn-opcao js-btn-servico" data-id-servico="{{ $servico->id }}">
+                    <span>{{ $servico->nome }}</span>
+                </button>
+            @endforeach
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-6">
-            <div class="form-group">
-                <label for="profissional">Selecione o profissional</label>
-                <select class="browser-default custom-select" id="profissional" name="profissional">
-                    <option></option>
-                    @foreach ($profissionais as $profissional)
-                        <option value="{{ $profissional->id }}">{{ $profissional->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
+    <div id="selecionar-profissional" style="display: none">
+        <label class="header-novo-agendamento">Selecione o profissional</label>
+        <div class="opcoes-agendamento d-flex"></div>
     </div>
 
 @endsection

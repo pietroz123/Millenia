@@ -162,3 +162,27 @@ body {
         }
     }
 }
+
+.opcoes-agendamento {
+    button {
+        &:not(:first-of-type) {
+            margin-left: 5px;
+        }
+    }
+    .btn-opcao {
+        &.selecionado {
+            background-color: #4285F4 !important;
+            color: white;
+        }
+    }
+}
+.header-novo-agendamento {
+    margin: 1rem 0;
+    padding: 8px 35px;
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-family: $font-oswald;
+    &:not(:first-of-type) {
+        margin-top: 2rem;
+    }
+} 
