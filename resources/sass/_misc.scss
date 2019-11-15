@@ -108,21 +108,64 @@ a:hover {
 // COLOR PICKER
 // =======================================================
 
+.sp-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: max-width .2s cubic-bezier(0.0,0.0,0.2,1),max-height .2s cubic-bezier(0.0,0.0,0.2,1),opacity .1s linear;
+    transition: max-width .2s cubic-bezier(0.0,0.0,0.2,1),max-height .2s cubic-bezier(0.0,0.0,0.2,1),opacity .1s linear;
+    background: #ffffff;
+    border: 0;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+    outline: 1px solid transparent;
+    z-index: 2000;
+}
 .sp-replacer {
     background: white;
     border-radius: 4px;
     display: block;
-    width: 50px;
+    width: 60px;
     height: calc(1.5em + 0.75rem + 2px);
+    border: 1px solid #ced4da;
 }
 .sp-palette {
     max-width: 400px;
+    .sp-thumb-el {
+        background: white;
+        border: none;
+        width: 18px;
+        height: 18px;
+        margin: 3px;
+        .sp-thumb-inner {
+            border-radius: 50%;
+        }
+    }
 }
 .sp-preview {
     height: 27px;
+    background: white;
+    border: 0;
+}
+.sp-preview-inner {
+    border-radius: 50%;
+    display: inline-block;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+    cursor: pointer;
+    top: 1px;
 }
 .sp-dd {
     line-height: 26px;
+    padding-left: 5px;
 }
 
 // =======================================================
