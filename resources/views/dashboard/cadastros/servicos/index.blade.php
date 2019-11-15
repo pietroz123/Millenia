@@ -39,7 +39,7 @@
                         <td>{{ $servico->tempo_execucao_em_minutos }}</td>
                         <td>{{ $servico->pontos }}</td>
                         <td class="td-actions">
-                            <button class="btn-action view" data-id-cliente="{{ $servico->id }}"><i class="fas fa-eye"></i></button>
+                            <button class="btn-action view" data-id-servico="{{ $servico->id }}"><i class="fas fa-eye"></i></button>
                             <a href="{{ route('servicos.edit', $servico->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
                             <form method="POST" action="{{ route('servicos.destroy', $servico->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este serviço?');">
                                 @method('DELETE')
@@ -58,7 +58,7 @@
     @endif
 
     <!-- Modal -->
-    <div class="modal fade" id="modal-servico" tabindex="-1" role="dialog" aria-labelledby="modal-servico-label"
+    <div class="modal fade modal-view" id="modal-servico" tabindex="-1" role="dialog" aria-labelledby="modal-servico-label"
     aria-hidden="true">
         {{-- Preenchido com AJAX --}}
     </div>
@@ -66,5 +66,5 @@
 @endsection
 
 @section('scripts')
-    {{-- <script src="{{ asset('js/dashboard/cadastros/servico/index.js') }}"></script> --}}
+    <script src="{{ asset('js/dashboard/cadastros/servico/index.js') }}"></script>
 @endsection

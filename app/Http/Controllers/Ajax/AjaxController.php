@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ajax;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Cliente;
+use App\Servico;
 use App\Profissional;
 
 class AjaxController extends Controller
@@ -30,6 +31,18 @@ class AjaxController extends Controller
         
         return view('dashboard.cadastros.profissionais.modal-profissional')->with(compact(
             'profissional',
+        ));
+    }
+
+    /**
+     * Recupera o modal com as informações do servico
+     */
+    public function modalInformacoesServico()
+    {
+        $servico = Servico::find(request('id'));
+        
+        return view('dashboard.cadastros.servicos.modal-servico')->with(compact(
+            'servico',
         ));
     }
 }
