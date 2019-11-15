@@ -65,11 +65,6 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="color-picker">Cor para a agenda</label>
-            <input type='text' id="color-picker" name="cor-agenda" value="{{ $profissional->cor_agenda }}">
-        </div>
-
     </div>
 
     <div class="col">
@@ -138,6 +133,16 @@
                 <div class="form-group">
                     <label class="mt-3" for="horario-saida">Saída</label>
                     <input type="time" class="form-control" id="horario-saida" name="horario-saida" placeholder="Horário de saída" autocomplete="new" value="{{ $profissional->horario_saida }}">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="color-picker">Cor para a agenda</label>
+                    <input type='text' id="color-picker" name="cor-agenda" value="{{ $profissional->cor_agenda }}">
                 </div>
             </div>
         </div>
