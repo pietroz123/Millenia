@@ -19,4 +19,7 @@ class Profissional extends Model
     public function cidade() {
         return $this->belongsTo('App\Cidade', 'id_cidade', 'id');
     }
+    public function servicos() {
+        return $this->belongsToMany('App\Servico', 'profissional_servico', 'id_profissional', 'id_servico');
+    }
 }

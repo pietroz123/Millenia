@@ -27,6 +27,8 @@
     <script src="{{ asset('js/dashboard/cadastros/profissional/create.js') }}"></script>
     <script>
         $(document).ready(function() {
+            
+            // Cor da agenda
             $("#color-picker").spectrum({
                 color: @json($profissional->cor_agenda),
                 preferredFormat: "hex",
@@ -42,6 +44,10 @@
                     ["#600","#783f04","#7f6000","#274e13","#0c343d","#073763","#20124d","#4c1130"]
                 ]
             });
+
+            // Pre seleciona os servicos
+            $('#servicos').val(@json($servicosSelecionados)).trigger('change');
+
         });
     </script>
 @endsection

@@ -7,7 +7,6 @@ $(document).ready(function() {
     $('select#servicos').select2({
         placeholder: 'Selecione os serviços do profissional',
         width: '100%',
-        tags: true, 
     });
     $('#cidade').select2({
         placeholder: "Selecione a cidade",

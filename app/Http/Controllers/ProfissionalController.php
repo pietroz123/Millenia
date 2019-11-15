@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profissional;
+use App\Servico;
 use App\Cidade;
 use App\Estado;
 
@@ -30,6 +31,7 @@ class ProfissionalController extends Controller
     {
         return view('dashboard.cadastros.profissionais.create', [
             'profissional' => new Profissional,
+            'servicos' => Servico::all(),
             'cidades' => Cidade::all()->sortBy('nome'),
             'estados' => Estado::all()->sortBy('nome'),
         ]);
@@ -54,7 +56,6 @@ class ProfissionalController extends Controller
         $profissional->telefone_residencial = request('tel-residencial');
         $profissional->email = request('email');
         // $profissional-> = request('area-atuacao');
-        // $profissional-> = request('servicos');
         $profissional->cor_agenda = request('cor-agenda');
         $profissional->cep = request('cep');
         $profissional->id_cidade = request('cidade');
@@ -65,6 +66,11 @@ class ProfissionalController extends Controller
         $profissional->horario_entrada = request('horario-entrada');
         $profissional->horario_saida = request('horario-saida');
         $profissional->save();
+
+        /**
+         * Atribui os servicos
+         */
+        $profissional->servicos()->sync(request('servicos'));
 
         return redirect()->route('profissionais.index')->with('success', 'Profissional cadastrado com sucesso');
     }
@@ -88,8 +94,19 @@ class ProfissionalController extends Controller
      */
     public function edit($id)
     {
+        // Recupera o profissional
+        $profissional = Profissional::find($id);
+
+        // Recupera os serviços
+        $servicosSelecionados = array();
+        foreach ($profissional->servicos->toArray() as $servico) {
+            array_push($servicosSelecionados, $servico['id']);
+        }
+
         return view('dashboard.cadastros.profissionais.edit', [
-            'profissional' => Profissional::find($id),
+            'profissional' => $profissional,
+            'servicos' => Servico::all(),
+            'servicosSelecionados' => $servicosSelecionados,
             'cidades' => Cidade::all()->sortBy('nome'),
             'estados' => Estado::all()->sortBy('nome'),
         ]);
@@ -115,7 +132,6 @@ class ProfissionalController extends Controller
         $profissional->telefone_residencial = request('tel-residencial');
         $profissional->email = request('email');
         // $profissional-> = request('area-atuacao');
-        // $profissional-> = request('servicos');
         $profissional->cor_agenda = request('cor-agenda');
         $profissional->cep = request('cep');
         $profissional->id_cidade = request('cidade');
@@ -126,6 +142,11 @@ class ProfissionalController extends Controller
         $profissional->horario_entrada = request('horario-entrada');
         $profissional->horario_saida = request('horario-saida');
         $profissional->save();
+
+        /**
+         * Atribui os servicos
+         */
+        $profissional->servicos()->sync(request('servicos'));
 
         return redirect()->route('profissionais.index')->with('success', 'Profissional atualizado com sucesso');
     }

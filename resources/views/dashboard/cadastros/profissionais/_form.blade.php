@@ -59,16 +59,15 @@
         <div class="form-group">
             <label for="servicos">Serviços</label>
             <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple">
-                <option value="1">Um</option>
-                <option value="2">Dois</option>
-                <option value="3">Três</option>
-                <option value="4">Quatro</option>
+                @foreach ($servicos as $servico)
+                    <option value="{{ $servico->id }}">{{ $servico->nome }}</option>
+                @endforeach
             </select>
         </div>
 
         <div class="form-group">
             <label for="color-picker">Cor para a agenda</label>
-            <input type='text' id="color-picker" name="cor-agenda">
+            <input type='text' id="color-picker" name="cor-agenda" value="{{ $profissional->cor_agenda }}">
         </div>
 
     </div>
