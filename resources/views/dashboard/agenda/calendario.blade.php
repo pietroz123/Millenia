@@ -10,6 +10,21 @@
     
     <div id='calendar'></div>
 
+    <div class="modal-agendamento">
+        <h5>Novo Agendamento</h5>
+        <div class="form-group">
+            <label for="marca">Marca</label>
+            <select class="browser-default custom-select" id="marca" name="marca">
+                <option></option>
+                <option value="1">Um</option>
+                <option value="1">Um</option>
+                <option value="1">Um</option>
+                <option value="1">Um</option>
+                <option value="1">Um</option>
+            </select>
+        </div>
+    </div>
+
 @endsection
 
 @section('scripts')

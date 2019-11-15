@@ -13,11 +13,17 @@
     <div id="selecionar-servico">
         <label class="header-novo-agendamento">Selecione o serviço</label>
         <div class="opcoes-agendamento d-flex">
-            @foreach ($servicos as $servico)
-                <button type="button" class="btn btn-light btn-opcao js-btn-servico" data-id-servico="{{ $servico->id }}">
-                    <span>{{ $servico->nome }}</span>
-                </button>
-            @endforeach
+            @if (count($servicos) > 0)
+                @foreach ($servicos as $servico)
+                    <button type="button" class="btn btn-light btn-opcao js-btn-servico" data-id-servico="{{ $servico->id }}">
+                        <span>{{ $servico->nome }}</span>
+                    </button>
+                @endforeach
+            @else
+                <div class="alert alert-info" role="alert">
+                    Nenhum serviço encontrado.
+                </div>
+            @endif
         </div>
     </div>
 

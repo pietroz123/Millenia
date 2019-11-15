@@ -2626,8 +2626,12 @@ body {
 }
 .opcoes-agenda .opcao-agenda span {
   padding-top: 5px;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 0px 10px;
 }
 .opcoes-agenda .opcao-agenda:not(:first-of-type) {
   margin-left: 15px;
@@ -2653,6 +2657,20 @@ body {
 }
 .header-novo-agendamento:not(:first-of-type) {
   margin-top: 2rem;
+}
+
+/**
+ * Novo Agendamento
+ */
+.modal-agendamento {
+  position: absolute;
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: opacity 200ms ease-in-out;
+  padding: 1rem;
+  width: 400px;
+  background-color: white;
+  z-index: 10000;
 }
 
 .btn {

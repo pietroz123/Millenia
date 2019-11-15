@@ -60,18 +60,32 @@ $(document).ready(function() {
         ],
 
         // Horário de Funcionamento
-        daysOfWeek: [ 1, 2, 3, 4, 5 ], // Segunda - Thursday
-        startTime: '10:00', // a start time (10am in this example)
-        endTime: '18:00', // an end time (6pm in this example)
+        businessHours: [
+            {
+                daysOfWeek: [ 1, 2, 3, 4, 5 ],  // Segunda - Sábado
+                startTime: '10:00',             // Horário de Início
+                endTime: '18:00',               // Horário de Fim
+            },
+        ],
+
+        nowIndicator: true,
 
         // Cor do texto
         eventTextColor: 'white',
 
         // Evento de Agendamento
         dateClick: function(info) {
-            alert('Clicked on: ' + info.dateStr);
-            alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-            alert('Current view: ' + info.view.type);
+
+            console.log(info);
+            
+            // alert('Clicked on: ' + info.dateStr);
+            // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+            // alert('Current view: ' + info.view.type);
+
+            $('.modal-agendamento').css({
+                left: info.jsEvent.pageX,
+                top: info.jsEvent.pageY,
+            });
         },
     });
     calendar.render();
