@@ -28,6 +28,7 @@ class ProdutoController extends Controller
     public function create()
     {
         return view('dashboard.cadastros.produtos.create', [
+            'produto' => new Produto,
             'marcas' => Marca::all(),
         ]);
     }
@@ -69,7 +70,10 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.cadastros.produtos.edit', [
+            'produto' => Produto::find($id),
+            'marcas' => Marca::all(),
+        ]);
     }
 
     /**
@@ -81,7 +85,14 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produto = Produto::find($id);
+        $produto->nome = request('nome');
+        $produto->id_marca = request('marca');
+        $produto->preco = request('preco');
+        $produto->pontos = request('pontos');
+        $produto->save();
+
+        return redirect()->route('produtos.index')->with('success', 'Produto atualizado com sucesso');
     }
 
     /**

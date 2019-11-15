@@ -46,7 +46,7 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="{{ route('produtos.index') }}" class="{{ setActive('') }}">
+            <a href="{{ route('produtos.index') }}" class="{{ setActive('produtos.index') }}">
                 <i class="fas fa-box-open"></i>
                 Produtos
             </a>

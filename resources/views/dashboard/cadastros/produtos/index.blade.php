@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-between w-100">
         <div>
             <h3>Produtos</h3>
-            <p>Número de Produtos: </p>
+            <p>Número de Produtos: {{ count($produtos) }}</p>
         </div>
         <div>
             <a href="{{ route('produtos.create') }}" class="btn btn-light btn-tool add">Adicionar um Produto</a>
@@ -37,7 +37,7 @@
                         <td>{{ $produto->preco }}</td>
                         <td>{{ $produto->pontos }}</td>
                         <td class="td-actions">
-                            <a href="#!" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="{{ route('produtos.edit', $produto->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
                             <form method="POST" action="{{ route('produtos.destroy', $produto->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este produto?');">
                                 @method('DELETE')
                                 @csrf
@@ -57,3 +57,6 @@
 
 @endsection
 
+@section('scripts')
+    <script src="{{ asset('js/dashboard/cadastros/produto/index.js') }}"></script>
+@endsection
