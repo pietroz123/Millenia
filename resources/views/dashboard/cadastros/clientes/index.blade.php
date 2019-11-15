@@ -54,7 +54,7 @@
     @endif
 
     <!-- Modal -->
-    <div class="modal fade" id="modal-cliente" tabindex="-1" role="dialog" aria-labelledby="modal-cliente-label"
+    <div class="modal fade modal-view" id="modal-cliente" tabindex="-1" role="dialog" aria-labelledby="modal-cliente-label"
     aria-hidden="true">
         {{-- Preenchido com AJAX --}}
     </div>

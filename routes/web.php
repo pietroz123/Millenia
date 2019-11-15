@@ -57,4 +57,7 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
     // Clientes
     Route::post('/modalInformacoesCliente', 'AjaxController@modalInformacoesCliente');
 
+    // Profissionais
+    Route::post('/modalInformacoesProfissional', 'AjaxController@modalInformacoesProfissional');
+
 });

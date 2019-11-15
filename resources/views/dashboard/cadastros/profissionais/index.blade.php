@@ -59,4 +59,14 @@
         </div>
     @endif
 
+    <!-- Modal -->
+    <div class="modal fade modal-view" id="modal-profissional" tabindex="-1" role="dialog" aria-labelledby="modal-profissional-label"
+    aria-hidden="true">
+        {{-- Preenchido com AJAX --}}
+    </div>
+
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/dashboard/cadastros/profissional/index.js') }}"></script>
 @endsection

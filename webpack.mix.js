@@ -43,6 +43,7 @@ mix.scripts('resources/js/dashboard/cadastros/cliente/create.js', 'public/js/das
 
 // Profissionais
 mix.scripts('resources/js/dashboard/cadastros/profissional/create.js', 'public/js/dashboard/cadastros/profissional/create.js');
+mix.scripts('resources/js/dashboard/cadastros/profissional/index.js', 'public/js/dashboard/cadastros/profissional/index.js');
 
 // Agenda
 mix.scripts('resources/js/dashboard/agenda/index.js', 'public/js/dashboard/agenda/index.js');

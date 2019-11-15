@@ -2578,13 +2578,10 @@ body {
   border-radius: 3px;
 }
 
-/**
- * Clientes
- */
-#modal-cliente .header {
+.modal-view .header {
   margin-bottom: 15px;
 }
-#modal-cliente .info {
+.modal-view .info {
   margin-bottom: 5px;
 }
 
@@ -2592,6 +2589,9 @@ body {
   display: contents;
 }
 
+/**
+ * Clientes
+ */
 /**
 * Profissionais
 */
@@ -2658,6 +2658,14 @@ input:-webkit-autofill {
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   transform: translateX(18px) !important;
+}
+
+.modal-header {
+  padding: 1.5rem 2rem !important;
+}
+
+.modal-body {
+  padding: 1.5rem 2rem !important;
 }
 
 .select2-selection {
