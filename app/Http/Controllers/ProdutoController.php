@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Marca;
+use App\Produto;
 
 class ProdutoController extends Controller
 {
@@ -13,7 +15,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        return view('dashboard.cadastros.produtos.index');
+        return view('dashboard.cadastros.produtos.index', [
+            'produtos' => Produto::all(),
+        ]);
     }
 
     /**
@@ -23,7 +27,9 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cadastros.produtos.create');
+        return view('dashboard.cadastros.produtos.create', [
+            'marcas' => Marca::all(),
+        ]);
     }
 
     /**
@@ -34,7 +40,14 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produto = new Produto;
+        $produto->nome = request('nome');
+        $produto->id_marca = request('marca');
+        $produto->preco = request('preco');
+        $produto->pontos = request('pontos');
+        $produto->save();
+
+        return redirect()->route('produtos.index')->with('success', 'Produto cadastrado com sucesso');
     }
 
     /**
@@ -79,6 +92,9 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::find($id);
+        $produto->delete();
+
+        return redirect()->route('produtos.index')->with('success', 'Produto removido com sucesso');
     }
 }

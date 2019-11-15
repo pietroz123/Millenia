@@ -9,12 +9,9 @@ $(document).ready(function() {
      */
     calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
+
+        // Traduções
         locale: 'pt-br',
-        header: {
-            left: 'prev,next',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
-        },
         buttonText: {
             today:    'hoje',
             month:    'mês',
@@ -22,13 +19,29 @@ $(document).ready(function() {
             day:      'dia',
             list:     'lista'
         },
+
+        // Configuração da barra de ferramentas
+        header: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+        },
+
+        // Plugins
         plugins: [
+            'interaction',
             'dayGrid',
             'timeGrid',
             'list',
         ],
+
+        // Começa na visualização por semana
         defaultView: 'timeGridWeek',
+
+        // Altura do calendário
         height: 800,
+
+        // Eventos (vem do backend)
         events: [
             {
                 title: '[Corte Masculino] João',
@@ -45,7 +58,21 @@ $(document).ready(function() {
                 borderColor: 'green',
             }
         ],
+
+        // Horário de Funcionamento
+        daysOfWeek: [ 1, 2, 3, 4, 5 ], // Segunda - Thursday
+        startTime: '10:00', // a start time (10am in this example)
+        endTime: '18:00', // an end time (6pm in this example)
+
+        // Cor do texto
         eventTextColor: 'white',
+
+        // Evento de Agendamento
+        dateClick: function(info) {
+            alert('Clicked on: ' + info.dateStr);
+            alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+            alert('Current view: ' + info.view.type);
+        },
     });
     calendar.render();
 

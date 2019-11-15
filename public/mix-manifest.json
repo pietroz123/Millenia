@@ -8,6 +8,7 @@
     "/js/dashboard/cadastros/profissional/create.js": "/js/dashboard/cadastros/profissional/create.js",
     "/js/dashboard/cadastros/profissional/index.js": "/js/dashboard/cadastros/profissional/index.js",
     "/js/dashboard/cadastros/servico/index.js": "/js/dashboard/cadastros/servico/index.js",
+    "/js/dashboard/cadastros/produto/create.js": "/js/dashboard/cadastros/produto/create.js",
     "/js/dashboard/agenda/calendario.js": "/js/dashboard/agenda/calendario.js",
     "/js/dashboard/agenda/novo-agendamento.js": "/js/dashboard/agenda/novo-agendamento.js"
 }
