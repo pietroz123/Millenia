@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="modal-cliente-label"><span class="font-weight-bold">{{ $cliente->nome }} (Cliente desde {{ date('d/m/Y', $cliente->created_at->timestamp) }}</span></h5>
+            <h5 class="modal-title" id="modal-cliente-label"><span class="font-weight-bold">{{ $cliente->nome }} </span><span> (Cliente desde {{ date('d/m/Y', $cliente->created_at->timestamp) }})</span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="row info">
                             <div class="col font-weight-bold">Profissão</div>
-                            <div class="col">{{ $cliente->profissao->nome }}</div>
+                            <div class="col">{{ $cliente->profissao ? $cliente->profissao->nome : 'Não especificado' }}</div>
                         </div>
                         <div class="row info">
                             <div class="col font-weight-bold">Deseja Notificação</div>

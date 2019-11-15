@@ -10,6 +10,10 @@ use App\Profissional;
 
 class AjaxController extends Controller
 {
+    // =======================================================
+    // MODALS
+    // =======================================================
+
     /**
      * Recupera o modal com as informações do cliente
      */
@@ -44,5 +48,23 @@ class AjaxController extends Controller
         return view('dashboard.cadastros.servicos.modal-servico')->with(compact(
             'servico',
         ));
+    }
+
+    // =======================================================
+    // NOVO AGENDAMENTO
+    // =======================================================
+
+    public function profissionaisDeUmServico()
+    {
+        $idServico = request('id');
+        $profissionais = Servico::find($idServico)->profissionais;
+        return $profissionais;
+    }
+
+    public function servicosDeUmProfissional()
+    {
+        $idProfissional = request('id');
+        $servicos = Profissional::find($idProfissional)->servicos;
+        return $servicos;
     }
 }

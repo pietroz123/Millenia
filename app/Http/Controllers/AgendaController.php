@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Servico;
+use App\Profissional;
 
 class AgendaController extends Controller
 {
@@ -20,5 +22,16 @@ class AgendaController extends Controller
     public function calendario()
     {
         return view('dashboard.agenda.calendario');
+    }
+
+    /**
+     * Retorna a página de criação de agendamento
+     */
+    public function novoAgendamento()
+    {
+        return view('dashboard.agenda.novo-agendamento', [
+            'servicos' => Servico::all(),
+            'profissionais' => Profissional::all(),
+        ]);
     }
 }

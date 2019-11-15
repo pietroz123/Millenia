@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="modal-servico-label"><span class="font-weight-bold">{{ $servico->nome }} (Adicionado {{ date('d/m/Y', $servico->created_at->timestamp) }}</span></h5>
+            <h5 class="modal-title" id="modal-servico-label"><span class="font-weight-bold">{{ $servico->nome }} </span> <span>(Adicionado em {{ date('d/m/Y', $servico->created_at->timestamp) }})</span></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

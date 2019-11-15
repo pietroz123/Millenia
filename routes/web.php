@@ -41,6 +41,9 @@ Route::resource('profissionais', 'ProfissionalController');
 // Serviços
 Route::resource('servicos', 'ServicoController');
 
+// Produtos
+Route::resource('produtos', 'ProdutoController');
+
 
 /**
  * ROTAS DA AGENDA
@@ -49,6 +52,7 @@ Route::prefix('agenda')->group(function() {
 
     Route::get('/agenda', 'AgendaController@index')->name('agenda.index');
     Route::get('/agenda/calendario', 'AgendaController@calendario')->name('agenda.calendario');
+    Route::get('/agenda/novo-agendamento', 'AgendaController@novoAgendamento')->name('agenda.novoAgendamento');
 
 });
 
@@ -65,5 +69,8 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
 
     // Serviços
     Route::post('/modalInformacoesServico', 'AjaxController@modalInformacoesServico');
+    
+    // Agenda
+    Route::post('/profissionaisDeUmServico', 'AjaxController@profissionaisDeUmServico');
 
 });

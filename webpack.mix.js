@@ -55,3 +55,4 @@ mix.scripts('resources/js/dashboard/cadastros/servico/index.js', 'public/js/dash
 
 // Agenda
 mix.scripts('resources/js/dashboard/agenda/calendario.js', 'public/js/dashboard/agenda/calendario.js');
+mix.scripts('resources/js/dashboard/agenda/novo-agendamento.js', 'public/js/dashboard/agenda/novo-agendamento.js');
