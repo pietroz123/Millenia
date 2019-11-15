@@ -2796,3 +2796,10 @@ input:-webkit-autofill {
 .dashboard-sidebar-item a:hover::after {
   width: 100%;
 }
+.dashboard-sidebar-item a.active {
+  opacity: 0.8;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.dashboard-sidebar-item a.active::after {
+  width: 100%;
+}

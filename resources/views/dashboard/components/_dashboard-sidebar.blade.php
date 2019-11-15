@@ -22,43 +22,43 @@
     <span class="dashboard-sidebar-divider">Navegação</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
-            <a href="{{ route('dashboard.agenda.index') }}">
+            <a href="{{ route('dashboard.agenda.index') }}" class="{{ setActive('dashboard.agenda.index') }}">
                 <i class="far fa-calendar-alt"></i>
                 Agenda
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="#!" class="{{ setActive('') }}">
                 <i class="fas fa-address-card"></i>
                 Cadastros
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="{{ route('clientes.index') }}">
+            <a href="{{ route('clientes.index') }}" class="{{ setActive('clientes.index') }}">
                 <i class="fas fa-user"></i>
                 Clientes
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="{{ route('profissionais.index') }}">
+            <a href="{{ route('profissionais.index') }}" class="{{ setActive('profissionais.index') }}">
                 <i class="fas fa-users"></i>
                 Profissionais
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="#!" class="{{ setActive('') }}">
                 <i class="fas fa-box-open"></i>
                 Produtos
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="{{ route('servicos.index') }}">
+            <a href="{{ route('servicos.index') }}" class="{{ setActive('servicos.index') }}">
                 <i class="fas fa-cut"></i>
                 Serviços
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="#!" class="{{ setActive('') }}">
                 <i class="fas fa-chart-pie"></i>
                 Relatórios
             </a>
@@ -68,13 +68,13 @@
     <span class="dashboard-sidebar-divider">Dados Gerais</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="#!" class="{{ setActive('') }}">
                 <i class="far fa-address-card"></i>
                 Dados Cadastrais
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="#!" class="{{ setActive('') }}">
                 <i class="fas fa-cog"></i>
                 Configurações
             </a>
