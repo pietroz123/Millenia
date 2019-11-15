@@ -67,4 +67,22 @@ class AjaxController extends Controller
         $servicos = Profissional::find($idProfissional)->servicos;
         return $servicos;
     }
+
+
+    // =======================================================
+    // CALENDÁRIO
+    // =======================================================
+
+    public function modalAgendamento()
+    {
+        $data = request('data');
+        $horario = request('horario');
+        $servicos = Servico::all();
+
+        return view('dashboard.agenda.modal-agendamento')->with(compact(
+            'data',
+            'horario',
+            'servicos',
+        ));
+    }
 }

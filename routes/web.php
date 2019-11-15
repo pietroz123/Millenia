@@ -72,5 +72,6 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
     
     // Agenda
     Route::post('/profissionaisDeUmServico', 'AjaxController@profissionaisDeUmServico');
+    Route::post('/modalAgendamento', 'AjaxController@modalAgendamento');
 
 });

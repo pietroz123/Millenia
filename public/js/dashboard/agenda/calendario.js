@@ -78,6 +78,33 @@ $(document).ready(function() {
 
             console.log(info);
             
+            const dateStr = info.dateStr;
+            const dateInfo = dateStr.split('T');
+            const date = dateInfo[0];
+            const time = dateInfo[1].split('-')[0];
+
+            // Cria o modal
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '/ajax/modalAgendamento',
+                method: 'POST',
+                data: {
+                    data: date,
+                    horario: time,
+                },
+                success: function(retorno) {
+                    console.log('Success');
+                    console.log(retorno);
+                    $('.modal-agendamento').html(retorno);
+                },
+                error: function(retorno) {
+                    console.log('Error');
+                    console.log(retorno);
+                }
+            });
+
             // alert('Clicked on: ' + info.dateStr);
             // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
             // alert('Current view: ' + info.view.type);
