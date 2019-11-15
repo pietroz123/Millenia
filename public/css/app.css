@@ -2717,6 +2717,10 @@ input:-webkit-autofill {
   line-height: 26px;
 }
 
+.fc-toolbar h2::first-letter {
+  text-transform: capitalize;
+}
+
 .dashboard-wrapper {
   display: flex;
   font-family: "Nunito Sans", sans-serif !important;

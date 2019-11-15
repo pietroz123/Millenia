@@ -9,7 +9,25 @@ $(document).ready(function() {
      */
     calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: [ 'dayGrid' ],
+        locale: 'pt-br',
+        header: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+        },
+        buttonText: {
+            today:    'hoje',
+            month:    'mês',
+            week:     'semana',
+            day:      'dia',
+            list:     'lista'
+        },
+        plugins: [
+            'dayGrid',
+            'timeGrid',
+            'list',
+        ],
+        defaultView: 'timeGridWeek',
         height: 800,
     });
     calendar.render();

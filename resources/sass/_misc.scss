@@ -124,3 +124,13 @@ a:hover {
 .sp-dd {
     line-height: 26px;
 }
+
+// =======================================================
+// FULL CALENDAR
+// =======================================================
+
+.fc-toolbar {
+    h2 {
+        &::first-letter { text-transform: capitalize; }
+    }
+}
