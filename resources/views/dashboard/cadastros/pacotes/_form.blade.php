@@ -18,7 +18,7 @@
         
         <div class="form-group">
             <label for="valor-sem-desconto">Valor (sem Desconto)</label>
-            <input type="number" class="form-control" id="valor-sem-desconto" name="valor-sem-desconto" autocomplete="new" placeholder="Valor sem Desconto" readonly required value="{{ $pacote->valor }}">
+            <input type="number" class="form-control" id="valor-sem-desconto" name="valor-sem-desconto" autocomplete="new" placeholder="Valor sem Desconto" readonly required value="{{ $pacote->valor_sem_desconto }}">
         </div>
 
         <div class="row">
@@ -26,7 +26,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="valor-com-desconto">Valor (com Desconto)</label>
-                    <input type="number" min="1" class="form-control" id="valor-com-desconto" name="valor-com-desconto" autocomplete="new" placeholder="Valor com Desconto" required value="{{ $pacote->valor }}">
+                    <input type="number" min="1" class="form-control" id="valor-com-desconto" name="valor-com-desconto" autocomplete="new" placeholder="Valor com Desconto" required value="{{ $pacote->valor_com_desconto }}">
                 </div>
             </div>
 

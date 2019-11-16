@@ -82,7 +82,21 @@ class PacoteController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Recupera o pacote
+        $pacote = Pacote::find($id);
+
+        
+        // Recupera os serviços
+        $servicosSelecionados = array();
+        foreach ($pacote->servicos->toArray() as $servico) {
+            array_push($servicosSelecionados, $servico['id']);
+        }
+        
+        return view('dashboard.cadastros.pacotes.edit', [
+            'pacote' => $pacote,
+            'servicos' => Servico::all(),
+            'servicosSelecionados' => $servicosSelecionados,
+        ]);
     }
 
     /**
