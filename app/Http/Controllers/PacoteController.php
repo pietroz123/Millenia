@@ -108,7 +108,26 @@ class PacoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /**
+         * Atualiza o pacote
+         */
+        $pacote = Pacote::find($id);
+        $pacote->nome = request('nome');
+
+        $servicos = request('servicos');
+        $pacote->valor_sem_desconto = request('valor-sem-desconto');
+        $pacote->desconto = request('desconto');
+        $pacote->valor_com_desconto = request('valor-com-desconto');
+        $pacote->descricao = request('descricao');
+        $pacote->ativo = request('ativo') == 'on' ? true : false;
+        $pacote->save();
+
+        /**
+         * Atribui os servicos
+         */
+        $pacote->servicos()->sync(request('servicos'));
+
+        return redirect()->route('pacotes.index')->with('success', 'Pacote atualizado com sucesso');
     }
 
     /**
@@ -119,6 +138,9 @@ class PacoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pacote = Pacote::find($id);
+        $pacote->delete();
+
+        return redirect()->route('pacotes.index')->with('success', 'Pacote removido com sucesso');
     }
 }

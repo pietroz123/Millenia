@@ -9,6 +9,7 @@
 @section('dashboard-content')
     
     <form method="POST" action="{{ route('pacotes.update', $pacote->id) }}">
+        @method('PUT')
         @csrf
 
         <h3>Edição do Pacote ({{ $pacote->nome }})</h3>
