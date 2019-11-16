@@ -59,6 +59,11 @@ Route::prefix('agenda')->group(function() {
 });
 
 /**
+ * ROTAS DE AGENDAMENTO
+ */
+Route::resource('agendamentos', 'AgendamentoController');
+
+/**
  * ROTAS DE AJAX
  */
 Route::namespace('Ajax')->prefix('ajax')->group(function() {
