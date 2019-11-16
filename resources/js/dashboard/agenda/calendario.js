@@ -42,21 +42,14 @@ $(document).ready(function() {
         height: 800,
 
         // Eventos (vem do backend)
-        events: [
+        eventSources: [
             {
-                title: '[Corte Masculino] João',
-                start: '2019-11-12T14:30:00',
-                end: '2019-11-12T15:00:00',
-                extendedProps: {
-                    status: 'done'
-                }
+                url: '/agendamentos',
+                type: 'GET',
+                error: function(error) {
+                    console.log(error);
+                },
             },
-            {
-                title: 'Birthday Party',
-                start: '2019-11-13T07:00:00',
-                backgroundColor: 'green',
-                borderColor: 'green',
-            }
         ],
 
         // Horário de Funcionamento
@@ -252,4 +245,14 @@ $(document).ready(function() {
         $('button.js-concluir-agendamento').prop('disabled', false);
     });
 
+});
+
+/**
+ * Fechar modal de agendamento quando clicar fora
+ */
+$(document).on('click', '.modal-agendamento', function(e) {
+    e.stopPropagation();
+});
+$(document).click(function() {
+    $('.modal-agendamento').hide();
 });

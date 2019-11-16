@@ -17,7 +17,19 @@ class AgendamentoController extends Controller
      */
     public function index()
     {
-        //
+        $agendamentos = Agendamento::all();
+        $ag = array();
+
+        foreach ($agendamentos as $agendamento) {
+            array_push($ag, [
+                'title' => $agendamento->titulo,
+                'start' => $agendamento->inicio,
+                'end' => $agendamento->fim,
+            ]);
+        }
+
+        return json_encode($ag);
+
     }
 
     /**
