@@ -48,19 +48,9 @@ class PacoteController extends Controller
         $pacote->nome = request('nome');
 
         $servicos = request('servicos');
-
-        /**
-         * Calcula o valor do pacote para cada serviço incluso
-         */
-        $valor_sem_desconto = 0;
-        foreach ($servicos as $idServico) {
-            $servico = Servico::find($idServico);
-            $valor_sem_desconto += $servico->preco;
-        }
-
-        $pacote->valor_sem_desconto = $valor_sem_desconto;
+        $pacote->valor_sem_desconto = request('valor-sem-desconto');
         $pacote->desconto = request('desconto');
-        $pacote->valor_com_desconto = $valor_sem_desconto * (1 - request('desconto') / 100);
+        $pacote->valor_com_desconto = request('valor-com-desconto');
         $pacote->descricao = request('descricao');
         $pacote->ativo = request('ativo') == 'on' ? true : false;
         $pacote->save();

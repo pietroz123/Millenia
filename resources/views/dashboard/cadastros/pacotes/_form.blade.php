@@ -11,26 +11,32 @@
             <label for="servicos">Serviços</label>
             <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple">
                 @foreach ($servicos as $servico)
-                    <option value="{{ $servico->id }}">{{ $servico->nome }}</option>
+                    <option value="{{ $servico->id }}" data-preco-servico="{{ $servico->preco }}">{{ $servico->nome }}</option>
                 @endforeach
             </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="valor-sem-desconto">Valor (sem Desconto)</label>
+            <input type="number" class="form-control" id="valor-sem-desconto" name="valor-sem-desconto" autocomplete="new" placeholder="Valor sem Desconto" readonly required value="{{ $pacote->valor }}">
         </div>
 
         <div class="row">
             
             <div class="col">
                 <div class="form-group">
+                    <label for="valor-com-desconto">Valor (com Desconto)</label>
+                    <input type="number" min="1" class="form-control" id="valor-com-desconto" name="valor-com-desconto" autocomplete="new" placeholder="Valor com Desconto" required value="{{ $pacote->valor }}">
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-group">
                     <label for="desconto">Desconto (%)</label>
-                    <input type="number" class="form-control" id="desconto" name="desconto" placeholder="Desconto" autocomplete="new" required value="{{ $pacote->desconto }}">
+                    <input type="number" min="1" class="form-control" id="desconto" name="desconto" placeholder="Desconto" autocomplete="new" required value="{{ $pacote->desconto }}">
                 </div>
             </div>
             
-            <div class="col">
-                {{-- <div class="form-group">
-                    <label for="valor">Valor (Total)</label>
-                    <input type="number" class="form-control" id="valor" name="valor" autocomplete="new" placeholder="Valor" required value="{{ $pacote->valor }}">
-                </div> --}}
-            </div>
             
         </div>
 
