@@ -5,7 +5,7 @@
 
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do cliente" autocomplete="new" required value="{{ $cliente->nome }}" value="{{ $cliente->nome }}">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do cliente" autocomplete="new" required value="{{ $cliente->nome }}">
         </div>
 
         <div class="row">

@@ -16,7 +16,8 @@ class CreatePacotesTable extends Migration
         Schema::create('pacotes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->double('valor');
+            $table->double('valor_sem_desconto');
+            $table->double('valor_com_desconto');
             $table->double('desconto');
             $table->text('descricao')->nullable();
             $table->boolean('ativo');

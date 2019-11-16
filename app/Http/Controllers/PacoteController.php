@@ -28,6 +28,7 @@ class PacoteController extends Controller
     public function create()
     {
         return view('dashboard.cadastros.pacotes.create', [
+            'pacote' => new Pacote,
             'servicos' => Servico::all(),
         ]);
     }
@@ -40,7 +41,36 @@ class PacoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /**
+         * Cria novo pacote
+         */
+        $pacote = new Pacote;
+        $pacote->nome = request('nome');
+
+        $servicos = request('servicos');
+
+        /**
+         * Calcula o valor do pacote para cada serviço incluso
+         */
+        $valor_sem_desconto = 0;
+        foreach ($servicos as $idServico) {
+            $servico = Servico::find($idServico);
+            $valor_sem_desconto += $servico->preco;
+        }
+
+        $pacote->valor_sem_desconto = $valor_sem_desconto;
+        $pacote->desconto = request('desconto');
+        $pacote->valor_com_desconto = $valor_sem_desconto * (1 - request('desconto') / 100);
+        $pacote->descricao = request('descricao');
+        $pacote->ativo = request('ativo') == 'on' ? true : false;
+        $pacote->save();
+
+        /**
+         * Atribui os servicos
+         */
+        $pacote->servicos()->sync(request('servicos'));
+
+        return redirect()->route('pacotes.index')->with('success', 'Pacote cadastrado com sucesso');
     }
 
     /**

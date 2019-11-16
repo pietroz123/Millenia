@@ -23,21 +23,27 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Celular</th>
-                    <th>Telefone</th>
+                    <th>Valor (Com Desconto)</th>
+                    <th>Desconto (%)</th>
+                    <th>Serviços</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($clientes as $cliente)
+                @foreach ($pacotes as $pacote)
                     <tr>
-                        <td>{{ $cliente->nome }}</td>
-                        <td>{{ $cliente->telefone_celular }}</td>
-                        <td>{{ $cliente->telefone_residencial }}</td>
+                        <td>{{ $pacote->nome }}</td>
+                        <td>{{ $pacote->valor_com_desconto }}</td>
+                        <td>{{ $pacote->desconto }}</td>
+                        <td>
+                            @foreach ($pacote->servicos as $servico)
+                                <span class="badge badge-light">{{ $servico->nome }}</span>
+                            @endforeach    
+                        </td>
                         <td class="td-actions">
-                            <button class="btn-action view" data-id-cliente="{{ $cliente->id }}"><i class="fas fa-eye"></i></button>
-                            <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
-                            <form method="POST" action="{{ route('clientes.destroy', $cliente->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este cliente?');">
+                            <button class="btn-action view" data-id-pacote="{{ $pacote->id }}"><i class="fas fa-eye"></i></button>
+                            <a href="{{ route('pacotes.edit', $pacote->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
+                            <form method="POST" action="{{ route('pacotes.destroy', $pacote->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este pacote?');">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
@@ -49,12 +55,12 @@
         </table>
     @else
         <div class="alert alert-info" role="alert">
-            Nenhum cliente foi cadastrado ainda. Você pode cadastrar um clicando no botão acima.
+            Nenhum pacote foi cadastrado ainda. Você pode cadastrar um clicando no botão acima.
         </div>
     @endif
 
     <!-- Modal -->
-    <div class="modal fade modal-view" id="modal-cliente" tabindex="-1" role="dialog" aria-labelledby="modal-cliente-label"
+    <div class="modal fade modal-view" id="modal-pacote" tabindex="-1" role="dialog" aria-labelledby="modal-pacote-label"
     aria-hidden="true">
         {{-- Preenchido com AJAX --}}
     </div>    
