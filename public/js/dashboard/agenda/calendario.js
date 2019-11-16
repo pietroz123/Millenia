@@ -260,6 +260,11 @@ $(document).ready(function() {
         $('button.js-concluir-agendamento').prop('disabled', false);
     });
 
+    // Botão de cancelar
+    $(document).on('click', '.js-cancelar-agendamento', function() {
+        $('.modal-agendamento').hide(); 
+    });
+
 });
 
 /**

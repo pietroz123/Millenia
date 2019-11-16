@@ -29,5 +29,6 @@
     
     </div>
     
-    <button class="btn btn-primary js-concluir-agendamento" disabled="disabled">Concluir</button>
+    <button class="btn btn-light js-cancelar-agendamento" type="button">Cancelar</button>
+    <button class="btn btn-primary js-concluir-agendamento" disabled="disabled" type="submit">Concluir</button>
 </form>
