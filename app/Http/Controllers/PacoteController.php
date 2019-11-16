@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Servico;
 
 class PacoteController extends Controller
 {
@@ -23,7 +24,9 @@ class PacoteController extends Controller
      */
     public function create()
     {
-        return view('dashboard.cadastros.pacotes.create');
+        return view('dashboard.cadastros.pacotes.create', [
+            'servicos' => Servico::all(),
+        ]);
     }
 
     /**

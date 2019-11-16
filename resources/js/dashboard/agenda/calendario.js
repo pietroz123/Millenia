@@ -95,8 +95,6 @@ $(document).ready(function() {
                     horario: time,
                 },
                 success: function(retorno) {
-                    console.log('Success');
-                    console.log(retorno);
 
                     $('.modal-agendamento').show();
                     $('.modal-agendamento').html(retorno);
@@ -190,6 +188,15 @@ $(document).ready(function() {
      * Ao selecionar um profissional, libera o botão de concluir agendamento
      */
     $(document).on('change', 'select#profissional', function() {
+
+        
+
+    });
+    
+    /**
+     * Ao selecionar um cliente, libera o botão de concluir agendamento
+     */
+    $(document).on('change', 'select#cliente', function() {
         $('button.js-concluir-agendamento').prop('disabled', false);
     });
 

@@ -26,15 +26,15 @@
         <div class="form-group">
             <label for="servicos">Serviços</label>
             <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple">
-                {{-- @foreach ($servicos as $servico) --}}
-                    <option value="1"></option>
-                {{-- @endforeach --}}
+                @foreach ($servicos as $servico)
+                    <option value="{{ $servico->id }}">{{ $servico->nome }}</option>
+                @endforeach
             </select>
         </div>
 
         <div class="form-group">
             <label for="descricao">Descrição</label>
-            <textarea class="form-control rounded-1" id="descricao" rows="3" placeholder="Descrição sobre o pacote"></textarea>
+            <textarea class="form-control rounded-1" id="descricao" rows="3" placeholder="Descrição sobre o pacote" name="descricao"></textarea>
         </div>
 
         <label class="d-block mt-3">O pacote está ativo?</label>
