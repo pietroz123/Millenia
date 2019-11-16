@@ -54,6 +54,7 @@ class ClienteController extends Controller
         $cliente->telefone_residencial = request('tel-residencial');
         $cliente->deseja_notificacao = request('deseja-notificacao') == "on" ? true : false;
         $cliente->email = request('email');
+        $cliente->data_nascimento = request('nascimento');
         $cliente->id_profissao = request('profissao');
         // $cliente->indicacao = request('indicacao');
         $cliente->id_cidade = request('cidade');
@@ -114,6 +115,7 @@ class ClienteController extends Controller
         $cliente->telefone_residencial = request('tel-residencial');
         $cliente->deseja_notificacao = request('deseja-notificacao') == "on" ? true : false;
         $cliente->email = request('email');
+        $cliente->data_nascimento = request('nascimento');
         $cliente->id_profissao = request('profissao');
         // $cliente->indicacao = request('indicacao');
         $cliente->id_cidade = request('cidade');

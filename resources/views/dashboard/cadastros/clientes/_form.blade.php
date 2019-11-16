@@ -25,13 +25,18 @@
         </div>
         
         <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="deseja-notificacao" name="deseja-notificacao" required {{ $cliente->deseja_notificacao ? 'checked' : '' }}>
+            <input type="checkbox" class="custom-control-input" id="deseja-notificacao" name="deseja-notificacao" {{ $cliente->deseja_notificacao ? 'checked' : '' }}>
             <label class="custom-control-label" for="deseja-notificacao">Receber notificações</label>
         </div>
 
         <div class="form-group mt-3">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente" autocomplete="new" required value="{{ $cliente->email }}">
+        </div>
+
+        <div class="form-group">
+            <label for="nascimento">Data de Nascimento</label>
+            <input type="date" class="form-control" id="nascimento" name="nascimento" placeholder="Data de Nascimento" autocomplete="new" required value="{{ $cliente->data_nascimento }}">
         </div>
 
         <h5 class="mt-4">Informações Adicionais (Opcional)</h5>

@@ -13,6 +13,10 @@
                     <div class="col">
                         <h5 class="header">Informações Básicas</h5>
                         <div class="row info">
+                            <div class="col font-weight-bold">Data de Nascimento</div>
+                            <div class="col">{{ $cliente->data_nascimento }}</div>
+                        </div>
+                        <div class="row info">
                             <div class="col font-weight-bold">Email</div>
                             <div class="col">{{ $cliente->email }}</div>
                         </div>
