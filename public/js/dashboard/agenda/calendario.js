@@ -118,13 +118,39 @@ $(document).ready(function() {
                 }
             });
 
+            const el = info.jsEvent.srcElement;
+            const tdTop = el.getBoundingClientRect().top;
+            var tdLeft = el.getBoundingClientRect().left;
+
+            console.log(date);
+            
+            const dateValues = date.split('-');
+            const y = dateValues[0];
+            const m = dateValues[1];
+            const d = dateValues[2];
+
+            const usDateStr = m + '-' + d + '-' + y;
+
+            const dateInstance = new Date(usDateStr);
+            console.log(dateInstance);
+            
+            const day = dateInstance.getDay();
+            console.log(day);
+            
+            const width = el.offsetWidth;
+            const dayWidth = width / 7;
+            tdLeft += dayWidth * day;
+            
+            console.log(el);
+
+
             // alert('Clicked on: ' + info.dateStr);
             // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
             // alert('Current view: ' + info.view.type);
 
             $('.modal-agendamento').css({
-                left: info.jsEvent.pageX,
-                top: info.jsEvent.pageY,
+                left: tdLeft,
+                top: tdTop,
             });
         },
     });
