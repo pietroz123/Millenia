@@ -65,6 +65,17 @@ $(document).ready(function() {
 
         // Cor do texto
         eventTextColor: 'white',
+        eventBorderColor: 'transparent',
+
+        // Espaçamento entre slots de tempo
+        slotDuration: '00:15:00', // 15 minutos
+
+        slotLabelFormat: {
+            hour: 'numeric',
+            minute: '2-digit',
+            omitZeroMinute: false,
+            meridiem: 'short'
+        },
 
         // Evento de Agendamento
         dateClick: function(info) {

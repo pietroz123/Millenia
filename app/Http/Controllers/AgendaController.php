@@ -22,20 +22,7 @@ class AgendaController extends Controller
      */
     public function calendario()
     {
-        $agendamentos = Agendamento::all();
-        $ag = array();
-
-        foreach ($agendamentos as $agendamento) {
-            array_push($ag, [
-                'title' => $agendamento->titulo,
-                'start' => $agendamento->inicio,
-                'end' => $agendamento->fim,
-            ]);
-        }
-
-        return view('dashboard.agenda.calendario', [
-            'agendamentos' => $ag,
-        ]);
+        return view('dashboard.agenda.calendario');
     }
 
     /**

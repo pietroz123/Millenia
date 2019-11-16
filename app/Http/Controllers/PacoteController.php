@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Servico;
+use App\Pacote;
 
 class PacoteController extends Controller
 {
@@ -14,7 +15,9 @@ class PacoteController extends Controller
      */
     public function index()
     {
-        return view('dashboard.cadastros.pacotes.index');
+        return view('dashboard.cadastros.pacotes.index', [
+            'pacotes' => Pacote::all(),
+        ]);
     }
 
     /**

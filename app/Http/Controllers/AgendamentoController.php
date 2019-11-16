@@ -25,6 +25,7 @@ class AgendamentoController extends Controller
                 'title' => $agendamento->titulo,
                 'start' => $agendamento->inicio,
                 'end' => $agendamento->fim,
+                'backgroundColor' => $agendamento->profissional->cor_agenda,
             ]);
         }
 
