@@ -70,6 +70,10 @@ $(document).ready(function() {
         // Espaçamento entre slots de tempo
         slotDuration: '00:15:00', // 15 minutos
 
+        // Limitação de Horários
+        minTime: '10:00:00',
+        maxTime: '18:00:00',
+
         slotLabelFormat: {
             hour: 'numeric',
             minute: '2-digit',
