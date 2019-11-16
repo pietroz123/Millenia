@@ -52,9 +52,9 @@ Route::resource('pacotes', 'PacoteController');
  */
 Route::prefix('agenda')->group(function() {
 
-    Route::get('/agenda', 'AgendaController@index')->name('agenda.index');
-    Route::get('/agenda/calendario', 'AgendaController@calendario')->name('agenda.calendario');
-    Route::get('/agenda/novo-agendamento', 'AgendaController@novoAgendamento')->name('agenda.novoAgendamento');
+    Route::get('', 'AgendaController@index')->name('agenda.index');
+    Route::get('/calendario', 'AgendaController@calendario')->name('agenda.calendario');
+    Route::get('/novo-agendamento', 'AgendaController@novoAgendamento')->name('agenda.novoAgendamento');
 
 });
 

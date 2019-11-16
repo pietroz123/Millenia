@@ -21,3 +21,9 @@
         @endforeach
     </select>
 </div>
+
+<div id="selecionar-profissional">
+
+</div>
+
+<button class="btn btn-primary js-concluir-agendamento" disabled="disabled">Concluir</button>

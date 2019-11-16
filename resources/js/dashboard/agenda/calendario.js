@@ -97,10 +97,14 @@ $(document).ready(function() {
                 success: function(retorno) {
                     console.log('Success');
                     console.log(retorno);
+
+                    $('.modal-agendamento').show();
                     $('.modal-agendamento').html(retorno);
+
                     $('select#servico').select2({
                         placeholder: 'Selecione o serviço',
                     });
+
                 },
                 error: function(retorno) {
                     console.log('Error');
@@ -119,5 +123,74 @@ $(document).ready(function() {
         },
     });
     calendar.render();
+
+    /**
+     * Recuperar profissionais de um serviço
+     */
+    $(document).on('change', 'select#servico', function() {
+
+        const id = $(this).val();
+            
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/ajax/profissionaisDeUmServico',
+            method: 'POST',
+            data: {
+                id: id
+            },
+            success: function(retorno) {
+    
+                const profissionais = retorno;
+    
+                var options = [];
+                for (let i = 0; i < profissionais.length; i++) {
+                    const profissional = profissionais[i];
+                    const id = profissional.id;
+                    const nome = profissional.nome;
+                    options.push(
+                        '<option value="'+ id +'">' +
+                            '<span>'+ nome +'</span>' +
+                        '</option>'
+                    );
+                }
+    
+                if (options.length > 0) {
+                    $('#selecionar-profissional').html(
+                        '<div class="form-group mt-2">' +
+                            '<label for="profissional">Selecionar o profissional</label>' +
+                            '<select class="browser-default custom-select" id="profissional" name="profissional">' +
+                                '<option></option>' +
+                                options +
+                            '</select>' +
+                        '</div>'
+                    );
+                    $('select#profissional').select2({
+                        placeholder: 'Selecione o profissional',
+                    });
+                }
+                else {
+                    $('#selecionar-profissional').html(
+                        '<div class="alert alert-info" role="alert">' +
+                            'Não encontramos nenhum profissional com esse serviço.' +
+                        '</div>'
+                    );
+                }
+            },
+            error: function(retorno) {
+                console.log('Error');
+                console.log(retorno);
+            }
+        });
+
+    });
+
+    /**
+     * Ao selecionar um profissional, libera o botão de concluir agendamento
+     */
+    $(document).on('change', 'select#profissional', function() {
+        $('button.js-concluir-agendamento').prop('disabled', false);
+    });
 
 });

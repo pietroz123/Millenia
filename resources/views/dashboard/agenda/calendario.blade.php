@@ -10,7 +10,7 @@
     
     <div id='calendar'></div>
 
-    <div class="modal-agendamento">
+    <div class="modal-agendamento" style="display: none">
         {{-- AJAX --}}
     </div>
 
