@@ -80,6 +80,11 @@ body {
         font-size: 14px;
         padding-bottom: 11px !important;
     }
+    tr {
+        &:hover {
+            background-color: #fafafac5;
+        }
+    }
     td {
         padding-top: 0.8rem !important;
         padding-bottom: 0.6rem !important;
@@ -105,6 +110,14 @@ body {
 }
 .remove-form {
     display: contents;
+}
+.crud-tool-bar {
+    margin: 0.5rem 0 0;
+    display: flex;
+    justify-content: space-between;
+    input {
+        max-width: 500px;
+    }
 }
 
 /**

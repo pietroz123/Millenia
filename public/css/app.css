@@ -2562,6 +2562,9 @@ body {
   font-size: 14px;
   padding-bottom: 11px !important;
 }
+.table-cadastro tr:hover {
+  background-color: #fafafac5;
+}
 .table-cadastro td {
   padding-top: 0.8rem !important;
   padding-bottom: 0.6rem !important;
@@ -2587,6 +2590,15 @@ body {
 
 .remove-form {
   display: contents;
+}
+
+.crud-tool-bar {
+  margin: 0.5rem 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+.crud-tool-bar input {
+  max-width: 500px;
 }
 
 /**

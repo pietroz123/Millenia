@@ -17,6 +17,17 @@
             <a href="{{ route('clientes.create') }}" class="btn btn-light btn-tool add">Adicionar um cliente</a>
         </div>
     </div>
+    
+    <div class="crud-tool-bar">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+            <input type="text" name="buscar-cliente" id="buscar-cliente" class="form-control" placeholder="Buscar cliente...">
+        </div>
+    </div>
 
     @if (count($clientes) > 0)
         <table class="table table-cadastro">
