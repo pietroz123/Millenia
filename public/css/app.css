@@ -2628,20 +2628,19 @@ body {
   align-items: center;
   width: 200px;
   padding: 1rem;
-  background: lightgrey;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
   border-radius: 4px;
-  font-weight: 600;
   transition: all 250ms ease-in;
 }
 .opcoes-agenda .opcao-agenda i {
   font-size: 30px;
 }
 .opcoes-agenda .opcao-agenda span {
-  padding-top: 5px;
-  font-size: 15px;
+  padding-top: 8px;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
   margin-top: 15px;
   padding: 0px 10px;
 }
@@ -2748,9 +2747,20 @@ input:-webkit-autofill {
   padding: 1.5rem 2rem !important;
 }
 
+.form-control:focus {
+  border-color: #005e6a;
+  box-shadow: 0 0 0 1px #005e6a;
+}
+
 .select2-selection {
   height: 38px !important;
   border: 1px solid #ced4da !important;
+}
+
+.select2-selection--single:focus {
+  border-color: #005e6a !important;
+  box-shadow: 0 0 1px 1px #005e6a !important;
+  outline: 0;
 }
 
 .select2-selection__placeholder {
@@ -2764,9 +2774,15 @@ input:-webkit-autofill {
   color: #495057 !important;
 }
 
-.select2-search__field {
+.select2-search--dropdown > .select2-search__field {
   border-radius: 0.25rem;
 }
+.select2-search--dropdown > .select2-search__field:focus {
+  border-color: #005e6a !important;
+  box-shadow: 0 0 1px 1px #005e6a !important;
+  outline: 0;
+}
+
 .select2-container--default {
   z-index: 10000;
 }
