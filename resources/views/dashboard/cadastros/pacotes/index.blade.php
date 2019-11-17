@@ -41,7 +41,6 @@
                             @endforeach    
                         </td>
                         <td class="td-actions">
-                            <button class="btn-action view" data-id-pacote="{{ $pacote->id }}"><i class="fas fa-eye"></i></button>
                             <a href="{{ route('pacotes.edit', $pacote->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
                             <form method="POST" action="{{ route('pacotes.destroy', $pacote->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este pacote?');">
                                 @method('DELETE')
