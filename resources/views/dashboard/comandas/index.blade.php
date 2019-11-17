@@ -17,6 +17,10 @@
             <a href="{{ route('comandas.create') }}" class="btn btn-light btn-tool add">Abrir nova comanda</a>
         </div>
     </div>
+
+    @foreach ($comandas as $comanda)
+        <a href="{{ route('comandas.edit', $comanda->id) }}">Comanda {{ $comanda->id }}</a>
+    @endforeach
     
     <!-- Modal -->
     <div class="modal fade modal-view" id="modal-comanda" tabindex="-1" role="dialog" aria-labelledby="modal-comanda-label"

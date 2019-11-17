@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-4">
     <div class="col-6">
         <div class="row">
             <div class="col">
@@ -7,7 +7,7 @@
                     <select class="browser-default custom-select" id="cliente" name="cliente" required>
                         <option></option>
                         @foreach ($clientes as $cliente)
-                            <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                            <option value="{{ $cliente->id }}" {{ $comanda->id_cliente == $cliente->id ? 'selected' : '' }}>{{ $cliente->nome }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="data">Data</label>
-                    <input type="date" name="data" id="data" class="form-control" value="{{ date('Y-m-d') }}" readonly>
+                    <input type="date" name="data" id="data" class="form-control" value="{{ $comanda ? date('Y-m-d', $comanda->created_at->timestamp) : date('Y-m-d') }}" readonly>
                 </div>
             </div>
         </div>
