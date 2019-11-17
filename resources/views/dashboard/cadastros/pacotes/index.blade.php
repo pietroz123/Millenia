@@ -23,8 +23,9 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Valor (Com Desconto)</th>
+                    <th>Valor (Original)</th>
                     <th>Desconto (%)</th>
+                    <th>Valor (Final)</th>
                     <th>Serviços</th>
                     <th>Ações</th>
                 </tr>
@@ -33,14 +34,16 @@
                 @foreach ($pacotes as $pacote)
                     <tr>
                         <td>{{ $pacote->nome }}</td>
-                        <td>{{ $pacote->valor_com_desconto }}</td>
+                        <td>{{ $pacote->valor_sem_desconto }}</td>
                         <td>{{ $pacote->desconto }}</td>
+                        <td>{{ $pacote->valor_com_desconto }}</td>
                         <td>
                             @foreach ($pacote->servicos as $servico)
                                 <span class="badge badge-light">{{ $servico->nome }}</span>
                             @endforeach    
                         </td>
                         <td class="td-actions">
+                            <button class="btn-action view" data-id-pacote="{{ $pacote->id }}"><i class="fas fa-eye"></i></button>
                             <a href="{{ route('pacotes.edit', $pacote->id) }}" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
                             <form method="POST" action="{{ route('pacotes.destroy', $pacote->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer remover este pacote?');">
                                 @method('DELETE')
@@ -65,4 +68,8 @@
     </div>    
 
 
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/dashboard/cadastros/pacote/index.js') }}"></script>
 @endsection

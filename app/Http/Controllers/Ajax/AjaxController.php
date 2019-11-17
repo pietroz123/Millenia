@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Cliente;
 use App\Servico;
 use App\Profissional;
+use App\Pacote;
 
 class AjaxController extends Controller
 {
@@ -47,6 +48,18 @@ class AjaxController extends Controller
         
         return view('dashboard.cadastros.servicos.modal-servico')->with(compact(
             'servico',
+        ));
+    }
+
+        /**
+     * Recupera o modal com as informações do pacote
+     */
+    public function modalInformacoesPacote()
+    {
+        $pacote = Pacote::find(request('id'));
+        
+        return view('dashboard.cadastros.pacotes.modal-pacote')->with(compact(
+            'pacote',
         ));
     }
 

@@ -53,7 +53,11 @@ mix.scripts('resources/js/dashboard/cadastros/produto/index.js', 'public/js/dash
 mix.scripts('resources/js/dashboard/cadastros/produto/create.js', 'public/js/dashboard/cadastros/produto/create.js');
 
 // Pacotes
+mix.scripts('resources/js/dashboard/cadastros/pacote/index.js', 'public/js/dashboard/cadastros/pacote/index.js');
 mix.scripts('resources/js/dashboard/cadastros/pacote/create.js', 'public/js/dashboard/cadastros/pacote/create.js');
+
+// Comandas
+mix.scripts('resources/js/dashboard/comandas/create.js', 'public/js/dashboard/comandas/create.js');
 
 
 // =======================================================

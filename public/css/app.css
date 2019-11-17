@@ -2524,7 +2524,7 @@ body {
   float: right;
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
-  content: "\F234";
+  content: "\F067";
 }
 .btn-tool::after {
   margin-left: 10px;
@@ -2574,6 +2574,10 @@ body {
   padding-bottom: 0.6rem;
 }
 
+.td-actions a {
+  color: inherit;
+}
+
 .btn-action {
   border: 0;
   background: #efefef;
@@ -2616,8 +2620,15 @@ body {
 }
 
 /**
- * Serviços
+ * Pacotes
  */
+.cartao-pacote {
+  width: 25%;
+}
+.cartao-pacote:not(:first-of-type) {
+  margin-left: 15px;
+}
+
 .opcoes-agenda {
   display: flex;
 }

@@ -58,9 +58,15 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-        <a href="{{ route('pacotes.index') }}" class="{{ setActive('pacotes.index') }}">
+            <a href="{{ route('pacotes.index') }}" class="{{ setActive('pacotes.index') }}">
                 <i class="fas fa-tag"></i>
                 Pacotes
+            </a>
+        </li>
+        <li class="dashboard-sidebar-item">
+            <a href="{{ route('comandas.index') }}" class="{{ setActive('comandas.index') }}">
+                <i class="far fa-file-alt"></i>
+                Comandas
             </a>
         </li>
         <li class="dashboard-sidebar-item">

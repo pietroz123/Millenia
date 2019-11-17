@@ -47,6 +47,9 @@ Route::resource('produtos', 'ProdutoController');
 // Pacotes
 Route::resource('pacotes', 'PacoteController');
 
+// Comandas
+Route::resource('comandas', 'ComandaController');
+
 /**
  * ROTAS DA AGENDA
  */
@@ -76,6 +79,9 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
 
     // Serviços
     Route::post('/modalInformacoesServico', 'AjaxController@modalInformacoesServico');
+
+    // Pacote
+    Route::post('/modalInformacoesPacote', 'AjaxController@modalInformacoesPacote');
     
     // Agenda
     Route::post('/profissionaisDeUmServico', 'AjaxController@profissionaisDeUmServico');
