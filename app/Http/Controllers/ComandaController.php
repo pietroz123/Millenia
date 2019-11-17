@@ -29,6 +29,7 @@ class ComandaController extends Controller
     public function create()
     {
         return view('dashboard.comandas.create', [
+            'comanda' => new Comanda,
             'clientes' => Cliente::all(),
             'servicos' => Servico::all(),
         ]);

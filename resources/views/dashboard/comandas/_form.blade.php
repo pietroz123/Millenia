@@ -15,7 +15,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="data">Data</label>
-                    <input type="date" name="data" id="data" class="form-control" value="{{ $comanda ? date('Y-m-d', $comanda->created_at->timestamp) : date('Y-m-d') }}" readonly>
+                    <input type="date" name="data" id="data" class="form-control" value="{{ $comanda->created_at ? date('Y-m-d', $comanda->created_at->timestamp) : date('Y-m-d') }}" readonly>
                 </div>
             </div>
         </div>
