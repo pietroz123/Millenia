@@ -151,6 +151,21 @@ body {
         margin-left: 15px;
     }
 }
+#modal-pacote {
+    .desconto {
+        position: relative;
+        img {
+            height: 100px;
+        }
+        .valor {
+            position: absolute;
+            top: 33px;
+            left: 25px;
+            color: white;
+            font-size: 25px;
+        }
+    }
+}
 
 
 // =======================================================

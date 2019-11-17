@@ -2629,6 +2629,20 @@ body {
   margin-left: 15px;
 }
 
+#modal-pacote .desconto {
+  position: relative;
+}
+#modal-pacote .desconto img {
+  height: 100px;
+}
+#modal-pacote .desconto .valor {
+  position: absolute;
+  top: 33px;
+  left: 25px;
+  color: white;
+  font-size: 25px;
+}
+
 .opcoes-agenda {
   display: flex;
 }

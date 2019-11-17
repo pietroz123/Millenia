@@ -33,4 +33,12 @@ $(document).ready(function() {
         );
     });
 
+    $("select#servicos").on("select2:unselect", function (evt) {
+        if (!evt.params.originalEvent) {
+          return;
+        }
+      
+        evt.params.originalEvent.stopPropagation();
+      });
+
 });
