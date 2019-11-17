@@ -2839,10 +2839,13 @@ input:-webkit-autofill {
 }
 
 .dashboard-sidebar {
+  color: #fafafa;
   position: fixed;
   width: 300px;
   min-height: 100vh;
-  background: linear-gradient(170.81deg, #C4C4C4 0%, rgba(196, 196, 196, 0) 97.51%);
+  background: #005e6a;
+  background: linear-gradient(0deg, #005e6a 0%, #00bcd4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005e6a",endColorstr="#00bcd4",GradientType=1);
   box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.4);
   font-weight: 600;
 }
@@ -2889,7 +2892,7 @@ input:-webkit-autofill {
 }
 
 .dashboard-sidebar-item a {
-  color: black;
+  color: #fafafa;
   padding: 10px 20px;
   display: block;
   position: relative;
@@ -2898,14 +2901,14 @@ input:-webkit-autofill {
   text-align: center;
   margin-right: 14px;
   min-width: 20px;
-  color: #27353e;
+  color: #ebebeb;
 }
 .dashboard-sidebar-item a::after {
   width: 0%;
   height: 100%;
   top: 0;
   left: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.329);
 }
 .dashboard-sidebar-item a::after {
   content: "";
@@ -2921,9 +2924,6 @@ input:-webkit-autofill {
   width: 100%;
 }
 .dashboard-sidebar-item a.active {
-  opacity: 0.8;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.dashboard-sidebar-item a.active::after {
-  width: 100%;
+  border-right: 4px solid #005f6b;
+  background: #ccccccc4;
 }
