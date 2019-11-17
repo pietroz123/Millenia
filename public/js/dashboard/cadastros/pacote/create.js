@@ -27,25 +27,25 @@ $(document).ready(function() {
     /**
      * Calcula o valor com desconto a partir do desconto
      */
-    $('input#desconto').keyup(function() {
+    $('input#desconto').on('keyup change', function() {
         const desconto = $(this).val();
         const valorSemDesconto = $('input#valor-sem-desconto').val();
         // Calcula o valor com desconto 
         const valorComDesconto = valorSemDesconto * (1 - desconto / 100);
         // Atribui ao input
-        $('input#valor-com-desconto').val(valorComDesconto);
+        $('input#valor-com-desconto').val(valorComDesconto.toFixed(2));
     });
 
     /**
      * Calcula o desconto a partir do valor com desconto
      */
-    $('input#valor-com-desconto').keyup(function() {
+    $('input#valor-com-desconto').on('keyup change', function() {
         const valorComDesconto = $(this).val();
         const valorSemDesconto = $('input#valor-sem-desconto').val();
         // Calcula o desconto 
         const desconto = 100 - (valorComDesconto * 100) / valorSemDesconto;
         // Atribui ao input
-        $('input#desconto').val(desconto);
+        $('input#desconto').val(desconto.toFixed(2));
     });
 
 });
