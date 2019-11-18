@@ -11,7 +11,6 @@
     <img src="https://image.flaticon.com/icons/svg/74/74472.svg" class="rounded-circle user-image" alt="">
     <div class="d-flex flex-column justify-content-center ml-3">
         <span class="user-name">{{ Auth::user()->name }}</span>
-        <span class="user-job">Cabeleireiro</span>
     </div>
 </div>
 
@@ -19,7 +18,7 @@
 
 <div>
 
-    <span class="dashboard-sidebar-divider">Navegação</span>
+    <span class="dashboard-sidebar-divider mt-2">Navegação</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
             <a href="{{ route('agenda.index') }}" class="{{ setActive('agenda.index') }}">
@@ -27,7 +26,7 @@
                 Agenda
             </a>
         </li>
-        <li class="dashboard-sidebar-item">
+        <li class="dashboard-sidebar-item mt-2">
             <a href="{{ route('clientes.index') }}" class="{{ setActive('clientes.index') }}">
                 <i class="fas fa-user"></i>
                 Clientes
@@ -69,22 +68,6 @@
                 Relatórios
             </a>
         </li>
-    </ul>
-
-    <span class="dashboard-sidebar-divider">Dados Gerais</span>
-    <ul class="dashboard-sidebar-items">
-        <li class="dashboard-sidebar-item">
-            <a href="#!" class="{{ setActive('') }}">
-                <i class="far fa-address-card"></i>
-                Dados Cadastrais
-            </a>
-        </li>
-        <li class="dashboard-sidebar-item">
-            <a href="#!" class="{{ setActive('') }}">
-                <i class="fas fa-cog"></i>
-                Configurações
-            </a>
-        </li>
         <li class="dashboard-sidebar-item">
             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i>
@@ -94,6 +77,7 @@
                 @csrf
             </form>
         </li>
+
     </ul>
 
 </div>

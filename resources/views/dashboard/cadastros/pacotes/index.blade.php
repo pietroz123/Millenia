@@ -23,9 +23,8 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Valor (Original)</th>
-                    <th>Desconto (%)</th>
-                    <th>Valor (Final)</th>
+                    <th>Ativo</th>
+                    <th>Preço</th>
                     <th>Serviços</th>
                     <th>Ações</th>
                 </tr>
@@ -34,8 +33,9 @@
                 @foreach ($pacotes as $pacote)
                     <tr>
                         <td>{{ $pacote->nome }}</td>
-                        <td>{{ $pacote->valor_sem_desconto }}</td>
-                        <td>{{ $pacote->desconto }}</td>
+                        <td>{{ $pacote->ativo ? 'Sim' : 'Não' }}</td>
+                        {{-- <td>{{ $pacote->valor_sem_desconto }}</td> --}}
+                        {{-- <td>{{ $pacote->desconto }}</td> --}}
                         <td>{{ $pacote->valor_com_desconto }}</td>
                         <td>
                             @foreach ($pacote->servicos as $servico)

@@ -1,13 +1,13 @@
 <table class="table table-borderless table-sm" id="tabela-horarios-disponiveis">
     <thead>
         <tr>
-            <th>Segunda</th>
-            <th>Terça</th>
-            <th>Quarta</th>
-            <th>Quinta</th>
-            <th>Sexta</th>
-            <th>Sábado</th>
-            <th>Domingo</th>
+            <th>Segunda <span class="d-block data">{{ $segunda->format('d/m/Y') }}</span></th>
+            <th>Terça <span class="d-block data">{{ $segunda->modify('+1 days')->format('d/m/Y') }}</span></th>
+            <th>Quarta <span class="d-block data">{{ $segunda->modify('+1 days')->format('d/m/Y') }}</span></th>
+            <th>Quinta <span class="d-block data">{{ $segunda->modify('+1 days')->format('d/m/Y') }}</span></th>
+            <th>Sexta <span class="d-block data">{{ $segunda->modify('+1 days')->format('d/m/Y') }}</span></th>
+            <th>Sábado <span class="d-block data">{{ $segunda->modify('+1 days')->format('d/m/Y') }}</span></th>
+            <th>Domingo <span class="d-block data">{{ $segunda->modify('+1 days')->format('d/m/Y') }}</span></th>
         </tr>
     </thead>
     <tbody>
@@ -23,11 +23,13 @@
     
                     <td>
                         @if ($horariosDisponiveis[$j][$start->format('H:i')])
-                            <button type="button" class="btn-opcao-horario">
+                            <button type="button" class="btn-opcao-horario" data-horario="{{ $start->format('H:i') }}">
                                 <span class="horario-disponivel">
                                     {{ $start->format('H:i') }}
                                 </span>
                             </button>
+                        @else
+                            -
                         @endif
                     </td>
                     

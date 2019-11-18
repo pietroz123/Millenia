@@ -105,16 +105,29 @@ class AjaxController extends Controller
             return $times;
         }
 
+        /**
+         * Recupera o inicio dessa semana
+         */
+        function primeiroDiaSemana($week, $year) {
+            $dto = new DateTime();
+            $dto->setISODate($year, $week);
+            return $dto;
+        }
+
         // Lista de horários das 10:00 às 18:00
         $horariosSemana = get_hours_range(36000, 64800, 900, 'g:i a', true);
         $limite = DateTime::createFromFormat('H:i', '18:00');
 
         // Lista de agendamentos
         $agendamentos = Agendamento::where('id_profissional', $idProfissional)->get();
-        $agendamentos = $agendamentos->groupBy(function($data) {
-            return Carbon::parse($data->inicio)->format('W');
+
+        // Retorna apenas os agendamentos da semana atual
+        $agendamentos = $agendamentos->filter(function($ag) {
+            $inicio = new DateTime($ag->inicio);
+            $semana = $inicio->format('W');
+            $essaSemana = date('W');
+            return $semana == $essaSemana; 
         });
-        $agendamentos = $agendamentos->last();
 
         /**
          * Primeiro loop para marcar horários ocupados
@@ -161,9 +174,41 @@ class AjaxController extends Controller
             }
         }
 
+        // Dias da semana
+        $segunda = primeiroDiaSemana(date('W'), date('Y'));
+
         return view('dashboard.agenda.tabela-horarios-disponiveis', [
             'horariosDisponiveis' => $horariosDisponiveis,
+            'segunda' => $segunda,
         ]);
+    }
+
+    /**
+     * Realizar um agendamento
+     */
+    public function realizarAgendamento()
+    {
+        $idServico = request('id-servico');
+        $idProfissional = request('id-profissional');
+        $idCliente = request('id-cliente');
+        $horario = request('horario');
+        $data = request('dia');
+
+        /**
+         * Recupera o serviço, o profissional e o cliente
+         */
+        $servico = Servico::find($idServico);
+        $profissional = Profissional::find($idProfissional);
+        $cliente = Cliente::find($idCliente);
+
+        $agendamento = new Agendamento;
+        $agendamento->id_servico = $idServico;
+        $agendamento->id_profissional = $idProfissional;
+        $agendamento->id_cliente = $idCliente;
+        $agendamento->titulo = '[' . $servico->nome . '] ' . $profissional->nome;
+        $agendamento->inicio = DateTime::createFromFormat('d/m/Y H:i', $data . ' ' . $horario )->format('Y-m-d H:i');
+        $agendamento->fim = date( 'Y-m-d H:i', strtotime("+" . $servico->tempo_execucao_em_minutos . " minutes", strtotime( $agendamento->inicio )) );
+        $agendamento->save();
     }
 
 

@@ -88,6 +88,7 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
     Route::post('/recuperarClientes', 'AjaxController@recuperarClientes');
     Route::post('/modalAgendamento', 'AjaxController@modalAgendamento');
     Route::post('/horariosDisponiveisDeUmProfissional', 'AjaxController@horariosDisponiveisDeUmProfissional');
+    Route::post('/realizarAgendamento', 'AjaxController@realizarAgendamento');
 
 });
 
@@ -96,6 +97,8 @@ use App\Profissional;
 use Carbon\Carbon;
 
 Route::get('/teste', function() {
+
+    dd(DateTime::createFromFormat('d/m/Y H:i', '20/11/2019 10:30' )->format('Y-m-d H:i') );
 
     /**
      * Cria um vetor de horas (https://surniaulula.com/2016/lang/php/php-create-an-array-of-hours/)
@@ -111,8 +114,23 @@ Route::get('/teste', function() {
         return $times;
     }
 
+    /**
+     * Recupera o inicio e fim da semana
+     */
+    function primeiroDiaSemana($week, $year) {
+        $dto = new DateTime();
+        $dto->setISODate($year, $week);
+        return $dto;
+        return $dto->format('Y-m-d');
+        // $dto->modify('+6 days');
+        // $ret['week_end'] = $dto->format('Y-m-d');
+        // return $ret;
+    }
+
     // Lista de horários das 10:00 às 18:00
     $horariosSemana = get_hours_range(36000, 64800, 900, 'g:i a', true);
+
+    // dd($horariosSemana);
     $limite = DateTime::createFromFormat('H:i', '18:00');
     // dd($horariosSemana);
 
@@ -120,10 +138,14 @@ Route::get('/teste', function() {
 
     // Lista de agendamentos
     $agendamentos = Agendamento::where('id_profissional', 4)->get();
-    $agendamentos = $agendamentos->groupBy(function($data) {
-        return Carbon::parse($data->inicio)->format('W');
+
+    // Retorna apenas os agendamentos da semana atual
+    $agendamentos = $agendamentos->filter(function($ag) {
+        $inicio = new DateTime($ag->inicio);
+        $semana = $inicio->format('W');
+        $essaSemana = date('W');
+        return $semana == $essaSemana; 
     });
-    $agendamentos = $agendamentos->last();
 
     /**
      * Primeiro loop para marcar horários ocupados
@@ -171,30 +193,8 @@ Route::get('/teste', function() {
         }
     }
 
-    // dd($horariosDisponiveis);
-
-    //!!! NÃO FUNCIONA A PARTIR DAQUI
-    
-    $start = DateTime::createFromFormat('H:i', '10:00');
-
-    for ( $i = 0; $i <= 32; $i++ ) {
-        
-        for ( $j = 0; $j <= 6; $j++ ) { 
-    
-            $str = $start->format('H:i');
-            if ($horariosDisponiveis[$j][$str])
-                echo "sim<br>";
-            else
-                echo "nao<br>";
-    
-        }
-
-        $start->modify("+15 minutes");
-        echo $start->format("H:i");
-
-    } 
-
-    // dd($horariosSemana);
+    $segunda = primeiroDiaSemana(date('W'), date('Y'));
+    dd($segunda);
 
     return view('teste', [
         'horariosDisponiveis' => $horariosDisponiveis,

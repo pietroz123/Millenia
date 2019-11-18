@@ -55,7 +55,7 @@ $(document).ready(function() {
         // Horário de Funcionamento
         businessHours: [
             {
-                daysOfWeek: [ 1, 2, 3, 4, 5 ],  // Segunda - Sábado
+                daysOfWeek: [ 1, 2, 3, 4, 5, 6 ],  // Segunda - Sábado
                 startTime: '10:00',             // Horário de Início
                 endTime: '18:00',               // Horário de Fim
             },

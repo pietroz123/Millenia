@@ -42,6 +42,14 @@
         <div class="clientes-disponiveis"></div>
     </div>
 
+    <button 
+        type="button"
+        class="btn btn-primary mt-4 js-realizar-agendamento"
+        style="display: none"
+    >
+        Realizar agendamento
+    </button>
+
 @endsection
 
 @section('scripts')

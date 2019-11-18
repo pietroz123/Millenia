@@ -1,10 +1,15 @@
 <div>
 
-    <select class="browser-default custom-select" wire:model="abertas">
-        <option selected>Selecionar o tipo de comanda</option>
-        <option value="1">Abertas</option>
-        <option value="0">Fechadas</option>
-    </select>
+    <div class="row">
+        <div class="col-6">
+            <label for="tipo-comanda">Tipo de Comanda</label>
+            <select class="browser-default custom-select" id="tipo-comanda" wire:model="abertas">
+                {{-- <option>Selecione o tipo de comanda (Abertas/Fechadas)</option> --}}
+                <option selected value="1">Abertas</option>
+                <option value="0">Fechadas</option>
+            </select>    
+        </div>
+    </div>
 
     <div class="comandas mt-4">
         @foreach ($comandas as $comanda)

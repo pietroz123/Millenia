@@ -106,6 +106,7 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.btn-opcao-horario', function() {
+
         $('#tabela-horarios-disponiveis').find('.btn-opcao-horario').removeClass('selecionado');
         $(this).addClass('selecionado');
         
@@ -169,6 +170,55 @@ $(document).ready(function() {
             });
 
         }
+
+    });
+
+    /**
+     * Após selecionar um cliente, mostra o botão de realizar agendamento
+     */
+    $(document).on('change', 'select#cliente', function() {
+
+        $('.js-realizar-agendamento').show();
+
+    });
+
+    /**
+     * Botão para realizar o agendamento
+     */
+    $(document).on('click', '.js-realizar-agendamento', function() {
+
+        const idServico = $('.js-btn-servico.selecionado').attr('data-id-servico');
+        const idProfissional = $('.js-btn-profissional.selecionado').attr('data-id-profissional');
+        const idCliente = $('select#cliente').val();
+        const horario = $('.btn-opcao-horario.selecionado').attr('data-horario');
+
+        $tdHorario = $('.btn-opcao-horario.selecionado').parent();
+        $thHorario = $tdHorario.closest('table').find('th').eq($tdHorario.index());
+        const dia = $thHorario.children('.data').text();
+        
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/ajax/realizarAgendamento',
+            method: 'POST',
+            data: {
+                'id-servico': idServico,
+                'id-profissional': idProfissional,
+                'id-cliente': idCliente,
+                horario: horario,
+                dia: dia,
+            },
+            success: function(retorno) {
+                console.log('Success');
+                console.log(retorno);
+                window.location.href = "/agenda/calendario";
+            },
+            error: function(retorno) {
+                console.log('Error');
+                console.log(retorno);
+            }
+        });
 
     });
     

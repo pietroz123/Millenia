@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <h5 class="mb-2">Comandas</h5>
+    {{-- <h5 class="mb-2">Comandas</h5> --}}
     @livewire('lista-comandas')
 
     
