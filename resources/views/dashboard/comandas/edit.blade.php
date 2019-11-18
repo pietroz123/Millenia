@@ -12,11 +12,16 @@
         @method('PUT')
         @csrf
 
-        <h3>Editar Comanda ({{ $comanda->id }})</h3>
+        <h3>Comanda #{{ $comanda->id }}</h3>
         
         @include('dashboard.comandas._form')
         
-        <button type="submit" class="btn btn-light btn-tool float-right mt-4">Atualizar comanda</button>
+        @if ($comanda->aberta)
+            <input type="submit" name="fechar-comanda" class="btn btn-primary btn-tool mt-4" value="Fechar Comanda">
+            <button type="submit" class="btn btn-light btn-tool mt-4">Atualizar comanda</button>
+        @else
+            <input type="submit" name="abrir-comanda" class="btn btn-primary btn-tool mt-4" value="Reabrir comanda">
+        @endif
     </form>
 
 @endsection

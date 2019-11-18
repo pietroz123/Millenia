@@ -4,7 +4,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="cliente">Cliente</label>
-                    <select class="browser-default custom-select" id="cliente" name="cliente" required>
+                    <select class="browser-default custom-select" id="cliente" name="cliente" required {{ !$comanda->aberta ? 'disabled' : '' }}>
                         <option></option>
                         @foreach ($clientes as $cliente)
                             <option value="{{ $cliente->id }}" {{ $comanda->id_cliente == $cliente->id ? 'selected' : '' }}>{{ $cliente->nome }}</option>
@@ -23,7 +23,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="servicos">Serviços</label>
-                    <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple">
+                    <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple" {{ !$comanda->aberta ? 'disabled' : '' }}>
                         @foreach ($servicos as $servico)
                             <option value="{{ $servico->id }}" data-preco-servico="{{ $servico->preco }}">{{ $servico->nome }}</option>
                         @endforeach

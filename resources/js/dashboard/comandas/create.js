@@ -39,6 +39,16 @@ $(document).ready(function() {
         }
       
         evt.params.originalEvent.stopPropagation();
-      });
+    });
+
+    /**
+     * Reabilita os campos do form se for reabrir a comanda
+     */
+    $('input[name=abrir-comanda]').click(function(e) {
+        e.preventDefault();
+        $('select#servicos').removeAttr('disabled');
+        $('select#cliente').removeAttr('disabled');
+        $('form').submit();
+    });
 
 });

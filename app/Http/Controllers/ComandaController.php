@@ -107,15 +107,28 @@ class ComandaController extends Controller
          * Atualiza a comanda
          */
         $comanda = Comanda::find($id);
+        $comanda->aberta = !request()->has('fechar-comanda');
         $comanda->id_cliente = request('cliente');
         $comanda->save();
+
+        /**
+         * Mensagem correta do redirect
+         */
+        if (request()->has('fechar-comanda'))
+            $mensagem = 'fechada';
+        else if (request()->has('abrir-comanda'))
+            $mensagem = 'reaberta';
+        else
+            $mensagem = 'atualizada';
         
         /**
          * Atribui os servicos
          */
         $comanda->servicos()->sync(request('servicos'));
 
-        return redirect()->route('comandas.index')->with('success', 'Comanda atualizada com sucesso');
+        return redirect()->route('comandas.index')->with(
+            'success', 'Comanda ' . $mensagem . ' com sucesso'
+        );
     }
 
     /**

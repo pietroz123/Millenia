@@ -10,4 +10,7 @@ class Comanda extends Model
     public function servicos() {
         return $this->belongsToMany('App\Servico', 'comanda_servico', 'id_comanda', 'id_servico');
     }
+    public function cliente() {
+        return $this->belongsTo('App\Cliente', 'id_cliente', 'id');
+    }
 }
