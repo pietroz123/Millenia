@@ -18,26 +18,9 @@
         </div>
     </div>
 
-    <div class="comandas">
-        @foreach ($comandas as $comanda)
-            <a href="{{ route('comandas.edit', $comanda->id) }}" class="comanda">
-                <div class="header">
-                    {{ $comanda->cliente->nome }}
-                </div>
-                <div class="info-basica-comanda">
-                    {{-- <span class="font-weight-bold">Cliente</span> <span class="valor">{{ $comanda->cliente->nome }}</span> --}}
-                    <span class="font-weight-bold">Data</span> <span class="valor">{{ date('d/m/Y', $comanda->created_at->timestamp) }}</span>
-                </div>
-                <div class="servicos-comanda">
-                    <ul class="list-group">
-                        @foreach ($comanda->servicos as $servico)
-                            <li class="list-group-item">{{ $servico->nome }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </a>
-        @endforeach
-    </div>
+    <h5 class="mb-2">Comandas</h5>
+    @livewire('lista-comandas')
+
     
     <!-- Modal -->
     <div class="modal fade modal-view" id="modal-comanda" tabindex="-1" role="dialog" aria-labelledby="modal-comanda-label"
@@ -48,5 +31,6 @@
 @endsection
 
 @section('scripts')
+    @livewireAssets
     {{-- <script src="{{ asset('js/dashboard/comandas/create.js') }}"></script> --}}
 @endsection

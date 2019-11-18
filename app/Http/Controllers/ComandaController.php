@@ -16,8 +16,12 @@ class ComandaController extends Controller
      */
     public function index()
     {
+        $comandas_abertas = Comanda::all()->where('aberta', true);
+        $comandas_fechadas = Comanda::all()->where('aberta', false);
+
         return view('dashboard.comandas.index', [
-            'comandas' => Comanda::all(),
+            'comandas_abertas' => $comandas_abertas,
+            'comandas_fechadas' => $comandas_fechadas,
         ]);
     }
 
