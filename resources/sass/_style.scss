@@ -296,3 +296,29 @@ body {
     background-color: white;
     z-index: 10000;
 }
+#tabela-horarios-disponiveis {
+    text-align: center;
+    th {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .btn-opcao {
+        padding: 0;
+        border: 0;
+        &.selecionado {
+            .horario-disponivel {
+                background-color: #4285F4 !important;
+                color: white;
+            }
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
+    .horario-disponivel {
+        background-color: #e0e0e0 !important;
+        padding: 0.25rem 0.5rem !important;
+        border-radius: 0.25rem !important;
+    }
+}

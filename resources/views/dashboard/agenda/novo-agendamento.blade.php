@@ -32,6 +32,11 @@
         <div class="opcoes-agendamento d-flex"></div>
     </div>
 
+    <div id="selecionar-horario" style="display: none">
+        <label class="header-novo-agendamento">Selecione o horário</label>
+        <div class="horarios-disponiveis"></div>
+    </div>
+
 @endsection
 
 @section('scripts')

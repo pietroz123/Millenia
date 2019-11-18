@@ -2757,6 +2757,31 @@ body {
   z-index: 10000;
 }
 
+#tabela-horarios-disponiveis {
+  text-align: center;
+}
+#tabela-horarios-disponiveis th {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#tabela-horarios-disponiveis .btn-opcao {
+  padding: 0;
+  border: 0;
+}
+#tabela-horarios-disponiveis .btn-opcao.selecionado .horario-disponivel {
+  background-color: #4285F4 !important;
+  color: white;
+}
+#tabela-horarios-disponiveis .btn-opcao:focus {
+  outline: 0;
+}
+#tabela-horarios-disponiveis .horario-disponivel {
+  background-color: #e0e0e0 !important;
+  padding: 0.25rem 0.5rem !important;
+  border-radius: 0.25rem !important;
+}
+
 .btn {
   font-size: 1rem;
   text-transform: none;

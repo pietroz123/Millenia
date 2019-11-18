@@ -85,8 +85,10 @@ $(document).ready(function() {
                 id: id
             },
             success: function(retorno) {
-                console.log('Success');
-                console.log(retorno);
+                $('.horarios-disponiveis').html(retorno);
+                $('#selecionar-horario').show();
+                // console.log('Success');
+                // console.log(retorno);
             },
             error: function(retorno) {
                 console.log('Error');
