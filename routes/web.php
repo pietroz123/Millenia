@@ -98,19 +98,19 @@ Route::get('/teste', function() {
     /**
      * Cria um vetor de horas (https://surniaulula.com/2016/lang/php/php-create-an-array-of-hours/)
      */
-    function get_hours_range( $start = 0, $end = 86400, $step = 3600, $format = 'g:i a' ) {
+    function get_hours_range( $start = 0, $end = 86400, $step = 3600, $format = 'g:i a', $boolean = true ) {
         $times = array();
         for ( $i = 0; $i <= 6; $i++ ) { 
             foreach ( range( $start, $end, $step ) as $timestamp ) {
                 $hour_mins = gmdate( 'H:i', $timestamp );
-                $times[$i][$hour_mins] = true;
+                $times[$i][$hour_mins] = $boolean;
             }
         }
         return $times;
     }
 
     // Lista de horários das 10:00 às 18:00
-    $horariosSemana = get_hours_range(36000, 64800, 900);
+    $horariosSemana = get_hours_range(36000, 64800, 900, 'g:i a', true);
     $limite = DateTime::createFromFormat('H:i', '18:00');
     // dd($horariosSemana);
 
@@ -139,7 +139,7 @@ Route::get('/teste', function() {
     // dd($horariosSemana);
 
     $tempo_execucao = 90;
-    $horariosDisponiveis = array();
+    $horariosDisponiveis = get_hours_range(36000, 64800, 900, 'g:i a', false);
 
     /**
      * Segundo loop para verificar disponibilidade
@@ -164,7 +164,32 @@ Route::get('/teste', function() {
         }
     }
 
-    dd($horariosDisponiveis);
+    // dd($horariosDisponiveis);
+
+    //!!! NÃO FUNCIONA A PARTIR DAQUI
+    
+    for ( $i = 0; $i <= 32; $i++ ) {
+
+        $start = DateTime::createFromFormat('H:i', '10:00');
+        
+        for ( $j = 0; $j <= 6; $j++ ) { 
+    
+            $str = $start->format('H:i');
+            if ($horariosDisponiveis[$j][$str])
+                echo "sim<br>";
+            else
+                echo "nao<br>";
+    
+        }
+
+        $start->modify("+15 minutes");
+
+    } 
+
     // dd($horariosSemana);
+
+    return view('teste', [
+        'horariosDisponiveis' => $horariosDisponiveis,
+    ]);
 
 });
