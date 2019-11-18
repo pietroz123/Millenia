@@ -17,7 +17,7 @@
         
         @include('dashboard.cadastros.profissionais._form')
         
-        <button type="submit" class="btn btn-light btn-tool float-right mt-4">Atualizar</button>
+        <button type="submit" class="btn btn-primary btn-tool float-right mt-4">Atualizar</button>
     </form>
 
 

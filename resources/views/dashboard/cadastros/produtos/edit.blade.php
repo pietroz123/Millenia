@@ -17,7 +17,7 @@
         
         @include('dashboard.cadastros.produtos._form')
         
-        <button type="submit" class="btn btn-light btn-tool float-right mt-4">Editar</button>
+        <button type="submit" class="btn btn-primary btn-tool float-right mt-4">Editar</button>
     </form>
 
 @endsection

@@ -15,7 +15,7 @@
         
         @include('dashboard.comandas._form')
         
-        <button type="submit" class="btn btn-light btn-tool float-right mt-4">Abrir comanda</button>
+        <button type="submit" class="btn btn-primary btn-tool float-right mt-4">Abrir comanda</button>
     </form>
 
 @endsection

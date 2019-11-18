@@ -28,12 +28,6 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!" class="{{ setActive('') }}">
-                <i class="fas fa-address-card"></i>
-                Cadastros
-            </a>
-        </li>
-        <li class="dashboard-sidebar-item">
             <a href="{{ route('clientes.index') }}" class="{{ setActive('clientes.index') }}">
                 <i class="fas fa-user"></i>
                 Clientes
