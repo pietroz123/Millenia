@@ -93,6 +93,7 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
 
 use App\Agendamento;
 use App\Profissional;
+use Carbon\Carbon;
 
 Route::get('/teste', function() {
 
@@ -119,7 +120,10 @@ Route::get('/teste', function() {
 
     // Lista de agendamentos
     $agendamentos = Agendamento::where('id_profissional', 4)->get();
-    // dd($agendamentos);
+    $agendamentos = $agendamentos->groupBy(function($data) {
+        return Carbon::parse($data->inicio)->format('W');
+    });
+    $agendamentos = $agendamentos->last();
 
     /**
      * Primeiro loop para marcar horários ocupados
