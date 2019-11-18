@@ -96,6 +96,11 @@ $(document).ready(function() {
             }
         });
     });
+
+    $(document).on('click', '.btn-opcao-horario', function() {
+        $('#tabela-horarios-disponiveis').find('.btn-opcao-horario').removeClass('selecionado');
+        $(this).addClass('selecionado');
+    });
     
     
 });

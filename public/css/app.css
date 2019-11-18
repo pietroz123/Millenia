@@ -2765,15 +2765,15 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
-#tabela-horarios-disponiveis .btn-opcao {
+#tabela-horarios-disponiveis .btn-opcao-horario {
   padding: 0;
   border: 0;
 }
-#tabela-horarios-disponiveis .btn-opcao.selecionado .horario-disponivel {
+#tabela-horarios-disponiveis .btn-opcao-horario.selecionado .horario-disponivel {
   background-color: #4285F4 !important;
   color: white;
 }
-#tabela-horarios-disponiveis .btn-opcao:focus {
+#tabela-horarios-disponiveis .btn-opcao-horario:focus {
   outline: 0;
 }
 #tabela-horarios-disponiveis .horario-disponivel {

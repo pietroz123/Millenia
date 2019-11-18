@@ -23,7 +23,7 @@
     
                     <td>
                         @if ($horariosDisponiveis[$j][$start->format('H:i')])
-                            <button type="button" class="btn-opcao">
+                            <button type="button" class="btn-opcao-horario">
                                 <span class="horario-disponivel">
                                     {{ $start->format('H:i') }}
                                 </span>
