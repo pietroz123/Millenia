@@ -322,3 +322,9 @@ body {
         border-radius: 0.25rem !important;
     }
 }
+.clientes-disponiveis {
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+}

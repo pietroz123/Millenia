@@ -20,13 +20,22 @@
                         <div class="col-8">
                             <h5 class="header">Informações Básicas</h5>
                             <div class="row info">
-                                <div class="col-8 font-weight-bold">Valor sem Desconto</div>
-                                <div class="col">{{ $pacote->valor_sem_desconto }}</div>
+                                <div class="col-8 font-weight-bold">Valor</div>
+                                <div class="col">{{ $pacote->valor_com_desconto }}</div>
                             </div>
-                            <div class="row info">
-                                <div class="col-8 font-weight-bold">Desconto</div>
-                                <div class="col">{{ $pacote->desconto }}</div>
+                            <div class="row info mt-3">
+                                <div class="col-8 font-weight-bold">Serviços</div>
+                                <div class="col">
+                                    @foreach ($pacote->servicos as $servico)
+                                        <span class="badge badge-light">{{ $servico->nome }}</span>
+                                    @endforeach 
+                                </div>
                             </div>
+                            <div class="row info mt-3">
+                                <div class="col-8 font-weight-bold">Descrição</div>
+                                <div class="col">{{ $pacote->descrição }}</div>
+                            </div>
+
                         </div>       
                     
                     </div>

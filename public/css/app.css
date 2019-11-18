@@ -2782,6 +2782,11 @@ body {
   border-radius: 0.25rem !important;
 }
 
+.clientes-disponiveis .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .btn {
   font-size: 1rem;
   text-transform: none;

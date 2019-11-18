@@ -37,6 +37,11 @@
         <div class="horarios-disponiveis"></div>
     </div>
 
+    <div id="selecionar-cliente" style="display: none">
+        <label class="header-novo-agendamento">Selecione o cliente</label>
+        <div class="clientes-disponiveis"></div>
+    </div>
+
 @endsection
 
 @section('scripts')

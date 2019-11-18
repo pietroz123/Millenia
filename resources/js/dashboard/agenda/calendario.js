@@ -266,7 +266,7 @@ $(document).ready(function() {
                 else {
                     $(
                         '<div class="alert alert-info" role="alert">' +
-                            'Não encontramos nenhum cliente com esse serviço.' +
+                            'Não encontramos nenhum cliente.' +
                         '</div>'
                     ).insertAfter('#selecionar-profissional');
                 }
