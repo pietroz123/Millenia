@@ -92,6 +92,7 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
 });
 
 use App\Agendamento;
+use App\Profissional;
 
 Route::get('/teste', function() {
 
@@ -113,6 +114,8 @@ Route::get('/teste', function() {
     $horariosSemana = get_hours_range(36000, 64800, 900, 'g:i a', true);
     $limite = DateTime::createFromFormat('H:i', '18:00');
     // dd($horariosSemana);
+
+    echo "Profissional: " . Profissional::find(4)->nome . "<br><br><br>";
 
     // Lista de agendamentos
     $agendamentos = Agendamento::where('id_profissional', 4)->get();
@@ -168,9 +171,9 @@ Route::get('/teste', function() {
 
     //!!! NÃO FUNCIONA A PARTIR DAQUI
     
-    for ( $i = 0; $i <= 32; $i++ ) {
+    $start = DateTime::createFromFormat('H:i', '10:00');
 
-        $start = DateTime::createFromFormat('H:i', '10:00');
+    for ( $i = 0; $i <= 32; $i++ ) {
         
         for ( $j = 0; $j <= 6; $j++ ) { 
     
@@ -183,6 +186,7 @@ Route::get('/teste', function() {
         }
 
         $start->modify("+15 minutes");
+        echo $start->format("H:i");
 
     } 
 

@@ -11,11 +11,11 @@
         </tr>
     </thead>
     <tbody>
-        @for ($i = 0; $i <= 32; $i++)
+        @php
+            $start = DateTime::createFromFormat('H:i', '10:00');
+        @endphp
 
-            @php
-                $start = DateTime::createFromFormat('H:i', '10:00');
-            @endphp
+        @for ($i = 0; $i <= 32; $i++)
 
             <tr>
 
@@ -23,9 +23,7 @@
     
                     <td>
                         @if ($horariosDisponiveis[$j][$start->format('H:i')])
-                            Sim
-                        @else
-                            Não
+                            {{ $start->format('H:i') }}
                         @endif
                     </td>
                     
