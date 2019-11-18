@@ -8,7 +8,7 @@
 <hr>
 
 <div class="user-info">
-    <img src="https://image.flaticon.com/icons/svg/145/145867.svg" class="rounded-circle user-image" alt="">
+    <img src="https://image.flaticon.com/icons/svg/74/74472.svg" class="rounded-circle user-image" alt="">
     <div class="d-flex flex-column justify-content-center ml-3">
         <span class="user-name">{{ Auth::user()->name }}</span>
         <span class="user-job">Cabeleireiro</span>
