@@ -2660,6 +2660,7 @@ body {
   border-radius: 4px;
   transition: all 250ms ease-in;
   font-size: 10px;
+  background-color: white;
 }
 .comanda .header {
   width: 100%;
@@ -2684,7 +2685,10 @@ body {
 }
 .comanda:hover {
   transition: all 250ms ease-in;
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+.comanda:not(:first-of-type) {
+  margin-left: 15px;
 }
 
 .opcoes-agenda {

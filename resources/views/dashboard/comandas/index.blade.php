@@ -25,7 +25,7 @@
                     {{ $comanda->cliente->nome }}
                 </div>
                 <div class="info-basica-comanda">
-                    <span class="font-weight-bold">Cliente</span> <span class="valor">{{ $comanda->cliente->nome }}</span>
+                    {{-- <span class="font-weight-bold">Cliente</span> <span class="valor">{{ $comanda->cliente->nome }}</span> --}}
                     <span class="font-weight-bold">Data</span> <span class="valor">{{ date('d/m/Y', $comanda->created_at->timestamp) }}</span>
                 </div>
                 <div class="servicos-comanda">
