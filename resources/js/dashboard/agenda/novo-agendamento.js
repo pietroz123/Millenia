@@ -42,7 +42,7 @@ $(document).ready(function() {
                     const id = profissional.id;
                     const nome = profissional.nome;
                     buttons.push(
-                        '<button type="button" class="btn btn-light btn-opcao" data-id-profissional="'+ id +'">' +
+                        '<button type="button" class="btn btn-light btn-opcao js-btn-profissional" data-id-profissional="'+ id +'">' +
                             '<span>'+ nome +'</span>' +
                         '</button>'
                     );
@@ -66,5 +66,34 @@ $(document).ready(function() {
             }
         });
     });
+
+    /**
+     * Recuperar horários disponíveis de um profissional
+     */
+    $(document).on('click', '.js-btn-profissional', function() {
+
+        const id = $(this).attr('data-id-profissional');
+        console.log(id);
+        
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: '/ajax/horariosDisponiveisDeUmProfissional',
+            method: 'POST',
+            data: {
+                id: id
+            },
+            success: function(retorno) {
+                console.log('Success');
+                console.log(retorno);
+            },
+            error: function(retorno) {
+                console.log('Error');
+                console.log(retorno);
+            }
+        });
+    });
+    
     
 });

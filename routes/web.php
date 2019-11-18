@@ -87,5 +87,84 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
     Route::post('/profissionaisDeUmServico', 'AjaxController@profissionaisDeUmServico');
     Route::post('/recuperarClientes', 'AjaxController@recuperarClientes');
     Route::post('/modalAgendamento', 'AjaxController@modalAgendamento');
+    Route::post('/horariosDisponiveisDeUmProfissional', 'AjaxController@horariosDisponiveisDeUmProfissional');
+
+});
+
+use App\Agendamento;
+
+Route::get('/teste', function() {
+
+    /**
+     * Cria um vetor de horas (https://surniaulula.com/2016/lang/php/php-create-an-array-of-hours/)
+     */
+    function get_hours_range( $start = 0, $end = 86400, $step = 3600, $format = 'g:i a' ) {
+        $times = array();
+        for ( $i = 0; $i <= 6; $i++ ) { 
+            foreach ( range( $start, $end, $step ) as $timestamp ) {
+                $hour_mins = gmdate( 'H:i', $timestamp );
+                $times[$i][$hour_mins] = true;
+            }
+        }
+        return $times;
+    }
+
+    // Lista de horários das 10:00 às 18:00
+    $horariosSemana = get_hours_range(36000, 64800, 900);
+    $limite = DateTime::createFromFormat('H:i', '18:00');
+    // dd($horariosSemana);
+
+    // Lista de agendamentos
+    $agendamentos = Agendamento::where('id_profissional', 4)->get();
+    // dd($agendamentos);
+
+    /**
+     * Primeiro loop para marcar horários ocupados
+     */
+    foreach ($agendamentos as $ag) {
+        
+        $inicio = new DateTime($ag->inicio);    // DateTime de início do agendamento
+        $fim = new DateTime($ag->fim);          // DateTime de fim do agendamento
+        $dia = $inicio->format('N') - 1;        // Representação numérica do dia da semana (0: Segunda, 1: Terça,..., 5: Sábado, 6: Domingo)
+
+        $atual = clone $inicio;
+        while ($atual <= $fim) {
+            $horario = $atual->format("H:i");
+            $horariosSemana[$dia][$horario] = false;      // Marca o horário como ocupado
+            $atual->modify("+15 minutes");          // Avança 15 minutos
+        }
+
+    }
+
+    // dd($horariosSemana);
+
+    $tempo_execucao = 90;
+    $horariosDisponiveis = array();
+
+    /**
+     * Segundo loop para verificar disponibilidade
+     */
+    foreach ($horariosSemana as $dia => $horarios) {
+        foreach ($horarios as $horario => $disponivel) {
+            
+            $atual = DateTime::createFromFormat('H:i', $horario);
+            $hAtual = $atual->format('H:i');
+            $fim = clone $atual;
+            $fim->modify("+" . $tempo_execucao . " minutes");
+            $hFim = $fim->format('H:i');
+
+            /**
+             * Verifica se o horário atual está disponível e o horário depois do tempo
+             * de execução do serviço está disponível. Se sim, este é um horário disponível
+             */
+            if ($horariosSemana[$dia][$hAtual] == true AND $fim <= $limite AND $horariosSemana[$dia][$hFim] == true) {
+                echo 'Dia '. $dia .': Horário ' . $hAtual . ' disponível', "<br>";
+                $horariosDisponiveis[$dia][$hAtual] = true;
+            }
+        }
+    }
+
+    dd($horariosDisponiveis);
+    // dd($horariosSemana);
 
 });

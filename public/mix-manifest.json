@@ -10,7 +10,9 @@
     "/js/dashboard/cadastros/servico/index.js": "/js/dashboard/cadastros/servico/index.js",
     "/js/dashboard/cadastros/produto/index.js": "/js/dashboard/cadastros/produto/index.js",
     "/js/dashboard/cadastros/produto/create.js": "/js/dashboard/cadastros/produto/create.js",
+    "/js/dashboard/cadastros/pacote/index.js": "/js/dashboard/cadastros/pacote/index.js",
     "/js/dashboard/cadastros/pacote/create.js": "/js/dashboard/cadastros/pacote/create.js",
+    "/js/dashboard/comandas/create.js": "/js/dashboard/comandas/create.js",
     "/js/dashboard/agenda/calendario.js": "/js/dashboard/agenda/calendario.js",
     "/js/dashboard/agenda/novo-agendamento.js": "/js/dashboard/agenda/novo-agendamento.js"
 }

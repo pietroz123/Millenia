@@ -8,6 +8,7 @@ use App\Cliente;
 use App\Servico;
 use App\Profissional;
 use App\Pacote;
+use App\Agendamento;
 
 class AjaxController extends Controller
 {
@@ -79,6 +80,15 @@ class AjaxController extends Controller
         $idProfissional = request('id');
         $servicos = Profissional::find($idProfissional)->servicos;
         return $servicos;
+    }
+
+    /**
+     * Recupera os horários disponíveis de um profissional
+     */
+    public function horariosDisponiveisDeUmProfissional()
+    {
+        $idProfissional = request('id');
+        dd(Agendamento::where('id_profissional', $idProfissional)->get());
     }
 
 
