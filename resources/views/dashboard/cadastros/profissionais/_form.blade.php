@@ -49,14 +49,6 @@
         <h5 class="mt-4">Informações Adicionais</h5>
 
         <div class="form-group">
-            <label class="mt-3" for="area-atuacao">Área de Atuação</label>
-            <select class="browser-default custom-select" id="area-atuacao" name="area-atuacao">
-                <option selected>Seleciona a área</option>
-                <option value="1">Cabeleireiro</option>
-            </select>
-        </div>
-
-        <div class="form-group">
             <label for="servicos">Serviços</label>
             <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple">
                 @foreach ($servicos as $servico)

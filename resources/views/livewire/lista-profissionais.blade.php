@@ -16,7 +16,6 @@
                     <tr>
                         <th>Nome</th>
                         <th>Telefone Celular</th>
-                        <th>Área de Atuação</th>
                         <th>Horário</th>
                         <th>Cor na Agenda</th>
                         <th>Ações</th>
@@ -27,7 +26,6 @@
                         <tr>
                             <td>{{ $profissional['nome'] }}</td>
                             <td>{{ $profissional['telefone_celular'] }}</td>
-                            <td></td>
                             <td>{{ date('H:i', strtotime($profissional['horario_entrada'])) }} - {{ date('H:i', strtotime($profissional['horario_saida'])) }}</td>
                             <td>
                                 <span class="cor-agenda-profissional" style="background-color: {{ $profissional['cor_agenda'] }};"></span>

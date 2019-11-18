@@ -51,6 +51,10 @@ $(document).ready(function() {
                 $('#selecionar-profissional').show();
                 if (buttons.length > 0) {
                     $('#selecionar-profissional .opcoes-agendamento').html(buttons);
+
+                    $('html, body').animate({
+                        scrollTop: $('#selecionar-profissional').offset().top - 50,
+                    });
                 }
                 else {
                     $('#selecionar-profissional .opcoes-agendamento').html(
@@ -87,6 +91,10 @@ $(document).ready(function() {
             success: function(retorno) {
                 $('.horarios-disponiveis').html(retorno);
                 $('#selecionar-horario').show();
+
+                $('html, body').animate({
+                    scrollTop: $('#selecionar-horario').offset().top - 50,
+                });
                 // console.log('Success');
                 // console.log(retorno);
             },
@@ -141,6 +149,10 @@ $(document).ready(function() {
                             placeholder: 'Selecione o cliente',
                         });
                         $('#selecionar-cliente').show();
+
+                        $('html, body').animate({
+                            scrollTop: $('#selecionar-cliente').offset().top - 50,
+                        });
                     }
                     else {
                         $('.clientes-disponiveis').html(
