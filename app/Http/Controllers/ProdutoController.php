@@ -15,6 +15,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
+        // dd(Produto::all());
         return view('dashboard.cadastros.produtos.index', [
             'produtos' => Produto::all(),
         ]);
