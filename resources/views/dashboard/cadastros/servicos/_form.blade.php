@@ -29,8 +29,6 @@
                     <label for="tempo-execucao">Tempo de Execução (em minutos)</label>
                     <select class="browser-default custom-select" id="tempo-execucao" name="tempo-execucao">
                         <option></option>
-                        <option value="5" {{ $servico->tempo_execucao_em_minutos == 5 ? 'selected' : '' }}>5 minutos</option>
-                        <option value="10" {{ $servico->tempo_execucao_em_minutos == 10 ? 'selected' : '' }}>10 minutos</option>
                         <option value="15" {{ $servico->tempo_execucao_em_minutos == 15 ? 'selected' : '' }}>15 minutos</option>
                         <option value="30" {{ $servico->tempo_execucao_em_minutos == 30 ? 'selected' : '' }}>30 minutos</option>
                         <option value="45" {{ $servico->tempo_execucao_em_minutos == 45 ? 'selected' : '' }}>45 minutos</option>
