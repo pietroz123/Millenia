@@ -116,22 +116,27 @@ class ComandaController extends Controller
         $comanda->save();
 
         /**
-         * Mensagem correta do redirect
-         */
-        if (request()->has('fechar-comanda'))
-            $mensagem = 'fechada';
-        else if (request()->has('abrir-comanda'))
-            $mensagem = 'reaberta';
-        else
-            $mensagem = 'atualizada';
-        
-        /**
          * Atribui os servicos
          */
         $comanda->servicos()->sync(request('servicos'));
 
-        return redirect()->route('comandas.index')->with(
-            'success', 'Comanda ' . $mensagem . ' com sucesso'
+        /**
+         * Mensagem correta do redirect
+         */
+        if (request()->has('fechar-comanda')) {
+            return redirect()->route('comandas.edit', $comanda->id)->with(
+                'success', 'Comanda fechada com sucesso'
+            );
+        }
+
+        else if (request()->has('abrir-comanda')) {
+            return redirect()->route('comandas.edit', $comanda->id)->with(
+                'success', 'Comanda reaberta com sucesso'
+            );
+        }        
+
+        return redirect()->route('comandas.edit', $comanda->id)->with(
+            'success', 'Comanda atualizada com sucesso'
         );
     }
 

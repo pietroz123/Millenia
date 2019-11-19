@@ -44,7 +44,7 @@ $(document).ready(function() {
     /**
      * Reabilita os campos do form se for reabrir a comanda
      */
-    $('input[name=abrir-comanda]').click(function(e) {
+    $('button[name=abrir-comanda]').click(function(e) {
         e.preventDefault();
         $('select#servicos').removeAttr('disabled');
         $('select#cliente').removeAttr('disabled');

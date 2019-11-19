@@ -20,7 +20,8 @@
             <input type="submit" name="fechar-comanda" class="btn btn-danger mr-1 btn-tool mt-4" value="Fechar Comanda">
             <button type="submit" class="btn btn-primary btn-tool mt-4">Atualizar comanda</button>
         @else
-            <input type="submit" name="abrir-comanda" class="btn btn-primary btn-tool mt-4" value="Reabrir comanda">
+            <input type="hidden" name="abrir-comanda" value="true">
+            <button name="abrir-comanda" type="submit" class="btn btn-primary btn-tool mt-4">Reabrir comanda</button>
         @endif
     </form>
 
