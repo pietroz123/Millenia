@@ -27,7 +27,17 @@
             <div class="col">
                 <div class="form-group">
                     <label for="tempo-execucao">Tempo de Execução (em minutos)</label>
-                    <input type="number" class="form-control" id="tempo-execucao" name="tempo-execucao" placeholder="Tempo para execução do serviço" autocomplete="new" value="{{ $servico->tempo_execucao_em_minutos }}" required>
+                    <select class="browser-default custom-select" id="tempo-execucao" name="tempo-execucao">
+                        <option></option>
+                        <option value="5" {{ $servico->tempo_execucao_em_minutos == 5 ? 'selected' : '' }}>5 minutos</option>
+                        <option value="10" {{ $servico->tempo_execucao_em_minutos == 10 ? 'selected' : '' }}>10 minutos</option>
+                        <option value="15" {{ $servico->tempo_execucao_em_minutos == 15 ? 'selected' : '' }}>15 minutos</option>
+                        <option value="30" {{ $servico->tempo_execucao_em_minutos == 30 ? 'selected' : '' }}>30 minutos</option>
+                        <option value="45" {{ $servico->tempo_execucao_em_minutos == 45 ? 'selected' : '' }}>45 minutos</option>
+                        <option value="60" {{ $servico->tempo_execucao_em_minutos == 60 ? 'selected' : '' }}>60 minutos</option>
+                        <option value="75" {{ $servico->tempo_execucao_em_minutos == 75 ? 'selected' : '' }}>75 minutos</option>
+                        <option value="90" {{ $servico->tempo_execucao_em_minutos == 90 ? 'selected' : '' }}>90 minutos</option>
+                    </select>
                 </div>
             </div>
 
