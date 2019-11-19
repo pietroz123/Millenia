@@ -94,12 +94,14 @@ Route::namespace('Ajax')->prefix('ajax')->group(function() {
 
 use App\Agendamento;
 use App\Profissional;
+use App\Servico;
 use Carbon\Carbon;
 
 Route::get('/teste', function() {
 
-    dd(DateTime::createFromFormat('d/m/Y H:i', '20/11/2019 10:30' )->format('Y-m-d H:i') );
-
+    $idProfissional = 4;
+    $idServico = 7;
+        
     /**
      * Cria um vetor de horas (https://surniaulula.com/2016/lang/php/php-create-an-array-of-hours/)
      */
@@ -115,29 +117,20 @@ Route::get('/teste', function() {
     }
 
     /**
-     * Recupera o inicio e fim da semana
+     * Recupera o inicio dessa semana
      */
     function primeiroDiaSemana($week, $year) {
         $dto = new DateTime();
         $dto->setISODate($year, $week);
         return $dto;
-        return $dto->format('Y-m-d');
-        // $dto->modify('+6 days');
-        // $ret['week_end'] = $dto->format('Y-m-d');
-        // return $ret;
     }
 
     // Lista de horários das 10:00 às 18:00
     $horariosSemana = get_hours_range(36000, 64800, 900, 'g:i a', true);
-
-    // dd($horariosSemana);
     $limite = DateTime::createFromFormat('H:i', '18:00');
-    // dd($horariosSemana);
-
-    echo "Profissional: " . Profissional::find(4)->nome . "<br><br><br>";
 
     // Lista de agendamentos
-    $agendamentos = Agendamento::where('id_profissional', 4)->get();
+    $agendamentos = Agendamento::where('id_profissional', $idProfissional)->get();
 
     // Retorna apenas os agendamentos da semana atual
     $agendamentos = $agendamentos->filter(function($ag) {
@@ -165,9 +158,7 @@ Route::get('/teste', function() {
 
     }
 
-    // dd($horariosSemana);
-
-    $tempo_execucao = 90;
+    $tempo_execucao = Servico::find($idServico)->tempo_execucao_em_minutos;
     $horariosDisponiveis = get_hours_range(36000, 64800, 900, 'g:i a', false);
 
     /**
@@ -187,17 +178,17 @@ Route::get('/teste', function() {
              * de execução do serviço está disponível. Se sim, este é um horário disponível
              */
             if ($horariosSemana[$dia][$hAtual] == true AND $fim <= $limite AND $horariosSemana[$dia][$hFim] == true) {
-                echo 'Dia '. $dia .': Horário ' . $hAtual . ' disponível', "<br>";
                 $horariosDisponiveis[$dia][$hAtual] = true;
             }
         }
     }
 
+    // Dias da semana
     $segunda = primeiroDiaSemana(date('W'), date('Y'));
-    dd($segunda);
 
-    return view('teste', [
+    return view('dashboard.agenda.tabela-horarios-disponiveis', [
         'horariosDisponiveis' => $horariosDisponiveis,
+        'segunda' => $segunda,
     ]);
 
 });
