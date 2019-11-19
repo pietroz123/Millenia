@@ -5,20 +5,20 @@
 
         <div class="form-group mt-3">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do serviço" autocomplete="new" value="{{ $servico->nome }}">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do serviço" autocomplete="new" value="{{ $servico->nome }}" required>
         </div>
 
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" step="0.01" min="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do serviço" autocomplete="new" value="{{ $servico->preco }}">
+                    <input type="number" step="0.01" min="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do serviço" autocomplete="new" value="{{ $servico->preco }}" required>
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="comissao">Comissão (%)</label>
-                    <input type="number" step="0.1" class="form-control" id="comissao" name="comissao" placeholder="Comissão sobre o serviço" autocomplete="new" value="{{ $servico->comissao }}">
+                    <input type="number" step="0.1" class="form-control" id="comissao" name="comissao" placeholder="Comissão sobre o serviço" autocomplete="new" value="{{ $servico->comissao }}" required>
                 </div>
             </div>
         </div>
@@ -27,21 +27,21 @@
             <div class="col">
                 <div class="form-group">
                     <label for="tempo-execucao">Tempo de Execução (em minutos)</label>
-                    <input type="number" class="form-control" id="tempo-execucao" name="tempo-execucao" placeholder="Tempo para execução do serviço" autocomplete="new" value="{{ $servico->tempo_execucao_em_minutos }}">
+                    <input type="number" class="form-control" id="tempo-execucao" name="tempo-execucao" placeholder="Tempo para execução do serviço" autocomplete="new" value="{{ $servico->tempo_execucao_em_minutos }}" required>
                 </div>
             </div>
 
             <div class="col">
                 <div class="form-group">
                     <label for="pontos">Pontos</label>
-                    <input type="number" class="form-control" id="pontos" name="pontos" placeholder="Pontos do serviço" autocomplete="new" value="{{ $servico->pontos }}">
+                    <input type="number" class="form-control" id="pontos" name="pontos" placeholder="Pontos do serviço" autocomplete="new" value="{{ $servico->pontos }}" required>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
             <label for="duracao">Duração (em dias)</label>
-            <input type="number" class="form-control" id="duracao" name="duracao" placeholder="Duração média do serviço em dias" autocomplete="new" value="{{ $servico->duracao_em_dias }}">
+            <input type="number" class="form-control" id="duracao" name="duracao" placeholder="Duração média do serviço em dias" autocomplete="new" value="{{ $servico->duracao_em_dias }}" required>
         </div>
 
         <div class="custom-control custom-checkbox">

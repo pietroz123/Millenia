@@ -4,12 +4,12 @@
 
         <div class="form-group mt-3">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do produto" autocomplete="new" value="{{ $produto->nome }}">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do produto" autocomplete="new" required value="{{ $produto->nome }}">
         </div>
 
         <div class="form-group">
             <label for="marca">Marca</label>
-            <select class="browser-default custom-select" id="marca" name="marca">
+            <select class="browser-default custom-select" id="marca" name="marca" required>
                 <option></option>
                 @foreach ($marcas as $marca)
                     <option value="{{ $marca->id }}" {{ $produto->id_marca == $marca->id ? 'selected' : '' }}>{{ $marca->nome }}</option>
@@ -21,13 +21,13 @@
             <div class="col">
                 <div class="form-group">
                     <label for="preco">Preço</label>
-                    <input type="number" step="0.01" min="0.01" class="form-control" id="preco" name="preco" placeholder="Preço do produto" autocomplete="new" value="{{ $produto->preco }}">
+                    <input type="number" step="0.01" min="1" class="form-control" id="preco" name="preco" placeholder="Preço do produto" autocomplete="new" required value="{{ $produto->preco }}">
                 </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="pontos">Pontos</label>
-                    <input type="number" class="form-control" id="pontos" name="pontos" placeholder="Pontos" autocomplete="new" value="{{ $produto->pontos }}">
+                    <input type="number" class="form-control" id="pontos" name="pontos" placeholder="Pontos" autocomplete="new" required value="{{ $produto->pontos }}">
                 </div>
             </div>
         </div>

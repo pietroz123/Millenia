@@ -9,7 +9,7 @@
 
         <div class="form-group">
             <label for="servicos">Serviços</label>
-            <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple">
+            <select class="browser-default custom-select" id="servicos" name="servicos[]" multiple="multiple" required>
                 @foreach ($servicos as $servico)
                     <option value="{{ $servico->id }}" data-preco-servico="{{ $servico->preco }}">{{ $servico->nome }}</option>
                 @endforeach

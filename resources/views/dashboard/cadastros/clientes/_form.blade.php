@@ -49,11 +49,11 @@
             @endforeach
         </select>
         
-        <label class="mt-3" for="indicacao">Indicação</label>
+        {{-- <label class="mt-3" for="indicacao">Indicação</label>
         <select class="browser-default custom-select" id="indicacao" name="indicacao">
             <option selected>Indicação</option>
             <option value="1">Amigo</option>
-        </select>
+        </select> --}}
     
     </div>
 
@@ -69,7 +69,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
-                    <select class="browser-default custom-select" id="cidade" name="cidade">
+                    <select class="browser-default custom-select" id="cidade" name="cidade" required>
                         <option></option>
                         @foreach ($cidades as $cidade)
                             <option value="{{ $cidade->id }}" {{ $cliente->cidade ? ($cliente->cidade->nome == $cidade->nome ? 'selected' : '') : '' }}>{{ $cidade->nome }}</option>
