@@ -69,14 +69,14 @@
     <div class="col">
         <h5>Informações Extras</h5>
 
-        <div class="form-group mt-3">
+        {{-- <div class="form-group mt-3">
             <label for="produtos">Produtos</label>
             <select class="browser-default custom-select" id="produtos" name="produtos">
                 <option>Produtos recomendados</option>
             </select>
-        </div>
+        </div> --}}
 
-        <div class="form-group">
+        <div class="form-group mt-3">
             <label for="observacoes">Observações</label>
             <textarea class="form-control rounded-1" id="observacoes" rows="3" placeholder="Observações sobre o serviço">{{ $servico->observacoes }}</textarea>
         </div>

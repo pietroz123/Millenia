@@ -17,7 +17,7 @@
                     <i class="fas fa-search"></i>
                 </span>
             </div>
-            <input type="text" name="buscar-cliente" id="buscar-cliente" class="form-control" placeholder="Buscar cliente..." autocomplete="new" wire:model="query">
+            <input type="text" name="buscar-cliente" id="buscar-cliente" class="form-control" placeholder="Buscar comanda do cliente" autocomplete="new" wire:model="query">
         </div>
     </div>
 
