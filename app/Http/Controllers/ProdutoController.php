@@ -43,7 +43,18 @@ class ProdutoController extends Controller
     {
         $produto = new Produto;
         $produto->nome = request('nome');
-        $produto->id_marca = request('marca');
+
+        // Atribui a marca
+        $id_marca = request('marca');
+        if (!is_numeric($id_marca)) {
+            // Cria nova marca
+            $marca = new Marca;
+            $marca->nome = $id_marca;
+            $marca->save();
+            $id_marca = $marca->id;
+        }
+        $produto->id_marca = $id_marca;
+
         $produto->preco = request('preco');
         $produto->pontos = request('pontos');
         $produto->save();
