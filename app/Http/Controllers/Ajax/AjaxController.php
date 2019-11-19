@@ -11,9 +11,12 @@ use App\Pacote;
 use App\Agendamento;
 use DateTime;
 use Carbon\Carbon;
+use App\Traits\WhatsappTrait;
 
 class AjaxController extends Controller
 {
+    use WhatsappTrait;
+
     // =======================================================
     // MODALS
     // =======================================================
@@ -209,6 +212,11 @@ class AjaxController extends Controller
         $agendamento->inicio = DateTime::createFromFormat('d/m/Y H:i', $data . ' ' . $horario )->format('Y-m-d H:i');
         $agendamento->fim = date( 'Y-m-d H:i', strtotime("+" . $servico->tempo_execucao_em_minutos . " minutes", strtotime( $agendamento->inicio )) );
         $agendamento->save();
+
+        /**
+         * Envia uma notificação por whatsapp
+         */
+        $this->enviarWhatsappAgendamento($agendamento);
     }
 
 

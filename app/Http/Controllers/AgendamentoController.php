@@ -7,9 +7,12 @@ use App\Servico;
 use App\Profissional;
 use App\Cliente;
 use App\Agendamento;
+use App\Traits\WhatsappTrait;
 
 class AgendamentoController extends Controller
 {
+    use WhatsappTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -75,6 +78,11 @@ class AgendamentoController extends Controller
         $agendamento->inicio = date( 'Y-m-d H:i', strtotime( $data . ' ' . $horario ) );
         $agendamento->fim = date( 'Y-m-d H:i', strtotime("+" . $servico->tempo_execucao_em_minutos . " minutes", strtotime( $data . ' ' . $horario )) );
         $agendamento->save();
+
+        /**
+         * Envia uma notificação por whatsapp
+         */
+        $this->enviarWhatsappAgendamento($agendamento);
 
         return redirect()->route('agenda.calendario')->with('success', 'Agendamento criado com sucesso');
     }
