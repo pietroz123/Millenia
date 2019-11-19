@@ -2556,6 +2556,57 @@ body {
   text-align: center;
 }
 
+.info-card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 10px solid #00bcd4;
+  background-color: #fdfdfd;
+}
+.info-card span {
+  margin-bottom: 10px;
+}
+.info-card .name {
+  font-size: 1.1rem;
+  color: #7F8192;
+}
+.info-card .value {
+  font-size: 1.4rem;
+  color: #585858;
+}
+.info-card .stats .stats-value {
+  font-weight: 600;
+}
+.info-card .stats .stats-value.increase {
+  color: #38c172;
+}
+.info-card .stats .stats-value.increase::before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\F062";
+  padding-right: 5px;
+}
+.info-card .stats .stats-value.decrease {
+  color: #e3342f;
+}
+.info-card .stats .stats-value.decrease::before {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  content: "\F063";
+  padding-right: 5px;
+}
+.info-card .stats-info {
+  margin-left: 10px;
+  font-weight: 500;
+  color: #7F8192;
+}
+.info-card:not(:last-of-type) {
+  margin-right: 20px;
+}
+
 .table-cadastro th {
   text-transform: uppercase;
   font-weight: 700;

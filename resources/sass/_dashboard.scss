@@ -5,9 +5,9 @@
 
 @mixin sidebar-background {
     background: rgb(0,94,106);
-    background: -moz-linear-gradient(0deg, rgba(0,94,106,1) 0%, rgba(0,188,212,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(0,94,106,1) 0%, rgba(0,188,212,1) 100%);
-    background: linear-gradient(0deg, rgba(0,94,106,1) 0%, rgba(0,188,212,1) 100%);
+    background: -moz-linear-gradient(0deg, $main-color-dark 0%, $main-color 100%);
+    background: -webkit-linear-gradient(0deg, $main-color-dark 0%, $main-color 100%);
+    background: linear-gradient(0deg, $main-color-dark 0%, $main-color 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#005e6a",endColorstr="#00bcd4",GradientType=1);
 }
 
