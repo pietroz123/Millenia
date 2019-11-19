@@ -33,7 +33,7 @@
             <div class="col">
                 <div class="form-group">
                     <label for="desconto">Desconto (%)</label>
-                    <input type="number" min="1" step="0.01" class="form-control" id="desconto" name="desconto" placeholder="Desconto" autocomplete="new" required value="{{ $pacote->desconto }}">
+                    <input type="number" min="1" max="100" step="0.01" class="form-control" id="desconto" name="desconto" placeholder="Desconto" autocomplete="new" required value="{{ $pacote->desconto }}">
                 </div>
             </div>
             

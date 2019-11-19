@@ -47,6 +47,7 @@ mix.scripts('resources/js/dashboard/cadastros/profissional/index.js', 'public/js
 
 // Serviços
 mix.scripts('resources/js/dashboard/cadastros/servico/index.js', 'public/js/dashboard/cadastros/servico/index.js');
+mix.scripts('resources/js/dashboard/cadastros/servico/create.js', 'public/js/dashboard/cadastros/servico/create.js');
 
 // Produtos
 mix.scripts('resources/js/dashboard/cadastros/produto/index.js', 'public/js/dashboard/cadastros/produto/index.js');

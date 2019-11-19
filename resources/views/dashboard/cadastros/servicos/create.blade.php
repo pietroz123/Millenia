@@ -19,3 +19,7 @@
     </form>
 
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('js/dashboard/cadastros/servico/create.js') }}"></script>
+@endsection

@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
     // =======================================================
+    // MÁSCARAS
+    // =======================================================
+
+    $('#valor-com-desconto').mask('000000000000000.00', {reverse: true});
+    $('#desconto').mask('000000000000000.00', {reverse: true});
+
+    // =======================================================
     // SELECTs
     // =======================================================
 
@@ -46,6 +53,14 @@ $(document).ready(function() {
         const desconto = 100 - (valorComDesconto * 100) / valorSemDesconto;
         // Atribui ao input
         $('input#desconto').val(desconto.toFixed(2));
+    });
+
+    $("select#servicos").on("select2:unselect", function (evt) {
+        if (!evt.params.originalEvent) {
+          return;
+        }
+      
+        evt.params.originalEvent.stopPropagation();
     });
 
 });
