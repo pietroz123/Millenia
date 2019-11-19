@@ -26,7 +26,7 @@
                 Agenda
             </a>
         </li>
-        <li class="dashboard-sidebar-item mt-2">
+        <li class="dashboard-sidebar-item">
             <a href="{{ route('clientes.index') }}" class="{{ setActive('clientes.index') }}">
                 <i class="fas fa-user"></i>
                 Clientes
@@ -62,12 +62,12 @@
                 Comandas
             </a>
         </li>
-        <li class="dashboard-sidebar-item">
+        {{-- <li class="dashboard-sidebar-item">
             <a href="#!" class="{{ setActive('') }}">
                 <i class="fas fa-chart-pie"></i>
                 Relatórios
             </a>
-        </li>
+        </li> --}}
         <li class="dashboard-sidebar-item">
             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i>

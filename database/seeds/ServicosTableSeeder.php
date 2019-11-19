@@ -48,7 +48,7 @@ class ServicosTableSeeder extends Seeder
             'observacoes' => '',
         ]);
         Servico::create([
-            'nome' => 'Sombrancelha',
+            'nome' => 'Sobrancelha',
             'preco' => '60',
             'comissao' => '6',
             'tempo_execucao_em_minutos' => '90',

@@ -26,14 +26,14 @@
             <div class="col">
                 <div class="form-group">
                     <label for="valor-com-desconto">Valor (com Desconto)</label>
-                    <input type="number" min="1" class="form-control" id="valor-com-desconto" name="valor-com-desconto" autocomplete="new" placeholder="Valor com Desconto" required value="{{ $pacote->valor_com_desconto }}">
+                    <input type="number" min="1" step="0.01" class="form-control" id="valor-com-desconto" name="valor-com-desconto" autocomplete="new" placeholder="Valor com Desconto" required value="{{ $pacote->valor_com_desconto }}">
                 </div>
             </div>
 
             <div class="col">
                 <div class="form-group">
                     <label for="desconto">Desconto (%)</label>
-                    <input type="number" min="1" class="form-control" id="desconto" name="desconto" placeholder="Desconto" autocomplete="new" required value="{{ $pacote->desconto }}">
+                    <input type="number" min="1" step="0.01" class="form-control" id="desconto" name="desconto" placeholder="Desconto" autocomplete="new" required value="{{ $pacote->desconto }}">
                 </div>
             </div>
             

@@ -3,7 +3,7 @@ $(document).ready(function() {
     /**
      * Recuperar modal com as informações do profissional
      */
-    $('.btn-action.view').click(function() {
+    $(document).on('click', '.btn-action.view', function() {
 
         const idProfissional = $(this).attr('data-id-profissional');
 

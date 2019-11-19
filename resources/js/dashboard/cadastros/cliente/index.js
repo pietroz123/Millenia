@@ -3,7 +3,7 @@ $(document).ready(function() {
     /**
      * Recuperar modal com as informações do cliente
      */
-    $('.btn-action.view').click(function() {
+    $(document).on('click', '.btn-action.view', function() {
 
         const idCliente = $(this).attr('data-id-cliente');
 

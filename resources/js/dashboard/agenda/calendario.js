@@ -250,18 +250,20 @@ $(document).ready(function() {
     
                 // Cria o select de resposta
                 if (options.length > 0) {
-                    $(
-                        '<div class="form-group mt-2">' +
-                            '<label for="cliente">Selecionar o cliente</label>' +
-                            '<select class="browser-default custom-select" id="cliente" name="cliente">' +
-                                '<option></option>' +
-                                options +
-                            '</select>' +
-                        '</div>'
-                    ).insertAfter('#selecionar-profissional');
-                    $('select#cliente').select2({
-                        placeholder: 'Selecione o cliente',
-                    });
+                    if ($('select#cliente').length == 0) {
+                        $(
+                            '<div class="form-group mt-2">' +
+                                '<label for="cliente">Selecionar o cliente</label>' +
+                                '<select class="browser-default custom-select" id="cliente" name="cliente">' +
+                                    '<option></option>' +
+                                    options +
+                                '</select>' +
+                            '</div>'
+                        ).insertAfter('#selecionar-profissional');
+                        $('select#cliente').select2({
+                            placeholder: 'Selecione o cliente',
+                        });
+                    }
                 }
                 else {
                     $(
