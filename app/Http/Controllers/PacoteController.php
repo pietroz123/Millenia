@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Servico;
 use App\Pacote;
+use App\Traits\WhatsappTrait;
 
 class PacoteController extends Controller
 {
+    use WhatsappTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -59,6 +62,12 @@ class PacoteController extends Controller
          * Atribui os servicos
          */
         $pacote->servicos()->sync(request('servicos'));
+
+        /**
+         * Envia uma notificação por whatsapp
+         */
+        if ($pacote->ativo)
+            $this->enviarWhatsappPacote($pacote);
 
         return redirect()->route('pacotes.index')->with('success', 'Pacote cadastrado com sucesso');
     }
