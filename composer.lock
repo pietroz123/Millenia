@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7feca41d75c26d9337afa4879fee9f1b",
+    "content-hash": "81a3bfdf87f32d69c1651f896a4d2d2b",
     "packages": [
+        {
+            "name": "cornford/backup",
+            "version": "v2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bradcornford/Backup.git",
+                "reference": "15acc201621a8eb025c7d38538e89385751dfdca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bradcornford/Backup/zipball/15acc201621a8eb025c7d38538e89385751dfdca",
+                "reference": "15acc201621a8eb025c7d38538e89385751dfdca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^5.0 || ^6.0",
+                "illuminate/console": "^5.0 || ^6.0",
+                "illuminate/support": "^5.0 || ^6.0",
+                "php": ">=5.4.0",
+                "symfony/process": "*"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.1",
+                "phpspec/phpspec": "2.*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Cornford\\Backup": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bradley Cornford",
+                    "email": "me@bradleycornford.co.uk"
+                }
+            ],
+            "description": "An easy way backup and restore databases in Laravel.",
+            "keywords": [
+                "backup",
+                "database",
+                "dump",
+                "laravel",
+                "restore"
+            ],
+            "time": "2019-09-23T19:14:28+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",

@@ -201,3 +201,9 @@ Route::get('/teste', function() {
     ]);
 
 });
+
+Route::get('/backup', function() {
+
+    Backup::export();
+
+});
