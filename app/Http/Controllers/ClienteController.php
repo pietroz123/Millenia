@@ -119,7 +119,6 @@ class ClienteController extends Controller
         $cliente->id_profissao = request('profissao');
         // $cliente->indicacao = request('indicacao');
         $cliente->id_cidade = request('cidade');
-        $cliente->id_estado = request('estado');
         $cliente->cep = request('cep');
         $cliente->bairro = request('bairro');
         $cliente->rua = request('rua');
