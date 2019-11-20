@@ -31,7 +31,13 @@
 
         <div class="form-group mt-3">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email do cliente" autocomplete="new" required value="{{ $cliente->email }}">
+            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Email do cliente" autocomplete="new" required value="{{ old('email', $cliente->email) }}">
+
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>Este e-mail já está em uso.</strong>
+                </span>
+            @enderror
         </div>
 
         <div class="form-group">

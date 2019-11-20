@@ -106,6 +106,10 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'email' => 'unique:clientes',
+        ]);
+
         /**
          * Atualiza o cliente
          */

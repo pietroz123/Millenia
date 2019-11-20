@@ -28,9 +28,9 @@ class AjaxController extends Controller
     {
         $cliente = Cliente::find(request('id'));
         
-        return view('dashboard.cadastros.clientes.modal-cliente')->with(compact(
-            'cliente',
-        ));
+        return view('dashboard.cadastros.clientes.modal-cliente', [
+            'cliente' => $cliente,
+        ]);
     }
 
     /**
@@ -40,9 +40,9 @@ class AjaxController extends Controller
     {
         $profissional = Profissional::find(request('id'));
         
-        return view('dashboard.cadastros.profissionais.modal-profissional')->with(compact(
-            'profissional',
-        ));
+        return view('dashboard.cadastros.profissionais.modal-profissional', [
+            'profissional' => $profissional,
+        ]);
     }
 
     /**
@@ -52,9 +52,9 @@ class AjaxController extends Controller
     {
         $servico = Servico::find(request('id'));
         
-        return view('dashboard.cadastros.servicos.modal-servico')->with(compact(
-            'servico',
-        ));
+        return view('dashboard.cadastros.servicos.modal-servico', [
+            'servico' => $servico,
+        ]);
     }
 
         /**
@@ -64,9 +64,9 @@ class AjaxController extends Controller
     {
         $pacote = Pacote::find(request('id'));
         
-        return view('dashboard.cadastros.pacotes.modal-pacote')->with(compact(
-            'pacote',
-        ));
+        return view('dashboard.cadastros.pacotes.modal-pacote', [
+            'pacote' => $pacote,
+        ]);
     }
 
     // =======================================================
@@ -230,10 +230,10 @@ class AjaxController extends Controller
         $horario = request('horario');
         $servicos = Servico::all();
 
-        return view('dashboard.agenda.modal-agendamento')->with(compact(
-            'data',
-            'horario',
-            'servicos',
-        ));
+        return view('dashboard.agenda.modal-agendamento', [
+            'data' => $data,
+            'horario' => $horario,
+            'servicos' => $servicos,
+        ]);
     }
 }
