@@ -295,12 +295,12 @@ $(document).ready(function() {
 
 });
 
-/**
- * Fechar modal de agendamento quando clicar fora
- */
-$(document).on('click', '.modal-agendamento', function(e) {
-    e.stopPropagation();
-});
-$(document).click(function() {
-    $('.modal-agendamento').hide();
-});
+// /**
+//  * Fechar modal de agendamento quando clicar fora
+//  */
+// $(document).on('click', '.modal-agendamento', function(e) {
+//     e.stopPropagation();
+// });
+// $(document).click(function() {
+//     $('.modal-agendamento').hide();
+// });
