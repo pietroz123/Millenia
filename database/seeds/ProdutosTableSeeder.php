@@ -31,11 +31,11 @@ class ProdutosTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'nome' => 'Uniq One Coconut',
-                'id_marca' => 7,
-                'preco' => 78.9,
+                'id_marca' => 6,
+                'preco' => 7.89,
                 'pontos' => 30,
                 'created_at' => '2019-11-19 03:22:49',
-                'updated_at' => '2019-11-19 03:22:49',
+                'updated_at' => '2019-11-20 16:23:07',
             ),
             2 => 
             array (
@@ -51,11 +51,11 @@ class ProdutosTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'nome' => 'Máscara de Nutrição 150ml',
-                'id_marca' => 8,
-                'preco' => 93.9,
+                'id_marca' => 7,
+                'preco' => 90.99,
                 'pontos' => 70,
                 'created_at' => '2019-11-19 03:28:12',
-                'updated_at' => '2019-11-19 03:28:12',
+                'updated_at' => '2019-11-20 16:23:29',
             ),
             4 => 
             array (

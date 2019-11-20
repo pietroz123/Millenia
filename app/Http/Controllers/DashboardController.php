@@ -37,13 +37,13 @@ class DashboardController extends Controller
         $n_pacotes = count(Pacote::all());
         $n_agendamentos = count(Agendamento::all());
 
-        return view('dashboard.dashboard-index')->with(compact(
-            'n_clientes',
-            'n_profissionais',
-            'n_produtos',
-            'n_servicos',
-            'n_pacotes',
-            'n_agendamentos',
-        ));
+        return view('dashboard.dashboard-index', [
+            'n_clientes' => $n_clientes,
+            'n_profissionais' => $n_profissionais,
+            'n_produtos' => $n_produtos,
+            'n_servicos' => $n_servicos,
+            'n_pacotes' => $n_pacotes,
+            'n_agendamentos' => $n_agendamentos,
+        ]);
     }
 }
